@@ -39,12 +39,12 @@
                         </tr>
                     </table>
 
-                    <br/>
+                    <br />
                     <table class='table w-full'>
                         <thead>
                             <tr>
                                 <th class="border border-black">No</th>
-                                <th class="border border-black">Nama/NIP</th>
+                                <th class="border border-black">Nama / NIP</th>
                                 <th class="border border-black">Jabatan / Pangkat / Gol. Eslon</th>
                                 <th class="border border-black">Uang Harian</th>
                                 <th class="border border-black">Uang Transport</th>
@@ -55,25 +55,25 @@
                         </thead>
                         <tbody>
                             @php $i=1 @endphp
-                            {{-- @foreach($pegawai as $p) --}}
+                            {{-- @foreach ($pegawai as $p) --}}
                             <tr>
-                                <td class="border border-black">{{ $i++ }}</td>
-                                <td class="border border-black">rh</td>
-                                <td class="border border-black">th</td>
-                                <td class="border border-black">th</td>
-                                <td class="border border-black">th</td>
-                                <td class="border border-black">aa</td>
-                                <td class="border border-black">aa</td>
-                                <td class="border border-black">aa</td>
+                                <td class="border border-black px-2">{{ $i++ }}</td>
+                                <td class="border border-black px-2">rh</td>
+                                <td class="border border-black px-2">th</td>
+                                <td class="border border-black px-2">th</td>
+                                <td class="border border-black px-2">th</td>
+                                <td class="border border-black px-2">aa</td>
+                                <td class="border border-black px-2">aa</td>
+                                <td class="border border-black px-2">aa</td>
                             </tr>
                             {{-- @endforeach --}}
                             <tr>
-                                <td colspan="3" class="text-center border border-black">Jumlah</td>
-                                <td class="border border-black"></td>
-                                <td class="border border-black"></td>
-                                <td class="border border-black"></td>
-                                <td class="border border-black"></td>
-                                <td class="border border-black"></td>
+                                <td colspan="3" class="text-center border border-black px-2">Jumlah</td>
+                                <td class="border border-black px-2"></td>
+                                <td class="border border-black px-2"></td>
+                                <td class="border border-black px-2"></td>
+                                <td class="border border-black px-2"></td>
+                                <td class="border border-black px-2"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -83,10 +83,35 @@
                         <p>Lunas dibayar,<span class="px-24"></span>2022</p>
                     </div>
                     <br>
-                    <div class="w-full flex justify-start">
-                        <p>Mengetahui / Sudah Dibayar</p>
-                    </div>
-             
+
+                    <table class="w-full">
+                        <tr>
+                            <td>Mengetahui / Sudah Dibayar</td>
+                        </tr>
+                        <tr>
+                            <td>Plt. KEPALA DINAS KOMUNIKASI DAN INFORMATIKA</td>
+                            <td>Mengetahui :</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="mb-20">ASISTEN ADMINISTRASI UMUM SEKRETARIS DAERAH <br> Selaku Pengguna Anggaran</p>
+                                <p><u>Drs. SUJARNO, M.Si</u></p>
+                                <P>NIP. 19630107 199003 1 004</P>
+                            </td>
+                            <td>
+                                <p>Pejabat Pelaksana Teknis Kegiatan</p>
+                                <p class="mb-20">Bidang Tata Kelola Informatika</p>
+                                <p><u>Hartono, S.Sos, M.M</u></p>
+                                <P>NIP. 19691015 199003 1 007</P>
+                            </td>
+                            <td>
+                                <p>Bendahara Pengeluaran</p>
+                                <p class="mb-20">Dinas komunnikasi dan Informatika</p>
+                                <p><u>ENDANG WEDININGSIH, S,Sos</u></p>
+                                <P>NIP. 19711210 199403</P>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
