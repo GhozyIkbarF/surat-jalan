@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>SPPD</title>
+  <title>Data NPPD</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="../vendors/feather/feather.css">
   <link rel="stylesheet" href="../vendors/mdi/css/materialdesignicons.min.css">
@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="../css/vertical-layout-light/style.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="../images/favicon.png" />
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css" />
 </head>
 <body>
   <div class="container-scroller">
@@ -79,7 +79,7 @@
           <li class="nav-item nav-category">Master Data</li>
           <li class="nav-item">
             <a class="nav-link" href="pages/datasppd.php">
-              <i class="mdi mdi-email-open menu-icon"></i>
+              <i class="mdi mdi mdi-file-multiple menu-icon"></i>
               <span class="menu-title">Data SPPD</span>
             </a>
           </li>
@@ -109,151 +109,247 @@
               <span class="menu-title">Data Setting</span>
             </a>
           </li>
-          <li class="nav-item nav-category">UI Elements</li>
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-              <i class="menu-icon mdi mdi-floor-plan"></i>
-              <span class="menu-title">UI Elements</span>
-              <i class="menu-arrow"></i> 
-            </a>
-            <div class="collapse" id="ui-basic">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item nav-category">Forms and Datas</li>
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
-              <i class="menu-icon mdi mdi-card-text-outline"></i>
-              <span class="menu-title">Form elements</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="form-elements">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">Basic Elements</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
-              <i class="menu-icon mdi mdi-chart-line"></i>
-              <span class="menu-title">Charts</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="charts">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/charts/chartjs.html">ChartJs</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
-              <i class="menu-icon mdi mdi-table"></i>
-              <span class="menu-title">Tables</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="tables">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/tables/basic-table.html">Basic table</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
-              <i class="menu-icon mdi mdi-layers-outline"></i>
-              <span class="menu-title">Icons</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="icons">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/icons/mdi.html">Mdi icons</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item nav-category">pages</li>
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-              <i class="menu-icon mdi mdi-account-circle-outline"></i>
-              <span class="menu-title">User Pages</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="auth">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item nav-category">help</li>
-          <li class="nav-item">
-            <a class="nav-link" href="http://bootstrapdash.com/demo/star-admin2-free/docs/documentation.html">
-              <i class="menu-icon mdi mdi-file-document"></i>
-              <span class="menu-title">Documentation</span>
-            </a>
-          </li>
         </ul>
       </nav>
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
           <div class="row">
-            <div class="col-sm-12">
-              <div class="home-tab">
-                <h2>Data NPPD (Nota Permintaan Perjalanan Dinas)</h2>
-                <div class=" d-flex flex-column">
-                  <div class="row flex-grow">
-                    <div class="grid-margin stretch-card">
-                      <div class="card card-rounded">
-                        <div class="card-body">
-                          <div class="d-sm-flex justify-content-between align-items-start">
-                            <div>
-                              <h4 class="card-title card-title-dash">Daftar Data NPPD</h4>
-                            </div>
-                            <div>
-                              <button class="btn btn-primary btn-lg text-white mb-0 me-0" type="button"><i class="mdi mdi-plus"></i>Tambah Data</button>
-                            </div>
-                          </div>
-                          <div class="table-responsive pt-3">
-                            <table class="table table-bordered">
-                              <thead>
-                                <tr>
-                                  <td>No</td>
-                                  <td>Penugasan Kepada</td>
-                                  <td>Golongan</td>
-                                  <td>Tujuan</td>
-                                  <td>Maksud Perjalanan Dinas</td>
-                                  <td>Tgl. Pergi s.d. Tgl. Kembali</td>
-                                  <td>Lama</td>
-                                  <td>Status</td>
-                                  <td>Aksi</td>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <td>1</td>
-                                  <td>
-                                    <p>1. Kurniawan Hadiputra, S.E.</p>
-                                    <p>2. Agus Hatorangan, S.Ag.</p>
-                                  </td>
-                                  <td>
-                                    <p>Golongan III</p>
-                                    <p>Golongan III</p>
-                                  </td>
-                                  <td>Kec. Rangsang</td>
-                                  <td>Membeli Kue Tahun Baru</td>
-                                  <td>20-04-2021 s.d. 25-04-2021</td>
-                                  <td>5 hari</td>
-                                  <td>Cek</td>
-                                  <td>Button</td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
-                        </div>
-                      </div>
+            <div class="col-sm-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-sm-flex justify-content-between align-items-center">
+                    <div>
+                      <h4 class="card-title">Data NPPD</h4>
+                      <small class="text-muted">Nota Permintaan Perjalanan Dinas</small>
                     </div>
+                    <div>
+                      <button type="button" class="btn btn-success btn-md">
+                        Tambah Data
+                      </button>
+                    </div>
+                  </div>
+                  <div class="table-responsive mt-3">
+                    <table class="table table-bordered display" id="table_sppd">
+                      <thead>
+                        <tr>
+                          <td>No</td>
+                          <td>Penugasan Kepada</td>
+                          <td>Golongan</td>
+                          <td>Tujuan</td>
+                          <td>Maksud Perjalanan Dinas</td>
+                          <td>Tgl. Pergi s.d. Tgl. Kembali</td>
+                          <td>Lama</td>
+                          <td>Status</td>
+                          <td>Aksi</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>
+                            <p>1. Kurniawan Hadiputra, S.E.</p>
+                            <p>2. Agus Hatorangan, S.Ag.</p>
+                          </td>
+                          <td>
+                            <p>Golongan III</p>
+                            <p>Golongan III</p>
+                          </td>
+                          <td>Kec. Rangsang</td>
+                          <td>Membeli Kue Tahun Baru</td>
+                          <td>20-04-2021 s.d. 25-04-2021</td>
+                          <td>5 hari</td>
+                          <td>Cek</td>
+                          <td>
+                            <div class="btn-group" role="group">
+                              <button type="button" class="btn btn-md btn-primary">
+                                <i class="mdi mdi-printer"></i>
+                              </button>
+                              <button type="button" class="btn btn-md btn-warning">
+                                <i class="mdi mdi-tooltip-edit"></i>
+                              </button>
+                              <button type="button" class="btn btn-md btn-danger">
+                                <i class="mdi mdi-delete"></i>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>
+                            <p>1. Kurniawan Hadiputra, S.E.</p>
+                            <p>2. Agus Hatorangan, S.Ag.</p>
+                          </td>
+                          <td>
+                            <p>Golongan III</p>
+                            <p>Golongan III</p>
+                          </td>
+                          <td>Kec. Rangsang</td>
+                          <td>Membeli Kue Tahun Baru</td>
+                          <td>20-04-2021 s.d. 25-04-2021</td>
+                          <td>5 hari</td>
+                          <td>Cek</td>
+                          <td>
+                            <div class="btn-group" role="group">
+                              <button type="button" class="btn btn-md btn-primary">
+                                <i class="mdi mdi-printer"></i>
+                              </button>
+                              <button type="button" class="btn btn-md btn-warning">
+                                <i class="mdi mdi-tooltip-edit"></i>
+                              </button>
+                              <button type="button" class="btn btn-md btn-danger">
+                                <i class="mdi mdi-delete"></i>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>
+                            <p>1. Kurniawan Hadiputra, S.E.</p>
+                            <p>2. Agus Hatorangan, S.Ag.</p>
+                          </td>
+                          <td>
+                            <p>Golongan III</p>
+                            <p>Golongan III</p>
+                          </td>
+                          <td>Kec. Rangsang</td>
+                          <td>Membeli Kue Tahun Baru</td>
+                          <td>20-04-2021 s.d. 25-04-2021</td>
+                          <td>5 hari</td>
+                          <td>Cek</td>
+                          <td>
+                            <div class="btn-group" role="group">
+                              <button type="button" class="btn btn-md btn-primary">
+                                <i class="mdi mdi-printer"></i>
+                              </button>
+                              <button type="button" class="btn btn-md btn-warning">
+                                <i class="mdi mdi-tooltip-edit"></i>
+                              </button>
+                              <button type="button" class="btn btn-md btn-danger">
+                                <i class="mdi mdi-delete"></i>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>
+                            <p>1. Kurniawan Hadiputra, S.E.</p>
+                            <p>2. Agus Hatorangan, S.Ag.</p>
+                          </td>
+                          <td>
+                            <p>Golongan III</p>
+                            <p>Golongan III</p>
+                          </td>
+                          <td>Kec. Rangsang</td>
+                          <td>Membeli Kue Tahun Baru</td>
+                          <td>20-04-2021 s.d. 25-04-2021</td>
+                          <td>5 hari</td>
+                          <td>Cek</td>
+                          <td>
+                            <div class="btn-group" role="group">
+                              <button type="button" class="btn btn-md btn-primary">
+                                <i class="mdi mdi-printer"></i>
+                              </button>
+                              <button type="button" class="btn btn-md btn-warning">
+                                <i class="mdi mdi-tooltip-edit"></i>
+                              </button>
+                              <button type="button" class="btn btn-md btn-danger">
+                                <i class="mdi mdi-delete"></i>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>
+                            <p>1. Kurniawan Hadiputra, S.E.</p>
+                            <p>2. Agus Hatorangan, S.Ag.</p>
+                          </td>
+                          <td>
+                            <p>Golongan III</p>
+                            <p>Golongan III</p>
+                          </td>
+                          <td>Kec. Rangsang</td>
+                          <td>Membeli Kue Tahun Baru</td>
+                          <td>20-04-2021 s.d. 25-04-2021</td>
+                          <td>5 hari</td>
+                          <td>Cek</td>
+                          <td>
+                            <div class="btn-group" role="group">
+                              <button type="button" class="btn btn-md btn-primary">
+                                <i class="mdi mdi-printer"></i>
+                              </button>
+                              <button type="button" class="btn btn-md btn-warning">
+                                <i class="mdi mdi-tooltip-edit"></i>
+                              </button>
+                              <button type="button" class="btn btn-md btn-danger">
+                                <i class="mdi mdi-delete"></i>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>
+                            <p>1. Kurniawan Hadiputra, S.E.</p>
+                            <p>2. Agus Hatorangan, S.Ag.</p>
+                          </td>
+                          <td>
+                            <p>Golongan III</p>
+                            <p>Golongan III</p>
+                          </td>
+                          <td>Kec. Rangsang</td>
+                          <td>Membeli Kue Tahun Baru</td>
+                          <td>20-04-2021 s.d. 25-04-2021</td>
+                          <td>5 hari</td>
+                          <td>Cek</td>
+                          <td>
+                            <div class="btn-group" role="group">
+                              <button type="button" class="btn btn-md btn-primary">
+                                <i class="mdi mdi-printer"></i>
+                              </button>
+                              <button type="button" class="btn btn-md btn-warning">
+                                <i class="mdi mdi-tooltip-edit"></i>
+                              </button>
+                              <button type="button" class="btn btn-md btn-danger">
+                                <i class="mdi mdi-delete"></i>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>
+                            <p>1. Kurniawan Hadiputra, S.E.</p>
+                            <p>2. Agus Hatorangan, S.Ag.</p>
+                          </td>
+                          <td>
+                            <p>Golongan III</p>
+                            <p>Golongan III</p>
+                          </td>
+                          <td>Kec. Rangsang</td>
+                          <td>Membeli Kue Tahun Baru</td>
+                          <td>20-04-2021 s.d. 25-04-2021</td>
+                          <td>5 hari</td>
+                          <td>Cek</td>
+                          <td>
+                            <div class="btn-group" role="group">
+                              <button type="button" class="btn btn-md btn-primary">
+                                <i class="mdi mdi-printer"></i>
+                              </button>
+                              <button type="button" class="btn btn-md btn-warning">
+                                <i class="mdi mdi-tooltip-edit"></i>
+                              </button>
+                              <button type="button" class="btn btn-md btn-danger">
+                                <i class="mdi mdi-delete"></i>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
@@ -277,26 +373,32 @@
   <!-- container-scroller -->
 
   <!-- plugins:js -->
-  <script src="vendors/js/vendor.bundle.base.js"></script>
+  <script src="../vendors/js/vendor.bundle.base.js"></script>
   <!-- endinject -->
   <!-- Plugin js for this page -->
-  <script src="vendors/chart.js/Chart.min.js"></script>
-  <script src="vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
-  <script src="vendors/progressbar.js/progressbar.min.js"></script>
+  <script src="../vendors/chart.js/Chart.min.js"></script>
+  <script src="../vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+  <script src="../vendors/progressbar.js/progressbar.min.js"></script>
 
   <!-- End plugin js for this page -->
   <!-- inject:js -->
-  <script src="js/off-canvas.js"></script>
-  <script src="js/hoverable-collapse.js"></script>
-  <script src="js/template.js"></script>
-  <script src="js/settings.js"></script>
-  <script src="js/todolist.js"></script>
+  <script src="../js/off-canvas.js"></script>
+  <script src="../js/hoverable-collapse.js"></script>
+  <script src="../js/template.js"></script>
+  <script src="../js/settings.js"></script>
+  <script src="../js/todolist.js"></script>
   <!-- endinject -->
   <!-- Custom js for this page-->
-  <script src="js/jquery.cookie.js" type="text/javascript"></script>
-  <script src="js/dashboard.js"></script>
-  <script src="js/Chart.roundedBarCharts.js"></script>
+  <script src="../js/jquery.cookie.js" type="text/javascript"></script>
+  <script src="../js/dashboard.js"></script>
+  <script src="../js/Chart.roundedBarCharts.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+  <script>
+    $(document).ready( function () {
+      $('#table_sppd').DataTable();
+    } );
+  </script>
   <!-- End custom js for this page-->
 </body>
 
