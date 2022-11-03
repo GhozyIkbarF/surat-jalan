@@ -25,8 +25,6 @@
   <!-- endinject -->
   <link rel="shortcut icon" href="../images/favicon.png" />
   <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
-
 </head>
 <body>
   <div class="container-scroller">
@@ -50,7 +48,7 @@
       <div class="navbar-menu-wrapper d-flex align-items-center">
         <ul class="navbar-nav">
           <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-            <h1 class="welcome-text">Data NPPD <span class="text-black fw-bold">(Nota Permintaan Perjalanan Dinas)</span></h1>
+            <h1 class="welcome-text">Data SPPD <span class="text-black fw-bold">(Surat Permintaan Perjalanan Dinas)</span></h1>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
@@ -87,7 +85,7 @@
           </li>
           <li class="nav-item nav-category">Master Data</li>
           <li class="nav-item">
-            <a class="nav-link" href="pages/datasppd.php">
+            <a class="nav-link" href="datasppd.php">
               <i class="mdi mdi mdi-file-multiple menu-icon"></i>
               <span class="menu-title">Data SPPD</span>
             </a>
@@ -129,7 +127,7 @@
                 <div class="card-body">
                   <div class="d-sm-flex justify-content-between align-items-center">
                     <div>
-                      <h4 class="card-title">Tambah Data NPPD</h4>
+                      <h4 class="card-title">Tambah Data SPPD</h4>
                     </div>
                     <div>
                       <a href="datasppd.php">
@@ -142,57 +140,106 @@
                   </div>
                   <div class="mt-3">
                   <form class="forms-sample">
-                    <div class="form-group">
-                      <label>Pilih Pegawai</label>
-                      <select class="js-example-basic-multiple w-100" multiple="multiple">
-                        <option value="AL">Alabama</option>
-                        <option value="WY">Wyoming</option>
-                        <option value="AM">America</option>
-                        <option value="CA">Canada</option>
-                        <option value="RU">Russia</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label>Pilih Lokasi Tujuan</label>
-                      <select class="js-example-basic-single w-100">
-                        <option value="AL">Alabama</option>
-                        <option value="WY">Wyoming</option>
-                        <option value="AM">America</option>
-                        <option value="CA">Canada</option>
-                        <option value="RU">Russia</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label for="tujuan">Maksud Tujuan Perjalanan</label>
-                      <input type="text" class="form-control" id="tujuan" placeholder="Tulis Tujuan Perjalanan">
-                    </div>
-                    <div class="form-group">
-                      <label>Pilih Jenis Transportasi</label>
-                        <select class="js-example-basic-single w-100">
-                        <option value="AL">Alabama</option>
-                        <option value="WY">Wyoming</option>
-                        <option value="AM">America</option>
-                        <option value="CA">Canada</option>
-                        <option value="RU">Russia</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                        <div id="datetimepicker">
-
-                            <label for="tglpergi">Tanggal Pergi</label>
-                            <input type="text" class="form-control" id="tglpergi" placeholder="Tulis Tanggal Pergi">
+                    <div class="row">
+                      <div class="col-md-6 grid-margin">
+                        <div class="form-group">
+                          <label>Pejabat Pemberi Perintah</label>
+                          <select class="js-example-basic-multiple w-100" multiple="multiple">
+                            <option value="AL">Alabama</option>
+                            <option value="WY">Wyoming</option>
+                            <option value="AM">America</option>
+                            <option value="CA">Canada</option>
+                            <option value="RU">Russia</option>
+                          </select>
                         </div>
+                        <div class="form-group">
+                          <label>Pegawai yang Diperintah</label>
+                          <select class="js-example-basic-multiple w-100" multiple="multiple">
+                            <option value="AL">Alabama</option>
+                            <option value="WY">Wyoming</option>
+                            <option value="AM">America</option>
+                            <option value="CA">Canada</option>
+                            <option value="RU">Russia</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label for="golongan">Golongan</label>
+                          <input type="text" class="form-control" id="golongan" placeholder="Pembina / IV a" disabled>
+                        </div>
+                        <div class="form-group">
+                          <label for="jabatan">Jabatan</label>
+                          <input type="text" class="form-control" id="jabatan" placeholder="Kepala Bidang Tata Kelola Informatika" disabled>
+                        </div>
+                        <div class="form-group">
+                          <label for="tingkat">Tingkat</label>
+                          <input type="text" class="form-control" id="tingkat" placeholder="-" disabled>
+                        </div>
+                        <div class="form-group">
+                          <label for="maksud">Maksud Perjalanan Dinas</label>
+                          <input type="text" class="form-control" id="maksud" placeholder="Tulis Maksud Perjalanan Dinas">
+                        </div>
+                        <div class="form-group">
+                          <label for="transportasi">Transportasi</label>
+                          <input type="text" class="form-control" id="transportasi" placeholder="Tulis Transportasi yang Digunakan">
+                        </div>
+                        <div class="form-group">
+                          <label for="berangkat">Tempat Berangkat</label>
+                          <input type="text" class="form-control" id="berangkat" placeholder="Tulis Tempat Keberangkatan">
+                        </div>
+                        <div class="form-group">
+                          <label for="tujuan">Tempat Tujuan</label>
+                          <input type="text" class="form-control" id="tujuan" placeholder="Tulis Tempat Tujuan">
+                        </div>
+                      </div>
+                      <div class="col-md-6 grid-margin">
+                        <div class="form-group">
+                          <label for="lama">Lama Perjalanan Dinas</label>
+                          <input type="text" class="form-control" id="lama" placeholder="Tulis Lamanya Perjalanan Dinas">
+                        </div>
+                        <div class="form-group">
+                          <label for="tglpergi">Tanggal Pergi</label>
+                          <input type="date" class="form-control" id="tglpergi" placeholder="Pilih Tanggal Kepergian">
+                        </div>
+                        <div class="form-group">
+                          <label for="tglkembali">Tanggal Kembali</label>
+                          <input type="date" class="form-control" id="tglkembali" placeholder="Pilih Tanggal Kembali">
+                        </div>
+                        <div class="form-group">
+                          <label for="tglkembali">Tanggal Kembali</label>
+                          <input type="date" class="form-control" id="tglkembali" placeholder="Pilih Tanggal Kembali">
+                        </div>
+                        <div class="form-group">
+                          <label>Pengikut / NIP</label>
+                          <select class="js-example-basic-multiple w-100" multiple="multiple">
+                            <option value="AL">Alabama</option>
+                            <option value="WY">Wyoming</option>
+                            <option value="AM">America</option>
+                            <option value="CA">Canada</option>
+                            <option value="RU">Russia</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label for="anggaran">Pembebanan Anggaran</label>
+                          <input type="text" class="form-control" id="anggaran" placeholder="Tulis Pembebanan Anggaran">
+                        </div>
+                        <div class="form-group">
+                          <label for="mataanggaran">Mata Anggaran</label>
+                          <input type="text" class="form-control" id="mataanggaran" placeholder="Tulis Mata Anggaran">
+                        </div>
+                        <div class="form-group">
+                          <label for="keterangan">Keterangan</label>
+                          <input type="text" class="form-control" id="keterangan" placeholder="Tulis Keterangan">
+                        </div>
+                      </div>
                     </div>
-                    <div class="form-group">
-                      <label for="tglpulang">Tanggal Pulang</label>
-                      <input type="text" class="form-control" id="tglpulang" placeholder="Tulis Tanggal Pulang">
+                    <div>
+                      <button type="submit" class="btn btn-primary me-2">Tambah</button>
+                      <a href="datasppd.php">
+                        <button type="button" class="btn btn-outline-danger">
+                            Batal
+                        </button>   
+                      </a>
                     </div>
-                    <div class="form-group">
-                      <label for="lama">Lama Perjalanan</label>
-                      <input type="text" class="form-control" id="lama" placeholder="Tulis Lama Perjalanan">
-                    </div>
-                    <button type="submit" class="btn btn-primary me-2">Tambah</button>
-                    <button class="btn btn-light">Batal</button>
                   </form>
                   </div>
                 </div>
@@ -239,18 +286,12 @@
   <script src="../js/Chart.roundedBarCharts.js"></script>
   <script src="../../js/select2.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
   <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
   <script>
     $(document).ready( function () {
       $('#table_sppd').DataTable();
     } );
-    $(function() {
-      $('#datetimepicker').datetimepicker();
-    });
   </script>
   <!-- End custom js for this page-->
 </body>
