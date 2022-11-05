@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Data NPPD</title>
+  <title>Data Daftar Penerimaan Uang</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="../vendors/feather/feather.css">
   <link rel="stylesheet" href="../vendors/mdi/css/materialdesignicons.min.css">
@@ -15,16 +15,15 @@
   <link rel="stylesheet" href="../vendors/css/vendor.bundle.base.css">
   <!-- endinject -->
   <!-- Plugin css for this page -->
-  <!-- <link rel="stylesheet" href="../vendors/datatables.net-bs4/dataTables.bootstrap4.css"> -->
   <link rel="stylesheet" href="../js/select.dataTables.min.css">
-  <link rel="stylesheet" href="../../vendors/select2/select2.min.css">
-  <link rel="stylesheet" href="../../vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="../css/vertical-layout-light/style.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="../images/favicon.png" />
-  <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
+  <!-- datatables -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" rel="stylesheet" />
+  <link href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
 </head>
 <body>
   <div class="container-scroller">
@@ -48,7 +47,7 @@
       <div class="navbar-menu-wrapper d-flex align-items-center">
         <ul class="navbar-nav">
           <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-            <h1 class="welcome-text">Data SPPD <span class="text-black fw-bold">(Surat Permintaan Perjalanan Dinas)</span></h1>
+            <h1 class="welcome-text text-black fw-bold">Data Penerimaan Uang Perjalanan Dinas</h1>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
@@ -145,116 +144,83 @@
                 <div class="card-body">
                   <div class="d-sm-flex justify-content-between align-items-center">
                     <div>
-                      <h4 class="card-title">Tambah Data SPPD</h4>
+                      <h4 class="card-title">Daftar Data Penerimaan Uang Perjalanan Dinas</h4>
                     </div>
                     <div>
-                      <a href="datasppd.php">
-                        <button type="button" class="btn btn-social-icon-text btn-dark">
-                          <i class="mdi mdi-arrow-left"></i>
-                            Kembali
-                        </button>   
+                      <a href="tambahdataspt.php">
+                        <button type="button" class="btn btn-success btn-md">
+                          Tambah Data
+                        </button>
                       </a>
                     </div>
                   </div>
-                  <div class="mt-3">
-                  <form class="forms-sample">
-                    <div class="row">
-                      <div class="col-md-6 grid-margin">
-                        <div class="form-group">
-                          <label>Pejabat Pemberi Perintah</label>
-                          <select class="js-example-basic-multiple w-100" multiple="multiple">
-                            <option value="AL">Alabama</option>
-                            <option value="WY">Wyoming</option>
-                            <option value="AM">America</option>
-                            <option value="CA">Canada</option>
-                            <option value="RU">Russia</option>
-                          </select>
-                        </div>
-                        <div class="form-group">
-                          <label>Pegawai yang Diperintah</label>
-                          <select class="js-example-basic-multiple w-100" multiple="multiple">
-                            <option value="AL">Alabama</option>
-                            <option value="WY">Wyoming</option>
-                            <option value="AM">America</option>
-                            <option value="CA">Canada</option>
-                            <option value="RU">Russia</option>
-                          </select>
-                        </div>
-                        <div class="form-group">
-                          <label for="golongan">Golongan</label>
-                          <input type="text" class="form-control" id="golongan" placeholder="Pembina / IV a" disabled>
-                        </div>
-                        <div class="form-group">
-                          <label for="jabatan">Jabatan</label>
-                          <input type="text" class="form-control" id="jabatan" placeholder="Kepala Bidang Tata Kelola Informatika" disabled>
-                        </div>
-                        <div class="form-group">
-                          <label for="tingkat">Tingkat</label>
-                          <input type="text" class="form-control" id="tingkat" placeholder="-" disabled>
-                        </div>
-                        <div class="form-group">
-                          <label for="maksud">Maksud Perjalanan Dinas</label>
-                          <input type="text" class="form-control" id="maksud" placeholder="Tulis Maksud Perjalanan Dinas">
-                        </div>
-                        <div class="form-group">
-                          <label for="transportasi">Transportasi</label>
-                          <input type="text" class="form-control" id="transportasi" placeholder="Tulis Transportasi yang Digunakan">
-                        </div>
-                        <div class="form-group">
-                          <label for="berangkat">Tempat Berangkat</label>
-                          <input type="text" class="form-control" id="berangkat" placeholder="Tulis Tempat Keberangkatan">
-                        </div>
-                        <div class="form-group">
-                          <label for="tujuan">Tempat Tujuan</label>
-                          <input type="text" class="form-control" id="tujuan" placeholder="Tulis Tempat Tujuan">
-                        </div>
-                      </div>
-                      <div class="col-md-6 grid-margin">
-                        <div class="form-group">
-                          <label for="lama">Lama Perjalanan Dinas</label>
-                          <input type="text" class="form-control" id="lama" placeholder="Tulis Lamanya Perjalanan Dinas">
-                        </div>
-                        <div class="form-group">
-                          <label for="tglpergi">Tanggal Pergi</label>
-                          <input type="date" class="form-control" id="tglpergi" placeholder="Pilih Tanggal Kepergian">
-                        </div>
-                        <div class="form-group">
-                          <label for="tglkembali">Tanggal Kembali</label>
-                          <input type="date" class="form-control" id="tglkembali" placeholder="Pilih Tanggal Kembali">
-                        </div>
-                        <div class="form-group">
-                          <label>Pengikut / NIP</label>
-                          <select class="js-example-basic-multiple w-100" multiple="multiple">
-                            <option value="AL">Alabama</option>
-                            <option value="WY">Wyoming</option>
-                            <option value="AM">America</option>
-                            <option value="CA">Canada</option>
-                            <option value="RU">Russia</option>
-                          </select>
-                        </div>
-                        <div class="form-group">
-                          <label for="anggaran">Pembebanan Anggaran</label>
-                          <input type="text" class="form-control" id="anggaran" placeholder="Tulis Pembebanan Anggaran">
-                        </div>
-                        <div class="form-group">
-                          <label for="mataanggaran">Mata Anggaran</label>
-                          <input type="text" class="form-control" id="mataanggaran" placeholder="Tulis Mata Anggaran">
-                        </div>
-                        <div class="form-group">
-                          <label for="keterangan">Keterangan</label>
-                          <input type="text" class="form-control" id="keterangan" placeholder="Tulis Keterangan">
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <button type="submit" class="btn btn-primary me-2">Tambah</button>
-                      <a href="datasppd.php">
-                        <button type="button" class="btn btn-outline-danger">
-                            Batal
-                        </button>   
-                      </a>
-                    </div>
-                  </form>
+                  <div class="table-responsive mt-3">
+                    <table class="table table-striped table-bordered" id="table_sppd">
+                      <thead>
+                        <tr>
+                          <td>No</td>
+                          <td>Dasar Perintah</td>
+                          <td>Pegawai yang Diperintah</td>
+                          <td>Golongan</td>
+                          <td>NIP</td>
+                          <td>Jabatan</td>
+                          <td>Maksud Tugas</td>
+                          <td>Hari, Tanggal</td>
+                          <td>Waktu</td>
+                          <td>Tempat</td>
+                          <td>Tempat Ditetapkan</td>
+                          <td>Tanggal Ditetapkan</td>
+                          <td>Yang Menetapkan</td>
+                          <td>Aksi</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>Perintah Plt. Kepala Dinas Komunikasi dan Informatika Kabupaten Karanganyar</td>
+                          <td>
+                            <p>Hartono, S.Sos, M.M</p>
+                            <p>Suparno</p>
+                            <p>Yahya Fathoni Amri</p>
+                          </td>
+                          <td>
+                            <p>Pembina / IV a</p>
+                            <p>Pengatur Tingkat I / II d</p>
+                            <p>-</p>
+                          </td>
+                          <td>
+                            <p>19691015 199003 1 007</p>
+                            <p>19731103 199803 1 012</p>
+                            <p>-</p>
+                          </td>
+                          <td>
+                            <p>Kepala Bidang Tata Kelola Informatika</p>
+                            <p>Analis Sistem Informasi dan Diseminasi Hukum Pada Seksi Persandian dan Keamanan Jaringan</p>
+                            <p>Network Analyst</p>
+                          </td>
+                          <td>Sarasehan dan Renungan Ulang Janji Hari Pramuka ke-61 Tahun</td>
+                          <td>Sabtu, 13 Agustus 2022</td>
+                          <td>19.30 WIB s.d. selesai</td>
+                          <td>Pendopo Tri Manunggal, Malanggaten, Kebakkramat</td>
+                          <td>Karanganyar</td>
+                          <td>13 Agustus 2022</td>
+                          <td>Drs. SUJARNO, M.Si.</td>
+                          <td>
+                            <div class="btn-group" role="group">
+                              <button type="button" class="btn btn-md btn-primary">
+                                <i class="mdi mdi-printer"></i>
+                              </button>
+                              <button type="button" class="btn btn-md btn-warning">
+                                <i class="mdi mdi-tooltip-edit"></i>
+                              </button>
+                              <button type="button" class="btn btn-md btn-danger">
+                                <i class="mdi mdi-delete"></i>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
@@ -282,7 +248,6 @@
   <!-- endinject -->
   <!-- Plugin js for this page -->
   <script src="../vendors/chart.js/Chart.min.js"></script>
-  <script src="../../vendors/select2/select2.min.js"></script>
   <script src="../vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
   <script src="../vendors/progressbar.js/progressbar.min.js"></script>
 
@@ -298,10 +263,10 @@
   <script src="../js/jquery.cookie.js" type="text/javascript"></script>
   <script src="../js/dashboard.js"></script>
   <script src="../js/Chart.roundedBarCharts.js"></script>
-  <script src="../../js/select2.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+  <!-- datatables -->
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
   <script>
     $(document).ready( function () {
       $('#table_sppd').DataTable();

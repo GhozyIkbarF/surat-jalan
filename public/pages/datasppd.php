@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Data NPPD</title>
+  <title>Data SPPD</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="../vendors/feather/feather.css">
   <link rel="stylesheet" href="../vendors/mdi/css/materialdesignicons.min.css">
@@ -83,6 +83,24 @@
             </a>
           </li>
           <li class="nav-item nav-category">Master Data</li>
+          <li class="nav-item">
+            <a class="nav-link" href="datasppd.php">
+              <i class="mdi mdi mdi-file-multiple menu-icon"></i>
+              <span class="menu-title">Data SPPD</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="dataspt.php">
+              <i class="mdi mdi mdi-file-multiple menu-icon"></i>
+              <span class="menu-title">Data SPT</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="datauang.php">
+              <i class="mdi mdi mdi-file-multiple menu-icon"></i>
+              <span class="menu-title">Data Penerimaan Uang</span>
+            </a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="datasppd.php">
               <i class="mdi mdi mdi-file-multiple menu-icon"></i>
@@ -168,7 +186,7 @@
                           <td>1</td>
                           <td>Plt. Kepala Dinas Komunikasi dan Informatika Kabupaten Karanganyar</td>
                           <td>Hartono, S.Sod, M.M / 19691015 199003 1 007</td>
-                          <td>Pembiina / IV a</td>
+                          <td>Pembina / IV a</td>
                           <td>kepala Bidang Tata Kelola Informatika</td>
                           <td>-</td>
                           <td>Sarasehan dan Renungan Ulang Janji Hari Pramuka ke-61 Tahun 2022</td>
@@ -203,7 +221,7 @@
                           <td>1</td>
                           <td>Plt. Kepala Dinas Komunikasi dan Informatika Kabupaten Karanganyar</td>
                           <td>Hartono, S.Sod, M.M / 19691015 199003 1 007</td>
-                          <td>Pembiina / IV a</td>
+                          <td>Pembina / IV a</td>
                           <td>kepala Bidang Tata Kelola Informatika</td>
                           <td>-</td>
                           <td>Sarasehan dan Renungan Ulang Janji Hari Pramuka ke-61 Tahun 2022</td>
@@ -238,7 +256,7 @@
                           <td>1</td>
                           <td>Plt. Kepala Dinas Komunikasi dan Informatika Kabupaten Karanganyar</td>
                           <td>Hartono, S.Sod, M.M / 19691015 199003 1 007</td>
-                          <td>Pembiina / IV a</td>
+                          <td>Pembina / IV a</td>
                           <td>kepala Bidang Tata Kelola Informatika</td>
                           <td>-</td>
                           <td>Sarasehan dan Renungan Ulang Janji Hari Pramuka ke-61 Tahun 2022</td>
@@ -273,7 +291,7 @@
                           <td>1</td>
                           <td>Plt. Kepala Dinas Komunikasi dan Informatika Kabupaten Karanganyar</td>
                           <td>Hartono, S.Sod, M.M / 19691015 199003 1 007</td>
-                          <td>Pembiina / IV a</td>
+                          <td>Pembina / IV a</td>
                           <td>kepala Bidang Tata Kelola Informatika</td>
                           <td>-</td>
                           <td>Sarasehan dan Renungan Ulang Janji Hari Pramuka ke-61 Tahun 2022</td>
@@ -308,7 +326,7 @@
                           <td>1</td>
                           <td>Plt. Kepala Dinas Komunikasi dan Informatika Kabupaten Karanganyar</td>
                           <td>Hartono, S.Sod, M.M / 19691015 199003 1 007</td>
-                          <td>Pembiina / IV a</td>
+                          <td>Pembina / IV a</td>
                           <td>kepala Bidang Tata Kelola Informatika</td>
                           <td>-</td>
                           <td>Sarasehan dan Renungan Ulang Janji Hari Pramuka ke-61 Tahun 2022</td>
@@ -343,7 +361,7 @@
                           <td>1</td>
                           <td>Plt. Kepala Dinas Komunikasi dan Informatika Kabupaten Karanganyar</td>
                           <td>Hartono, S.Sod, M.M / 19691015 199003 1 007</td>
-                          <td>Pembiina / IV a</td>
+                          <td>Pembina / IV a</td>
                           <td>kepala Bidang Tata Kelola Informatika</td>
                           <td>-</td>
                           <td>Sarasehan dan Renungan Ulang Janji Hari Pramuka ke-61 Tahun 2022</td>
@@ -378,7 +396,7 @@
                           <td>1</td>
                           <td>Plt. Kepala Dinas Komunikasi dan Informatika Kabupaten Karanganyar</td>
                           <td>Hartono, S.Sod, M.M / 19691015 199003 1 007</td>
-                          <td>Pembiina / IV a</td>
+                          <td>Pembina / IV a</td>
                           <td>kepala Bidang Tata Kelola Informatika</td>
                           <td>-</td>
                           <td>Sarasehan dan Renungan Ulang Janji Hari Pramuka ke-61 Tahun 2022</td>
@@ -409,7 +427,41 @@
                             </div>
                           </td>
                         </tr>
-                        
+                        <tr>
+                          <td>1</td>
+                          <td>Plt. Kepala Dinas Komunikasi dan Informatika Kabupaten Karanganyar</td>
+                          <td>Hartono, S.Sod, M.M / 19691015 199003 1 007</td>
+                          <td>Pembina / IV a</td>
+                          <td>kepala Bidang Tata Kelola Informatika</td>
+                          <td>-</td>
+                          <td>Sarasehan dan Renungan Ulang Janji Hari Pramuka ke-61 Tahun 2022</td>
+                          <td>Kendaraan Dinas</td>
+                          <td>Karanganyar</td>
+                          <td>Pendopo Tri Manunggal, Malanggaten, Kebakkramat</td>
+                          <td>1 hari</td>
+                          <td>13 Agustus 2022</td>
+                          <td>13 Agustus 2022</td>
+                          <td>
+                            <p>Suparno / 19731103 199803 1 012</p>
+                            <p>Yahya Fathoni Amri, S.Kom / -</p>
+                          </td>
+                          <td>Dinas Kominfo Kabupaten Karanganyar</td>
+                          <td>APBD TA 2022</td>
+                          <td>-</td>
+                          <td>
+                            <div class="btn-group" role="group">
+                              <button type="button" class="btn btn-md btn-primary">
+                                <i class="mdi mdi-printer"></i>
+                              </button>
+                              <button type="button" class="btn btn-md btn-warning">
+                                <i class="mdi mdi-tooltip-edit"></i>
+                              </button>
+                              <button type="button" class="btn btn-md btn-danger">
+                                <i class="mdi mdi-delete"></i>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
                       </tbody>
                     </table>
                   </div>
