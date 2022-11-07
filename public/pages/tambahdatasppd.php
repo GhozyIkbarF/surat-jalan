@@ -158,6 +158,49 @@
                   </div>
                   <div class="mt-3">
                   <form class="forms-sample">
+<<<<<<< HEAD
+                    <div class="form-group">
+                      <label>Pilih Pegawai</label>
+                      <select class="js-example-basic-multiple w-100" multiple="multiple">
+                        <option value="AL">Alabama</option>
+                        <option value="WY">Wyoming</option>
+                        <option value="AM">America</option>
+                        <option value="CA">Canada</option>
+                        <option value="RU">Russia</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label>Pilih Lokasi Tujuan</label>
+                      <select class="js-example-basic-single w-100">
+                        <option value="AL">Alabama</option>
+                        <option value="WY">Wyoming</option>
+                        <option value="AM">America</option>
+                        <option value="CA">Canada</option>
+                        <option value="RU">Russia</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="tujuan">Maksud Tujuan Perjalanan</label>
+                      <input type="text" class="form-control" id="tujuan" placeholder="Tulis Tujuan Perjalanan">
+                    </div>
+                    <div class="form-group">
+                      <label>Pilih Jenis Transportasi</label>
+                        <select class="js-example-basic-single w-100">
+                        <option value="AL">Alabama</option>
+                        <option value="WY">Wyoming</option>
+                        <option value="AM">America</option>
+                        <option value="CA">Canada</option>
+                        <option value="RU">Russia</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="tglpergi">Tanggal Pergi</label>
+                        <input type="date" class="form-control" id="tglpergi" placeholder="Tulis Tanggal Pergi">
+                    </div>
+                    <div class="form-group">
+                      <label for="tglpulang">Tanggal Pulang</label>
+                      <input type="date" class="form-control" id="tglpulang" placeholder="Tulis Tanggal Pulang">
+=======
                     <div class="row">
                       <div class="col-md-6 grid-margin">
                         <div class="form-group">
@@ -253,6 +296,7 @@
                             Batal
                         </button>   
                       </a>
+>>>>>>> dcd5e9248fb21700d9d625f6b4fd03a10231fc36
                     </div>
                   </form>
                   </div>
@@ -302,11 +346,14 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
   <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+<<<<<<< HEAD
+=======
   <script>
     $(document).ready( function () {
       $('#table_sppd').DataTable();
     } );
   </script>
+>>>>>>> dcd5e9248fb21700d9d625f6b4fd03a10231fc36
   <!-- End custom js for this page-->
 </body>
 
