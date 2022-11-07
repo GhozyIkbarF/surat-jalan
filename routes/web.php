@@ -14,16 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('layouts.main');
-// })->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/', function () {
+    return view('layouts.main');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::controller(PageController::class)->group(function () {
-    Route::get('/', 'index')->middleware(['auth', 'verified']);
-    Route::get('/datasppd', 'datasppd')->middleware(['auth', 'verified']);
-    Route::get('/dataspt', 'dataspt')->middleware(['auth', 'verified']);
-    Route::get('/datauang', 'datauang')->middleware(['auth', 'verified']);
-});
+
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
