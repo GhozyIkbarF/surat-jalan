@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Data NPPD</title>
+  <title>Data SPPD</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="../vendors/feather/feather.css">
   <link rel="stylesheet" href="../vendors/mdi/css/materialdesignicons.min.css">
@@ -15,14 +15,15 @@
   <link rel="stylesheet" href="../vendors/css/vendor.bundle.base.css">
   <!-- endinject -->
   <!-- Plugin css for this page -->
-  <!-- <link rel="stylesheet" href="../vendors/datatables.net-bs4/dataTables.bootstrap4.css"> -->
   <link rel="stylesheet" href="../js/select.dataTables.min.css">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="../css/vertical-layout-light/style.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="../images/favicon.png" />
-  <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
+  <!-- datatables -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" rel="stylesheet" />
+  <link href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
 </head>
 <body>
   <div class="container-scroller">
@@ -46,7 +47,7 @@
       <div class="navbar-menu-wrapper d-flex align-items-center">
         <ul class="navbar-nav">
           <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-            <h1 class="welcome-text">Data NPPD <span class="text-black fw-bold">(Nota Permintaan Perjalanan Dinas)</span></h1>
+            <h1 class="welcome-text">Data SPPD <span class="text-black fw-bold">(Surat Permintaan Perjalanan Dinas)</span></h1>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
@@ -83,7 +84,25 @@
           </li>
           <li class="nav-item nav-category">Master Data</li>
           <li class="nav-item">
-            <a class="nav-link" href="pages/datasppd.php">
+            <a class="nav-link" href="datasppd.php">
+              <i class="mdi mdi mdi-file-multiple menu-icon"></i>
+              <span class="menu-title">Data SPPD</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="dataspt.php">
+              <i class="mdi mdi mdi-file-multiple menu-icon"></i>
+              <span class="menu-title">Data SPT</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="datauang.php">
+              <i class="mdi mdi mdi-file-multiple menu-icon"></i>
+              <span class="menu-title">Data Penerimaan Uang</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="datasppd.php">
               <i class="mdi mdi mdi-file-multiple menu-icon"></i>
               <span class="menu-title">Data SPPD</span>
             </a>
@@ -125,7 +144,7 @@
                 <div class="card-body">
                   <div class="d-sm-flex justify-content-between align-items-center">
                     <div>
-                      <h4 class="card-title">Daftar Data NPPD</h4>
+                      <h4 class="card-title">Daftar Data SPPD</h4>
                     </div>
                     <div>
                       <a href="tambahdatasppd.php">
@@ -136,65 +155,54 @@
                     </div>
                   </div>
                   <div class="table-responsive mt-3">
-                    <table class="table table-bordered display" id="table_sppd">
+                    <table class="table table-striped table-bordered" id="table_sppd">
                       <thead>
                         <tr>
-                          <td>No</td>
-                          <td>Penugasan Kepada</td>
-                          <td>Golongan</td>
-                          <td>Tujuan</td>
-                          <td>Maksud Perjalanan Dinas</td>
-                          <td>Tgl. Pergi s.d. Tgl. Kembali</td>
-                          <td>Lama</td>
-                          <td>Status</td>
-                          <td>Aksi</td>
+                          <td rowspan="2">No</td>
+                          <td rowspan="2">Pejabat Pemberi Perintah</td>
+                          <td rowspan="2">Pegawai yang Diperintah</td>
+                          <td rowspan="2">Golongan</td>
+                          <td rowspan="2">Jabatan</td>
+                          <td rowspan="2">Tingkat</td>
+                          <td rowspan="2">Maksud Perjalanan Dinas</td>
+                          <td rowspan="2">Transportasi</td>
+                          <td rowspan="2">Tempat Berangkat</td>
+                          <td rowspan="2">Tempat Tujuan</td>
+                          <td rowspan="2">Lama Perjalanan</td>
+                          <td rowspan="2">Tgl. Pergi</td>
+                          <td rowspan="2">Tgl. Kembali</td>
+                          <td rowspan="2">Pengikut / NIP</td>
+                          <td colspan="2">Pembebanan Anggaran</td>
+                          <td rowspan="2">Keterangan</td>
+                          <td rowspan="2">Aksi</td>
+                        </tr>
+                        <tr>
+                          <td>Instansi</td>
+                          <td>Mata Anggaran</td>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
                           <td>1</td>
+                          <td>Plt. Kepala Dinas Komunikasi dan Informatika Kabupaten Karanganyar</td>
+                          <td>Hartono, S.Sod, M.M / 19691015 199003 1 007</td>
+                          <td>Pembina / IV a</td>
+                          <td>kepala Bidang Tata Kelola Informatika</td>
+                          <td>-</td>
+                          <td>Sarasehan dan Renungan Ulang Janji Hari Pramuka ke-61 Tahun 2022</td>
+                          <td>Kendaraan Dinas</td>
+                          <td>Karanganyar</td>
+                          <td>Pendopo Tri Manunggal, Malanggaten, Kebakkramat</td>
+                          <td>1 hari</td>
+                          <td>13 Agustus 2022</td>
+                          <td>13 Agustus 2022</td>
                           <td>
-                            <p>1. Kurniawan Hadiputra, S.E.</p>
-                            <p>2. Agus Hatorangan, S.Ag.</p>
+                            <p>Suparno / 19731103 199803 1 012</p>
+                            <p>Yahya Fathoni Amri, S.Kom / -</p>
                           </td>
-                          <td>
-                            <p>Golongan III</p>
-                            <p>Golongan III</p>
-                          </td>
-                          <td>Kec. Rangsang</td>
-                          <td>Membeli Kue Tahun Baru</td>
-                          <td>20-04-2021 s.d. 25-04-2021</td>
-                          <td>5 hari</td>
-                          <td>Cek</td>
-                          <td>
-                            <div class="btn-group" role="group">
-                              <button type="button" class="btn btn-md btn-primary">
-                                <i class="mdi mdi-printer"></i>
-                              </button>
-                              <button type="button" class="btn btn-md btn-warning">
-                                <i class="mdi mdi-tooltip-edit"></i>
-                              </button>
-                              <button type="button" class="btn btn-md btn-danger">
-                                <i class="mdi mdi-delete"></i>
-                              </button>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>1</td>
-                          <td>
-                            <p>1. Kurniawan Hadiputra, S.E.</p>
-                            <p>2. Agus Hatorangan, S.Ag.</p>
-                          </td>
-                          <td>
-                            <p>Golongan III</p>
-                            <p>Golongan III</p>
-                          </td>
-                          <td>Kec. Rangsang</td>
-                          <td>Membeli Kue Tahun Baru</td>
-                          <td>20-04-2021 s.d. 25-04-2021</td>
-                          <td>5 hari</td>
-                          <td>Cek</td>
+                          <td>Dinas Kominfo Kabupaten Karanganyar</td>
+                          <td>APBD TA 2022</td>
+                          <td>-</td>
                           <td>
                             <div class="btn-group" role="group">
                               <button type="button" class="btn btn-md btn-primary">
@@ -211,48 +219,25 @@
                         </tr>
                         <tr>
                           <td>1</td>
+                          <td>Plt. Kepala Dinas Komunikasi dan Informatika Kabupaten Karanganyar</td>
+                          <td>Hartono, S.Sod, M.M / 19691015 199003 1 007</td>
+                          <td>Pembina / IV a</td>
+                          <td>kepala Bidang Tata Kelola Informatika</td>
+                          <td>-</td>
+                          <td>Sarasehan dan Renungan Ulang Janji Hari Pramuka ke-61 Tahun 2022</td>
+                          <td>Kendaraan Dinas</td>
+                          <td>Karanganyar</td>
+                          <td>Pendopo Tri Manunggal, Malanggaten, Kebakkramat</td>
+                          <td>1 hari</td>
+                          <td>13 Agustus 2022</td>
+                          <td>13 Agustus 2022</td>
                           <td>
-                            <p>1. Kurniawan Hadiputra, S.E.</p>
-                            <p>2. Agus Hatorangan, S.Ag.</p>
+                            <p>Suparno / 19731103 199803 1 012</p>
+                            <p>Yahya Fathoni Amri, S.Kom / -</p>
                           </td>
-                          <td>
-                            <p>Golongan III</p>
-                            <p>Golongan III</p>
-                          </td>
-                          <td>Kec. Rangsang</td>
-                          <td>Membeli Kue Tahun Baru</td>
-                          <td>20-04-2021 s.d. 25-04-2021</td>
-                          <td>5 hari</td>
-                          <td>Cek</td>
-                          <td>
-                            <div class="btn-group" role="group">
-                              <button type="button" class="btn btn-md btn-primary">
-                                <i class="mdi mdi-printer"></i>
-                              </button>
-                              <button type="button" class="btn btn-md btn-warning">
-                                <i class="mdi mdi-tooltip-edit"></i>
-                              </button>
-                              <button type="button" class="btn btn-md btn-danger">
-                                <i class="mdi mdi-delete"></i>
-                              </button>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>1</td>
-                          <td>
-                            <p>1. Kurniawan Hadiputra, S.E.</p>
-                            <p>2. Agus Hatorangan, S.Ag.</p>
-                          </td>
-                          <td>
-                            <p>Golongan III</p>
-                            <p>Golongan III</p>
-                          </td>
-                          <td>Kec. Rangsang</td>
-                          <td>Membeli Kue Tahun Baru</td>
-                          <td>20-04-2021 s.d. 25-04-2021</td>
-                          <td>5 hari</td>
-                          <td>Cek</td>
+                          <td>Dinas Kominfo Kabupaten Karanganyar</td>
+                          <td>APBD TA 2022</td>
+                          <td>-</td>
                           <td>
                             <div class="btn-group" role="group">
                               <button type="button" class="btn btn-md btn-primary">
@@ -269,48 +254,25 @@
                         </tr>
                         <tr>
                           <td>1</td>
+                          <td>Plt. Kepala Dinas Komunikasi dan Informatika Kabupaten Karanganyar</td>
+                          <td>Hartono, S.Sod, M.M / 19691015 199003 1 007</td>
+                          <td>Pembina / IV a</td>
+                          <td>kepala Bidang Tata Kelola Informatika</td>
+                          <td>-</td>
+                          <td>Sarasehan dan Renungan Ulang Janji Hari Pramuka ke-61 Tahun 2022</td>
+                          <td>Kendaraan Dinas</td>
+                          <td>Karanganyar</td>
+                          <td>Pendopo Tri Manunggal, Malanggaten, Kebakkramat</td>
+                          <td>1 hari</td>
+                          <td>13 Agustus 2022</td>
+                          <td>13 Agustus 2022</td>
                           <td>
-                            <p>1. Kurniawan Hadiputra, S.E.</p>
-                            <p>2. Agus Hatorangan, S.Ag.</p>
+                            <p>Suparno / 19731103 199803 1 012</p>
+                            <p>Yahya Fathoni Amri, S.Kom / -</p>
                           </td>
-                          <td>
-                            <p>Golongan III</p>
-                            <p>Golongan III</p>
-                          </td>
-                          <td>Kec. Rangsang</td>
-                          <td>Membeli Kue Tahun Baru</td>
-                          <td>20-04-2021 s.d. 25-04-2021</td>
-                          <td>5 hari</td>
-                          <td>Cek</td>
-                          <td>
-                            <div class="btn-group" role="group">
-                              <button type="button" class="btn btn-md btn-primary">
-                                <i class="mdi mdi-printer"></i>
-                              </button>
-                              <button type="button" class="btn btn-md btn-warning">
-                                <i class="mdi mdi-tooltip-edit"></i>
-                              </button>
-                              <button type="button" class="btn btn-md btn-danger">
-                                <i class="mdi mdi-delete"></i>
-                              </button>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>1</td>
-                          <td>
-                            <p>1. Kurniawan Hadiputra, S.E.</p>
-                            <p>2. Agus Hatorangan, S.Ag.</p>
-                          </td>
-                          <td>
-                            <p>Golongan III</p>
-                            <p>Golongan III</p>
-                          </td>
-                          <td>Kec. Rangsang</td>
-                          <td>Membeli Kue Tahun Baru</td>
-                          <td>20-04-2021 s.d. 25-04-2021</td>
-                          <td>5 hari</td>
-                          <td>Cek</td>
+                          <td>Dinas Kominfo Kabupaten Karanganyar</td>
+                          <td>APBD TA 2022</td>
+                          <td>-</td>
                           <td>
                             <div class="btn-group" role="group">
                               <button type="button" class="btn btn-md btn-primary">
@@ -327,19 +289,165 @@
                         </tr>
                         <tr>
                           <td>1</td>
+                          <td>Plt. Kepala Dinas Komunikasi dan Informatika Kabupaten Karanganyar</td>
+                          <td>Hartono, S.Sod, M.M / 19691015 199003 1 007</td>
+                          <td>Pembina / IV a</td>
+                          <td>kepala Bidang Tata Kelola Informatika</td>
+                          <td>-</td>
+                          <td>Sarasehan dan Renungan Ulang Janji Hari Pramuka ke-61 Tahun 2022</td>
+                          <td>Kendaraan Dinas</td>
+                          <td>Karanganyar</td>
+                          <td>Pendopo Tri Manunggal, Malanggaten, Kebakkramat</td>
+                          <td>1 hari</td>
+                          <td>13 Agustus 2022</td>
+                          <td>13 Agustus 2022</td>
                           <td>
-                            <p>1. Kurniawan Hadiputra, S.E.</p>
-                            <p>2. Agus Hatorangan, S.Ag.</p>
+                            <p>Suparno / 19731103 199803 1 012</p>
+                            <p>Yahya Fathoni Amri, S.Kom / -</p>
                           </td>
+                          <td>Dinas Kominfo Kabupaten Karanganyar</td>
+                          <td>APBD TA 2022</td>
+                          <td>-</td>
                           <td>
-                            <p>Golongan III</p>
-                            <p>Golongan III</p>
+                            <div class="btn-group" role="group">
+                              <button type="button" class="btn btn-md btn-primary">
+                                <i class="mdi mdi-printer"></i>
+                              </button>
+                              <button type="button" class="btn btn-md btn-warning">
+                                <i class="mdi mdi-tooltip-edit"></i>
+                              </button>
+                              <button type="button" class="btn btn-md btn-danger">
+                                <i class="mdi mdi-delete"></i>
+                              </button>
+                            </div>
                           </td>
-                          <td>Kec. Rangsang</td>
-                          <td>Membeli Kue Tahun Baru</td>
-                          <td>20-04-2021 s.d. 25-04-2021</td>
-                          <td>5 hari</td>
-                          <td>Cek</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>Plt. Kepala Dinas Komunikasi dan Informatika Kabupaten Karanganyar</td>
+                          <td>Hartono, S.Sod, M.M / 19691015 199003 1 007</td>
+                          <td>Pembina / IV a</td>
+                          <td>kepala Bidang Tata Kelola Informatika</td>
+                          <td>-</td>
+                          <td>Sarasehan dan Renungan Ulang Janji Hari Pramuka ke-61 Tahun 2022</td>
+                          <td>Kendaraan Dinas</td>
+                          <td>Karanganyar</td>
+                          <td>Pendopo Tri Manunggal, Malanggaten, Kebakkramat</td>
+                          <td>1 hari</td>
+                          <td>13 Agustus 2022</td>
+                          <td>13 Agustus 2022</td>
+                          <td>
+                            <p>Suparno / 19731103 199803 1 012</p>
+                            <p>Yahya Fathoni Amri, S.Kom / -</p>
+                          </td>
+                          <td>Dinas Kominfo Kabupaten Karanganyar</td>
+                          <td>APBD TA 2022</td>
+                          <td>-</td>
+                          <td>
+                            <div class="btn-group" role="group">
+                              <button type="button" class="btn btn-md btn-primary">
+                                <i class="mdi mdi-printer"></i>
+                              </button>
+                              <button type="button" class="btn btn-md btn-warning">
+                                <i class="mdi mdi-tooltip-edit"></i>
+                              </button>
+                              <button type="button" class="btn btn-md btn-danger">
+                                <i class="mdi mdi-delete"></i>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>Plt. Kepala Dinas Komunikasi dan Informatika Kabupaten Karanganyar</td>
+                          <td>Hartono, S.Sod, M.M / 19691015 199003 1 007</td>
+                          <td>Pembina / IV a</td>
+                          <td>kepala Bidang Tata Kelola Informatika</td>
+                          <td>-</td>
+                          <td>Sarasehan dan Renungan Ulang Janji Hari Pramuka ke-61 Tahun 2022</td>
+                          <td>Kendaraan Dinas</td>
+                          <td>Karanganyar</td>
+                          <td>Pendopo Tri Manunggal, Malanggaten, Kebakkramat</td>
+                          <td>1 hari</td>
+                          <td>13 Agustus 2022</td>
+                          <td>13 Agustus 2022</td>
+                          <td>
+                            <p>Suparno / 19731103 199803 1 012</p>
+                            <p>Yahya Fathoni Amri, S.Kom / -</p>
+                          </td>
+                          <td>Dinas Kominfo Kabupaten Karanganyar</td>
+                          <td>APBD TA 2022</td>
+                          <td>-</td>
+                          <td>
+                            <div class="btn-group" role="group">
+                              <button type="button" class="btn btn-md btn-primary">
+                                <i class="mdi mdi-printer"></i>
+                              </button>
+                              <button type="button" class="btn btn-md btn-warning">
+                                <i class="mdi mdi-tooltip-edit"></i>
+                              </button>
+                              <button type="button" class="btn btn-md btn-danger">
+                                <i class="mdi mdi-delete"></i>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>Plt. Kepala Dinas Komunikasi dan Informatika Kabupaten Karanganyar</td>
+                          <td>Hartono, S.Sod, M.M / 19691015 199003 1 007</td>
+                          <td>Pembina / IV a</td>
+                          <td>kepala Bidang Tata Kelola Informatika</td>
+                          <td>-</td>
+                          <td>Sarasehan dan Renungan Ulang Janji Hari Pramuka ke-61 Tahun 2022</td>
+                          <td>Kendaraan Dinas</td>
+                          <td>Karanganyar</td>
+                          <td>Pendopo Tri Manunggal, Malanggaten, Kebakkramat</td>
+                          <td>1 hari</td>
+                          <td>13 Agustus 2022</td>
+                          <td>13 Agustus 2022</td>
+                          <td>
+                            <p>Suparno / 19731103 199803 1 012</p>
+                            <p>Yahya Fathoni Amri, S.Kom / -</p>
+                          </td>
+                          <td>Dinas Kominfo Kabupaten Karanganyar</td>
+                          <td>APBD TA 2022</td>
+                          <td>-</td>
+                          <td>
+                            <div class="btn-group" role="group">
+                              <button type="button" class="btn btn-md btn-primary">
+                                <i class="mdi mdi-printer"></i>
+                              </button>
+                              <button type="button" class="btn btn-md btn-warning">
+                                <i class="mdi mdi-tooltip-edit"></i>
+                              </button>
+                              <button type="button" class="btn btn-md btn-danger">
+                                <i class="mdi mdi-delete"></i>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>Plt. Kepala Dinas Komunikasi dan Informatika Kabupaten Karanganyar</td>
+                          <td>Hartono, S.Sod, M.M / 19691015 199003 1 007</td>
+                          <td>Pembina / IV a</td>
+                          <td>kepala Bidang Tata Kelola Informatika</td>
+                          <td>-</td>
+                          <td>Sarasehan dan Renungan Ulang Janji Hari Pramuka ke-61 Tahun 2022</td>
+                          <td>Kendaraan Dinas</td>
+                          <td>Karanganyar</td>
+                          <td>Pendopo Tri Manunggal, Malanggaten, Kebakkramat</td>
+                          <td>1 hari</td>
+                          <td>13 Agustus 2022</td>
+                          <td>13 Agustus 2022</td>
+                          <td>
+                            <p>Suparno / 19731103 199803 1 012</p>
+                            <p>Yahya Fathoni Amri, S.Kom / -</p>
+                          </td>
+                          <td>Dinas Kominfo Kabupaten Karanganyar</td>
+                          <td>APBD TA 2022</td>
+                          <td>-</td>
                           <td>
                             <div class="btn-group" role="group">
                               <button type="button" class="btn btn-md btn-primary">
@@ -398,9 +506,10 @@
   <script src="../js/jquery.cookie.js" type="text/javascript"></script>
   <script src="../js/dashboard.js"></script>
   <script src="../js/Chart.roundedBarCharts.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+  <!-- datatables -->
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
   <script>
     $(document).ready( function () {
       $('#table_sppd').DataTable();
