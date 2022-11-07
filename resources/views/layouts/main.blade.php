@@ -5,14 +5,16 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>SPPD | @yield('title')</title>
+  <title>@yield('title')</title>
     @stack('prepend-style')
     @include('includes.style')
     @stack('addon-style')
 </head>
 <body>
   <div class="container-scroller">
+    @include('sweetalert::alert')
     <!-- partial:partials/_navbar.html -->
+    @section('kpj','Dashboard')
     @include('includes.navbar')
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">

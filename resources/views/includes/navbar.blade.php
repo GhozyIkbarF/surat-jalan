@@ -15,6 +15,11 @@
       </div>
     </div>
     <div class="navbar-menu-wrapper d-flex align-items-top">
+      <ul class="navbar-nav">
+        <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
+          <h1 class="welcome-text"><span class="text-black fw-bold">@yield('kpj')</span></h1>
+        </li>
+      </ul>
       <ul class="navbar-nav ms-auto">
         <li class="nav-item dropdown d-none d-lg-block user-dropdown">
           <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
