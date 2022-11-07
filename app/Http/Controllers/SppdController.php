@@ -14,7 +14,7 @@ class SppdController extends Controller
      */
     public function index()
     {
-        
+        return view('pages.datasppd');
     }
 
     /**

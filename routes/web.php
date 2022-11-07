@@ -1,8 +1,10 @@
 <?php
 
-use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PdfController;
+use App\Http\Controllers\SptController;
+use App\Http\Controllers\SppdController;
+use App\Http\Controllers\BiayaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +21,9 @@ Route::get('/', function () {
     return view('layouts.main');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-
+Route::get('/sppd', [SppdController::class, 'index']);
+Route::get('/spt', [SptController::class, 'index']);
+Route::get('/biaya', [BiayaController::class, 'index']);
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
@@ -28,4 +32,3 @@ Route::get('/pdf1', [PdfController::class, 'index']);
 Route::get('/pdf2', [PdfController::class, 'pdf2']);
 
 require __DIR__ . '/auth.php';
-
