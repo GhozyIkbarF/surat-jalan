@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PdfController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+
+Route::get('/pdf1', [PdfController::class, 'index']);
+Route::get('/pdf2', [PdfController::class, 'pdf2']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

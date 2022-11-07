@@ -177,15 +177,12 @@
                       </select>
                     </div>
                     <div class="form-group">
-                        <div id="datetimepicker">
-
-                            <label for="tglpergi">Tanggal Pergi</label>
-                            <input type="text" class="form-control" id="tglpergi" placeholder="Tulis Tanggal Pergi">
-                        </div>
+                        <label for="tglpergi">Tanggal Pergi</label>
+                        <input type="date" class="form-control" id="tglpergi" placeholder="Tulis Tanggal Pergi">
                     </div>
                     <div class="form-group">
                       <label for="tglpulang">Tanggal Pulang</label>
-                      <input type="text" class="form-control" id="tglpulang" placeholder="Tulis Tanggal Pulang">
+                      <input type="date" class="form-control" id="tglpulang" placeholder="Tulis Tanggal Pulang">
                     </div>
                     <div class="form-group">
                       <label for="lama">Lama Perjalanan</label>
@@ -239,19 +236,8 @@
   <script src="../js/Chart.roundedBarCharts.js"></script>
   <script src="../../js/select2.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
   <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
-  <script>
-    $(document).ready( function () {
-      $('#table_sppd').DataTable();
-    } );
-    $(function() {
-      $('#datetimepicker').datetimepicker();
-    });
-  </script>
   <!-- End custom js for this page-->
 </body>
 
