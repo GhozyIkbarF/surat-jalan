@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Data SPPD</title>
+  <title>Data Daftar Penerimaan Uang</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="../vendors/feather/feather.css">
   <link rel="stylesheet" href="../vendors/mdi/css/materialdesignicons.min.css">
@@ -48,7 +48,7 @@
       <div class="navbar-menu-wrapper d-flex align-items-center">
         <ul class="navbar-nav">
           <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-            <h1 class="welcome-text">Data SPPD <span class="text-black fw-bold">(Surat Permintaan Perjalanan Dinas)</span></h1>
+            <h1 class="welcome-text text-black fw-bold">Data Penerimaan Uang Perjalanan Dinas</h1>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
@@ -145,10 +145,10 @@
                 <div class="card-body">
                   <div class="d-sm-flex justify-content-between align-items-center">
                     <div>
-                      <h4 class="card-title">Tambah Data SPPD</h4>
+                      <h4 class="card-title">Tambah Data Penerimaan Uang</h4>
                     </div>
                     <div>
-                      <a href="datasppd.php">
+                      <a href="datauang.php">
                         <button type="button" class="btn btn-social-icon-text btn-dark">
                           <i class="mdi mdi-arrow-left"></i>
                             Kembali
@@ -161,7 +161,23 @@
                     <div class="row">
                       <div class="col-md-6 grid-margin">
                         <div class="form-group">
-                          <label>Pejabat Pemberi Perintah</label>
+                          <label for="kegiatan">Kegiatan</label>
+                          <input type="text" class="form-control" id="kegiatan" placeholder="Tulis Nama Kegiatan">
+                        </div>
+                        <div class="form-group">
+                          <label for="lokasi">Lokasi</label>
+                          <input type="text" class="form-control" id="Lokasi" placeholder="Tulis Lokasi">
+                        </div>
+                        <div class="form-group">
+                          <label for="tgl">Tanggal Kegiatan</label>
+                          <input type="date" class="form-control" id="tgl" placeholder="Pilih Tanggal Kegiatan">
+                        </div>
+                        <div class="form-group">
+                          <label for="rekening">Kode Rekening</label>
+                          <input type="text" class="form-control" id="rekening" placeholder="Tulis Kode Rekening">
+                        </div>
+                        <div class="form-group">
+                          <label>Nama Pegawai</label>
                           <select class="js-example-basic-multiple w-100" multiple="multiple">
                             <option value="AL">Alabama</option>
                             <option value="WY">Wyoming</option>
@@ -169,61 +185,23 @@
                             <option value="CA">Canada</option>
                             <option value="RU">Russia</option>
                           </select>
-                        </div>
-                        <div class="form-group">
-                          <label>Pegawai yang Diperintah</label>
-                          <select class="js-example-basic-multiple w-100" multiple="multiple">
-                            <option value="AL">Alabama</option>
-                            <option value="WY">Wyoming</option>
-                            <option value="AM">America</option>
-                            <option value="CA">Canada</option>
-                            <option value="RU">Russia</option>
-                          </select>
-                        </div>
-                        <div class="form-group">
-                          <label for="golongan">Golongan</label>
-                          <input type="text" class="form-control" id="golongan" placeholder="Pembina / IV a" disabled>
-                        </div>
-                        <div class="form-group">
-                          <label for="jabatan">Jabatan</label>
-                          <input type="text" class="form-control" id="jabatan" placeholder="Kepala Bidang Tata Kelola Informatika" disabled>
-                        </div>
-                        <div class="form-group">
-                          <label for="tingkat">Tingkat</label>
-                          <input type="text" class="form-control" id="tingkat" placeholder="-" disabled>
-                        </div>
-                        <div class="form-group">
-                          <label for="maksud">Maksud Perjalanan Dinas</label>
-                          <input type="text" class="form-control" id="maksud" placeholder="Tulis Maksud Perjalanan Dinas">
-                        </div>
-                        <div class="form-group">
-                          <label for="transportasi">Transportasi</label>
-                          <input type="text" class="form-control" id="transportasi" placeholder="Tulis Transportasi yang Digunakan">
-                        </div>
-                        <div class="form-group">
-                          <label for="berangkat">Tempat Berangkat</label>
-                          <input type="text" class="form-control" id="berangkat" placeholder="Tulis Tempat Keberangkatan">
-                        </div>
-                        <div class="form-group">
-                          <label for="tujuan">Tempat Tujuan</label>
-                          <input type="text" class="form-control" id="tujuan" placeholder="Tulis Tempat Tujuan">
                         </div>
                       </div>
                       <div class="col-md-6 grid-margin">
                         <div class="form-group">
-                          <label for="lama">Lama Perjalanan Dinas</label>
-                          <input type="text" class="form-control" id="lama" placeholder="Tulis Lamanya Perjalanan Dinas">
+                          <label for="tempatpenugasan">Tempat Penugasan</label>
+                          <input type="text" class="form-control" id="tempatpenugasan" placeholder="Tulis Tempat Penugasan">
                         </div>
                         <div class="form-group">
-                          <label for="tglpergi">Tanggal Pergi</label>
-                          <input type="date" class="form-control" id="tglpergi" placeholder="Pilih Tanggal Kepergian">
+                          <label for="tempatditetapkan">Tempat Ditetapkan</label>
+                          <input type="text" class="form-control" id="tempatditetapkan" placeholder="Tulis Tempat Surat Ditetapkan">
                         </div>
                         <div class="form-group">
-                          <label for="tglkembali">Tanggal Kembali</label>
-                          <input type="date" class="form-control" id="tglkembali" placeholder="Pilih Tanggal Kembali">
+                          <label for="tglditetapkan">Hari, Tanggal Ditetapkan</label>
+                          <input type="date" class="form-control" id="tglditetapkan" placeholder="Pilih Tanggal Surat Ditetapkan">
                         </div>
                         <div class="form-group">
-                          <label>Pengikut / NIP</label>
+                          <label>Yang Menetapkan</label>
                           <select class="js-example-basic-multiple w-100" multiple="multiple">
                             <option value="AL">Alabama</option>
                             <option value="WY">Wyoming</option>
@@ -231,24 +209,12 @@
                             <option value="CA">Canada</option>
                             <option value="RU">Russia</option>
                           </select>
-                        </div>
-                        <div class="form-group">
-                          <label for="anggaran">Pembebanan Anggaran</label>
-                          <input type="text" class="form-control" id="anggaran" placeholder="Tulis Pembebanan Anggaran">
-                        </div>
-                        <div class="form-group">
-                          <label for="mataanggaran">Mata Anggaran</label>
-                          <input type="text" class="form-control" id="mataanggaran" placeholder="Tulis Mata Anggaran">
-                        </div>
-                        <div class="form-group">
-                          <label for="keterangan">Keterangan</label>
-                          <input type="text" class="form-control" id="keterangan" placeholder="Tulis Keterangan">
                         </div>
                       </div>
                     </div>
                     <div>
                       <button type="submit" class="btn btn-primary me-2">Tambah</button>
-                      <a href="datasppd.php">
+                      <a href="dataspt.php">
                         <button type="button" class="btn btn-outline-danger">
                             Batal
                         </button>   
@@ -306,6 +272,9 @@
     $(document).ready( function () {
       $('#table_sppd').DataTable();
     } );
+    $('#waktutugas').datetimepicker({
+      format: 'LT'
+    });
   </script>
   <!-- End custom js for this page-->
 </body>
