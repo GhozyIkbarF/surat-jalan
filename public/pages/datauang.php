@@ -102,13 +102,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="datasppd.php">
-              <i class="mdi mdi mdi-file-multiple menu-icon"></i>
-              <span class="menu-title">Data SPT</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="datapegawai.php">
               <i class="mdi mdi-human-male-female menu-icon"></i>
               <span class="menu-title">Data Pegawai</span>
             </a>
@@ -147,7 +141,7 @@
                       <h4 class="card-title">Daftar Data Penerimaan Uang Perjalanan Dinas</h4>
                     </div>
                     <div>
-                      <a href="tambahdataspt.php">
+                      <a href="tambahdatauang.php">
                         <button type="button" class="btn btn-success btn-md">
                           Tambah Data
                         </button>
@@ -159,52 +153,56 @@
                       <thead>
                         <tr>
                           <td>No</td>
-                          <td>Dasar Perintah</td>
-                          <td>Pegawai yang Diperintah</td>
-                          <td>Golongan</td>
-                          <td>NIP</td>
-                          <td>Jabatan</td>
-                          <td>Maksud Tugas</td>
-                          <td>Hari, Tanggal</td>
-                          <td>Waktu</td>
-                          <td>Tempat</td>
-                          <td>Tempat Ditetapkan</td>
-                          <td>Tanggal Ditetapkan</td>
-                          <td>Yang Menetapkan</td>
+                          <td>Kegiatan</td>
+                          <td>Lokasi</td>
+                          <td>Tanggal</td>
+                          <td>Kode Rekening</td>
+                          <td>Nama / NIP</td>
+                          <td>Jabatan / Pangkat / Gol. Eselon</td>
+                          <td>Uang Harian</td>
+                          <td>Uang Transport</td>
+                          <td>Biaya Transport</td>
+                          <td>Penerimaan</td>
                           <td>Aksi</td>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
                           <td>1</td>
-                          <td>Perintah Plt. Kepala Dinas Komunikasi dan Informatika Kabupaten Karanganyar</td>
-                          <td>
-                            <p>Hartono, S.Sos, M.M</p>
-                            <p>Suparno</p>
-                            <p>Yahya Fathoni Amri</p>
-                          </td>
-                          <td>
-                            <p>Pembina / IV a</p>
-                            <p>Pengatur Tingkat I / II d</p>
-                            <p>-</p>
-                          </td>
-                          <td>
-                            <p>19691015 199003 1 007</p>
-                            <p>19731103 199803 1 012</p>
-                            <p>-</p>
-                          </td>
-                          <td>
-                            <p>Kepala Bidang Tata Kelola Informatika</p>
-                            <p>Analis Sistem Informasi dan Diseminasi Hukum Pada Seksi Persandian dan Keamanan Jaringan</p>
-                            <p>Network Analyst</p>
-                          </td>
-                          <td>Sarasehan dan Renungan Ulang Janji Hari Pramuka ke-61 Tahun</td>
-                          <td>Sabtu, 13 Agustus 2022</td>
-                          <td>19.30 WIB s.d. selesai</td>
+                          <td>Sarasehan dan Renungan Ulang Janji Hari Pramuka ke-61 Tahun 2022</td>
                           <td>Pendopo Tri Manunggal, Malanggaten, Kebakkramat</td>
-                          <td>Karanganyar</td>
                           <td>13 Agustus 2022</td>
-                          <td>Drs. SUJARNO, M.Si.</td>
+                          <td>2.16.03.2.02.06.5.1.02.04.01.0003</td>
+                          <td>
+                            <p>Hartono, S.Sos., M.M / 19691015 199003 1 007</p>
+                            <p>Suparno / 19731103 199803 1 012</p>
+                            <p>Yahya Fathoni Amri, S.Kom</p>
+                          </td>
+                          <td>
+                            <p>Kepala Bidang Tata Kelola Informatika Dinas Kominfo Kab. Karanganyar / Pembina / IV a</p>
+                            <p>Analis Sistem Informasi dan Diseminasi Hukum Pada Seksi Persandian dan Keamanan Jaringan Dinas Kominfo Kab. Karanganyar / Pengatur Tingkat I / II d</p>
+                            <p>Network Analyst Dinas Kominfo Kab. Karanganyar / -</p>
+                          </td>
+                          <td>
+                            <p>-</p>
+                            <p>-</p>
+                            <p>-</p>
+                          </td>
+                          <td>
+                            <p>Rp80.000</p>
+                            <p>Ro60.000</p>
+                            <p>Rp50.000</p>
+                          </td>
+                          <td>
+                            <p>8 Lt x Rp12.500 = Rp100.000</p>
+                            <p>-</p>
+                            <p>-</p>
+                          </td>
+                          <td>
+                            <p>Rp180.000</p>
+                            <p>Rp60.000</p>
+                            <p>Rp50.000</p>
+                          </td>
                           <td>
                             <div class="btn-group" role="group">
                               <button type="button" class="btn btn-md btn-primary">

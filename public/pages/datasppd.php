@@ -16,6 +16,8 @@
   <!-- endinject -->
   <!-- Plugin css for this page -->
   <link rel="stylesheet" href="../js/select.dataTables.min.css">
+  <!-- Multiple Select -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="../css/vertical-layout-light/style.css">
@@ -102,13 +104,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="datasppd.php">
-              <i class="mdi mdi mdi-file-multiple menu-icon"></i>
-              <span class="menu-title">Data SPPD</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="datapegawai.php">
               <i class="mdi mdi-human-male-female menu-icon"></i>
               <span class="menu-title">Data Pegawai</span>
             </a>
@@ -147,11 +143,9 @@
                       <h4 class="card-title">Daftar Data SPPD</h4>
                     </div>
                     <div>
-                      <a href="tambahdatasppd.php">
-                        <button type="button" class="btn btn-success btn-md">
-                          Tambah Data
-                        </button>
-                      </a>
+                      <button type="button" class="btn btn-success btn-md" data-bs-toggle="modal" data-bs-target="#modalsppd">
+                        Tambah Data
+                      </button>
                     </div>
                   </div>
                   <div class="table-responsive mt-3">
@@ -486,6 +480,126 @@
   </div>
   <!-- container-scroller -->
 
+  <!-- Modal SPPD -->
+  <div class="modal fade" id="modalsppd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Tambah Data SPPD</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form class="forms-sample">
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6 grid-margin">
+              <div class="form-group">
+                <div class="row">
+                  <label>Pejabat Pemberi Perintah</label>
+                </div>
+                <div class="row">
+                  <select class="selectpicker" multiple data-live-search="true" placeholder="Pilih Pejabat">
+                    <option value="AL">Alabama</option>
+                    <option value="WY">Wyoming</option>
+                    <option value="AM">America</option>
+                    <option value="CA">Canada</option>
+                    <option value="RU">Russia</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <label>Pegawai yang Diperintah</label>
+                </div>
+                <div class="row">
+                  <select class="selectpicker" multiple data-live-search="true" placeholder="Pilih Pegawai">
+                    <option value="AL">Alabama</option>
+                    <option value="WY">Wyoming</option>
+                    <option value="AM">America</option>
+                    <option value="CA">Canada</option>
+                    <option value="RU">Russia</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="golongan">Golongan Pegawai yang Diperintah</label>
+                <input type="text" class="form-control" id="golongan" placeholder="-" disabled>
+              </div>
+              <div class="form-group">
+                <label for="jabatan">Jabatan Pegawai yang Diperintah</label>
+                <input type="text" class="form-control" id="jabatan" placeholder="-" disabled>
+              </div>
+              <div class="form-group">
+                <label for="tingkat">Tingkat Pegawai yang Diperintah</label>
+                <input type="text" class="form-control" id="tingkat" placeholder="-" disabled>
+              </div>
+              <div class="form-group">
+                <label for="maksud">Maksud Perjalanan Dinas</label>
+                <input type="text" class="form-control" id="maksud" placeholder="Tulis Maksud Perjalanan Dinas">
+              </div>
+              <div class="form-group">
+                <label for="transportasi">Transportasi</label>
+                <input type="text" class="form-control" id="transportasi" placeholder="Tulis Transportasi yang Digunakan">
+              </div>
+              <div class="form-group">
+                <label for="berangkat">Tempat Berangkat</label>
+                <input type="text" class="form-control" id="berangkat" placeholder="Tulis Tempat Keberangkatan">
+              </div>
+            </div>
+            <div class="col-md-6 grid-margin">
+              <div class="form-group">
+                <label for="tujuan">Tempat Tujuan</label>
+                <input type="text" class="form-control" id="tujuan" placeholder="Tulis Tempat Tujuan">
+              </div>
+              <div class="form-group">
+                <label for="lama">Lama Perjalanan Dinas (hari)</label>
+                <input type="text" class="form-control" id="lama" placeholder="Tulis Lamanya Perjalanan Dinas">
+              </div>
+              <div class="form-group">
+                <label for="tglpergi">Tanggal Pergi</label>
+                <input type="date" class="form-control" id="tglpergi" placeholder="Pilih Tanggal Kepergian">
+              </div>
+              <div class="form-group">
+                <label for="tglkembali">Tanggal Kembali</label>
+                <input type="date" class="form-control" id="tglkembali" placeholder="Pilih Tanggal Kembali">
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <label>Pengikut</label>
+                </div>
+                <div class="row">
+                  <select class="selectpicker" multiple data-live-search="true" placeholder="Pilih Pegawai Pengikut">
+                    <option value="AL">Alabama</option>
+                    <option value="WY">Wyoming</option>
+                    <option value="AM">America</option>
+                    <option value="CA">Canada</option>
+                    <option value="RU">Russia</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="anggaran">Pembebanan Anggaran Instansi</label>
+                <input type="text" class="form-control" id="anggaran" placeholder="Tulis Pembebanan Anggaran">
+              </div>
+              <div class="form-group">
+                <label for="mataanggaran">Mata Anggaran</label>
+                <input type="text" class="form-control" id="mataanggaran" placeholder="Tulis Mata Anggaran">
+              </div>
+              <div class="form-group">
+                <label for="keterangan">Keterangan</label>
+                <input type="text" class="form-control" id="keterangan" placeholder="Tulis Keterangan">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>
+          <button type="submit" class="btn btn-primary">Tambah</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <!-- plugins:js -->
   <script src="../vendors/js/vendor.bundle.base.js"></script>
   <!-- endinject -->
@@ -506,6 +620,8 @@
   <script src="../js/jquery.cookie.js" type="text/javascript"></script>
   <script src="../js/dashboard.js"></script>
   <script src="../js/Chart.roundedBarCharts.js"></script>
+  <!-- Multiple Select -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/js/bootstrap-select.min.js"></script>
   <!-- datatables -->
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
   <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
