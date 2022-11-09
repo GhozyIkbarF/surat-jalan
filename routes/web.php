@@ -5,7 +5,7 @@ use App\Http\Controllers\PdfController;
 use App\Http\Controllers\SptController;
 use App\Http\Controllers\SppdController;
 use App\Http\Controllers\BiayaController;
-
+use App\Http\Controllers\PegawaiController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,7 +31,7 @@ Route::get('/biaya', [BiayaController::class, 'index']);
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
-
+Route::resource('/pegawai', PegawaiController::class);
 Route::get('/pdf1', [PdfController::class, 'index']);
 Route::get('/pdf2', [PdfController::class, 'pdf2']);
 Route::get('/pdf3', [PdfController::class, 'pdf3']);
