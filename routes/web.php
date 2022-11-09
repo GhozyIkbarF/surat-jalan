@@ -31,6 +31,7 @@ Route::controller(PageController::class)->group(function () {
 
 Route::get('/pdf1', [PdfController::class, 'index']);
 Route::get('/pdf2', [PdfController::class, 'pdf2']);
+Route::get('/pdf3', [PdfController::class, 'pdf3']);
 
 require __DIR__ . '/auth.php';
 
