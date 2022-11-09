@@ -21,7 +21,11 @@ Route::get('/', function () {
     return view('layouts.main');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/sppd', [SppdController::class, 'index']);
+Route::controller(SppdController::class)->group(function () {
+    Route::get('/sppd', 'index')->name('datasppd');
+    Route::get('/create-sppd', 'create')->middleware(['auth', 'verified'])->name('tambahsppd');
+});
+
 Route::get('/spt', [SptController::class, 'index']);
 Route::get('/biaya', [BiayaController::class, 'index']);
 // Route::get('/dashboard', function () {
@@ -30,5 +34,8 @@ Route::get('/biaya', [BiayaController::class, 'index']);
 Route::resource('/pegawai', PegawaiController::class);
 Route::get('/pdf1', [PdfController::class, 'index']);
 Route::get('/pdf2', [PdfController::class, 'pdf2']);
+Route::get('/pdf3', [PdfController::class, 'pdf3']);
 
+
+Route::resource('pegawai-ajax-crud', PegawaiAjaxController::class);
 require __DIR__ . '/auth.php';

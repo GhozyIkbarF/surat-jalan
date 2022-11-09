@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Data SPPD</title>
+  <title>Data Instansi</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="../vendors/feather/feather.css">
   <link rel="stylesheet" href="../vendors/mdi/css/materialdesignicons.min.css">
@@ -48,7 +48,7 @@
       <div class="navbar-menu-wrapper d-flex align-items-center">
         <ul class="navbar-nav">
           <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-            <h1 class="welcome-text">Data SPPD <span class="text-black fw-bold">(Surat Permintaan Perjalanan Dinas)</span></h1>
+            <h1 class="welcome-text text-black fw-bold">Data Instansi</h1>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
@@ -103,35 +103,16 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="datasppd.php">
-              <i class="mdi mdi mdi-file-multiple menu-icon"></i>
-              <span class="menu-title">Data SPT</span>
-            </a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="datapegawai.php">
               <i class="mdi mdi-human-male-female menu-icon"></i>
               <span class="menu-title">Data Pegawai</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">
-              <i class="mdi mdi-cash-multiple menu-icon"></i>
-              <span class="menu-title">Data Biaya</span>
-            </a>
-          </li>
-          <li class="nav-item nav-category">Master Laporan</li>
-          <li class="nav-item">
-            <a class="nav-link" href="">
-              <i class="mdi mdi-paperclip menu-icon"></i>
-              <span class="menu-title">Data Laporan</span>
-            </a>
-          </li>
           <li class="nav-item nav-category">Master Setting</li>
           <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="datainstansi.php">
               <i class="mdi mdi-settings menu-icon"></i>
-              <span class="menu-title">Data Setting</span>
+              <span class="menu-title">Data Instansi</span>
             </a>
           </li>
         </ul>
@@ -145,114 +126,79 @@
                 <div class="card-body">
                   <div class="d-sm-flex justify-content-between align-items-center">
                     <div>
-                      <h4 class="card-title">Tambah Data SPPD</h4>
+                      <h4 class="card-title">Data Instansi</h4>
                     </div>
                     <div>
-                      <a href="datasppd.php">
-                        <button type="button" class="btn btn-social-icon-text btn-dark">
-                          <i class="mdi mdi-arrow-left"></i>
-                            Kembali
-                        </button>   
-                      </a>
+                      <button type="button" class="btn btn-success btn-md" data-bs-toggle="modal" data-bs-target="#modaltambahpegawai">
+                        Edit Data
+                      </button>
                     </div>
                   </div>
                   <div class="mt-3">
                   <form class="forms-sample">
                     <div class="row">
-                      <div class="col-md-6 grid-margin">
+                      <div class="col">
                         <div class="form-group">
-                          <label>Pejabat Pemberi Perintah</label>
-                          <select class="js-example-basic-multiple w-100" multiple="multiple">
-                            <option value="AL">Alabama</option>
-                            <option value="WY">Wyoming</option>
-                            <option value="AM">America</option>
-                            <option value="CA">Canada</option>
-                            <option value="RU">Russia</option>
-                          </select>
-                        </div>
-                        <div class="form-group">
-                          <label>Pegawai yang Diperintah</label>
-                          <select class="js-example-basic-multiple w-100" multiple="multiple">
-                            <option value="AL">Alabama</option>
-                            <option value="WY">Wyoming</option>
-                            <option value="AM">America</option>
-                            <option value="CA">Canada</option>
-                            <option value="RU">Russia</option>
-                          </select>
-                        </div>
-                        <div class="form-group">
-                          <label for="golongan">Golongan</label>
-                          <input type="text" class="form-control" id="golongan" placeholder="Pembina / IV a" disabled>
-                        </div>
-                        <div class="form-group">
-                          <label for="jabatan">Jabatan</label>
-                          <input type="text" class="form-control" id="jabatan" placeholder="Kepala Bidang Tata Kelola Informatika" disabled>
-                        </div>
-                        <div class="form-group">
-                          <label for="tingkat">Tingkat</label>
-                          <input type="text" class="form-control" id="tingkat" placeholder="-" disabled>
-                        </div>
-                        <div class="form-group">
-                          <label for="maksud">Maksud Perjalanan Dinas</label>
-                          <input type="text" class="form-control" id="maksud" placeholder="Tulis Maksud Perjalanan Dinas">
-                        </div>
-                        <div class="form-group">
-                          <label for="transportasi">Transportasi</label>
-                          <input type="text" class="form-control" id="transportasi" placeholder="Tulis Transportasi yang Digunakan">
-                        </div>
-                        <div class="form-group">
-                          <label for="berangkat">Tempat Berangkat</label>
-                          <input type="text" class="form-control" id="berangkat" placeholder="Tulis Tempat Keberangkatan">
-                        </div>
-                        <div class="form-group">
-                          <label for="tujuan">Tempat Tujuan</label>
-                          <input type="text" class="form-control" id="tujuan" placeholder="Tulis Tempat Tujuan">
+                          <label for="Nama">Nama Instansi</label>
+                          <input type="text" class="form-control" id="nama" placeholder="Dinas Komunikasi dan Informatika Kabupaten Karanganyar" disabled>
                         </div>
                       </div>
-                      <div class="col-md-6 grid-margin">
+                      <div class="col">
                         <div class="form-group">
-                          <label for="lama">Lama Perjalanan Dinas</label>
-                          <input type="text" class="form-control" id="lama" placeholder="Tulis Lamanya Perjalanan Dinas">
-                        </div>
-                        <div class="form-group">
-                          <label for="tglpergi">Tanggal Pergi</label>
-                          <input type="date" class="form-control" id="tglpergi" placeholder="Pilih Tanggal Kepergian">
-                        </div>
-                        <div class="form-group">
-                          <label for="tglkembali">Tanggal Kembali</label>
-                          <input type="date" class="form-control" id="tglkembali" placeholder="Pilih Tanggal Kembali">
-                        </div>
-                        <div class="form-group">
-                          <label>Pengikut / NIP</label>
-                          <select class="js-example-basic-multiple w-100" multiple="multiple">
-                            <option value="AL">Alabama</option>
-                            <option value="WY">Wyoming</option>
-                            <option value="AM">America</option>
-                            <option value="CA">Canada</option>
-                            <option value="RU">Russia</option>
-                          </select>
-                        </div>
-                        <div class="form-group">
-                          <label for="anggaran">Pembebanan Anggaran</label>
-                          <input type="text" class="form-control" id="anggaran" placeholder="Tulis Pembebanan Anggaran">
-                        </div>
-                        <div class="form-group">
-                          <label for="mataanggaran">Mata Anggaran</label>
-                          <input type="text" class="form-control" id="mataanggaran" placeholder="Tulis Mata Anggaran">
-                        </div>
-                        <div class="form-group">
-                          <label for="keterangan">Keterangan</label>
-                          <input type="text" class="form-control" id="keterangan" placeholder="Tulis Keterangan">
+                          <label for="Keterangan">Keterangan Instansi</label>
+                          <input type="text" class="form-control" id="keterangan" placeholder="" disabled>
                         </div>
                       </div>
                     </div>
-                    <div>
-                      <button type="submit" class="btn btn-primary me-2">Tambah</button>
-                      <a href="datasppd.php">
-                        <button type="button" class="btn btn-outline-danger">
-                            Batal
-                        </button>   
-                      </a>
+                    <hr>
+                    <div class="row">
+                      <div class="col">
+                        <div class="form-group">
+                          <label for="Alamat">Alamat Instansi</label>
+                          <input type="text" class="form-control" id="alamat" placeholder="Jl. Lawu No. 385 B Karanganyar" disabled>
+                        </div>
+                        <div class="form-group">
+                          <label for="Lokasi">Kota/Kabupaten Instansi</label>
+                          <input type="text" class="form-control" id="lokasi" placeholder="Kabupaten Karanganyar" disabled>
+                        </div>
+                        <div class="form-group">
+                          <label for="Kode Pos">Kode Pos</label>
+                          <input type="text" class="form-control" id="kodepos" placeholder="57712" disabled>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-group">
+                          <label for="Faks">Faks Instansi</label>
+                          <input type="text" class="form-control" id="faks" placeholder="(0721) 495590" disabled>
+                        </div>
+                        <div class="form-group">
+                          <label for="Telepon">Telp Instansi</label>
+                          <input type="text" class="form-control" id="telepon" placeholder="(0271) 495039" disabled>
+                        </div>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col">
+                        <div class="form-group">
+                          <label for="Pimpinan Tertinggi">Pimpinan Tertinggi Instansi</label>
+                          <input type="text" class="form-control" id="pimpinan" placeholder="Kepala Dinas" disabled>
+                        </div>
+                        <div class="form-group">
+                          <label for="Nama Pimpinan">Nama Pimpinan Tertinggi Instansi</label>
+                          <input type="text" class="form-control" id="namapimpinan" placeholder="Drs. Sujarno, M.Si." disabled>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-group">
+                          <label for="NIP Pimpinan">NIP Pimpinan Tertinggi Instansi</label>
+                          <input type="text" class="form-control" id="nippimpinan" placeholder="19630107 199003 1 004" disabled>
+                        </div>
+                        <div class="form-group">
+                          <label for="Jabatan Pimpinan">Jabatan Pimpinan Tertinggi Instansi</label>
+                          <input type="text" class="form-control" id="jabatanpimpinan" placeholder="Pembina Utama Muda" disabled>
+                        </div>
+                      </div>
                     </div>
                   </form>
                   </div>

@@ -1,8 +1,8 @@
-@extends('layouts.main')
+{{-- @extends('layouts.main')
 @section('title','Tambah SPPD')
 @section('sng','Tambah SPPD')
 @section('kpj','Tambah Surat Perintah Perjalanan Dinas')
-@section('content')
+@section('content') --}}
 <div class="card">
     <div class="card-body">
       <div class="d-sm-flex justify-content-between align-items-center">
@@ -120,4 +120,4 @@
       </div>
     </div>
   </div>
-  @endsection
+  {{-- @endsection --}}
