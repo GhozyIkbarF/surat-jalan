@@ -109,24 +109,11 @@
               <span class="menu-title">Data Pegawai</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">
-              <i class="mdi mdi-cash-multiple menu-icon"></i>
-              <span class="menu-title">Data Biaya</span>
-            </a>
-          </li>
-          <li class="nav-item nav-category">Master Laporan</li>
-          <li class="nav-item">
-            <a class="nav-link" href="">
-              <i class="mdi mdi-paperclip menu-icon"></i>
-              <span class="menu-title">Data Laporan</span>
-            </a>
-          </li>
           <li class="nav-item nav-category">Master Setting</li>
           <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="datainstansi.php">
               <i class="mdi mdi-settings menu-icon"></i>
-              <span class="menu-title">Data Setting</span>
+              <span class="menu-title">Data Instansi</span>
             </a>
           </li>
         </ul>
@@ -143,7 +130,7 @@
                       <h4 class="card-title">Daftar Data SPPD</h4>
                     </div>
                     <div>
-                      <button type="button" class="btn btn-success btn-md" data-bs-toggle="modal" data-bs-target="#modalsppd">
+                      <button type="button" class="btn btn-success btn-md" data-bs-toggle="modal" data-bs-target="#modaltambahsppd">
                         Tambah Data
                       </button>
                     </div>
@@ -176,6 +163,146 @@
                         </tr>
                       </thead>
                       <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>Plt. Kepala Dinas Komunikasi dan Informatika Kabupaten Karanganyar</td>
+                          <td>Hartono, S.Sod, M.M / 19691015 199003 1 007</td>
+                          <td>Pembina / IV a</td>
+                          <td>kepala Bidang Tata Kelola Informatika</td>
+                          <td>-</td>
+                          <td>Sarasehan dan Renungan Ulang Janji Hari Pramuka ke-61 Tahun 2022</td>
+                          <td>Kendaraan Dinas</td>
+                          <td>Karanganyar</td>
+                          <td>Pendopo Tri Manunggal, Malanggaten, Kebakkramat</td>
+                          <td>1 hari</td>
+                          <td>13 Agustus 2022</td>
+                          <td>13 Agustus 2022</td>
+                          <td>
+                            <p>Suparno / 19731103 199803 1 012</p>
+                            <p>Yahya Fathoni Amri, S.Kom / -</p>
+                          </td>
+                          <td>Dinas Kominfo Kabupaten Karanganyar</td>
+                          <td>APBD TA 2022</td>
+                          <td>-</td>
+                          <td>
+                            <div class="btn-group" role="group">
+                              <button type="button" class="btn btn-md btn-primary">
+                                <i class="mdi mdi-printer"></i>
+                              </button>
+                              <button type="button" class="btn btn-md btn-warning" data-bs-toggle="modal" data-bs-target="#modaleditsppd">
+                                <i class="mdi mdi-tooltip-edit"></i>
+                              </button>
+                              <button type="button" class="btn btn-md btn-danger" data-bs-toggle="modal" data-bs-target="#modalhapussppd">
+                                <i class="mdi mdi-delete"></i>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>Plt. Kepala Dinas Komunikasi dan Informatika Kabupaten Karanganyar</td>
+                          <td>Hartono, S.Sod, M.M / 19691015 199003 1 007</td>
+                          <td>Pembina / IV a</td>
+                          <td>kepala Bidang Tata Kelola Informatika</td>
+                          <td>-</td>
+                          <td>Sarasehan dan Renungan Ulang Janji Hari Pramuka ke-61 Tahun 2022</td>
+                          <td>Kendaraan Dinas</td>
+                          <td>Karanganyar</td>
+                          <td>Pendopo Tri Manunggal, Malanggaten, Kebakkramat</td>
+                          <td>1 hari</td>
+                          <td>13 Agustus 2022</td>
+                          <td>13 Agustus 2022</td>
+                          <td>
+                            <p>Suparno / 19731103 199803 1 012</p>
+                            <p>Yahya Fathoni Amri, S.Kom / -</p>
+                          </td>
+                          <td>Dinas Kominfo Kabupaten Karanganyar</td>
+                          <td>APBD TA 2022</td>
+                          <td>-</td>
+                          <td>
+                            <div class="btn-group" role="group">
+                              <button type="button" class="btn btn-md btn-primary">
+                                <i class="mdi mdi-printer"></i>
+                              </button>
+                              <button type="button" class="btn btn-md btn-warning">
+                                <i class="mdi mdi-tooltip-edit"></i>
+                              </button>
+                              <button type="button" class="btn btn-md btn-danger">
+                                <i class="mdi mdi-delete"></i>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>Plt. Kepala Dinas Komunikasi dan Informatika Kabupaten Karanganyar</td>
+                          <td>Hartono, S.Sod, M.M / 19691015 199003 1 007</td>
+                          <td>Pembina / IV a</td>
+                          <td>kepala Bidang Tata Kelola Informatika</td>
+                          <td>-</td>
+                          <td>Sarasehan dan Renungan Ulang Janji Hari Pramuka ke-61 Tahun 2022</td>
+                          <td>Kendaraan Dinas</td>
+                          <td>Karanganyar</td>
+                          <td>Pendopo Tri Manunggal, Malanggaten, Kebakkramat</td>
+                          <td>1 hari</td>
+                          <td>13 Agustus 2022</td>
+                          <td>13 Agustus 2022</td>
+                          <td>
+                            <p>Suparno / 19731103 199803 1 012</p>
+                            <p>Yahya Fathoni Amri, S.Kom / -</p>
+                          </td>
+                          <td>Dinas Kominfo Kabupaten Karanganyar</td>
+                          <td>APBD TA 2022</td>
+                          <td>-</td>
+                          <td>
+                            <div class="btn-group" role="group">
+                              <button type="button" class="btn btn-md btn-primary">
+                                <i class="mdi mdi-printer"></i>
+                              </button>
+                              <button type="button" class="btn btn-md btn-warning">
+                                <i class="mdi mdi-tooltip-edit"></i>
+                              </button>
+                              <button type="button" class="btn btn-md btn-danger">
+                                <i class="mdi mdi-delete"></i>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>Plt. Kepala Dinas Komunikasi dan Informatika Kabupaten Karanganyar</td>
+                          <td>Hartono, S.Sod, M.M / 19691015 199003 1 007</td>
+                          <td>Pembina / IV a</td>
+                          <td>kepala Bidang Tata Kelola Informatika</td>
+                          <td>-</td>
+                          <td>Sarasehan dan Renungan Ulang Janji Hari Pramuka ke-61 Tahun 2022</td>
+                          <td>Kendaraan Dinas</td>
+                          <td>Karanganyar</td>
+                          <td>Pendopo Tri Manunggal, Malanggaten, Kebakkramat</td>
+                          <td>1 hari</td>
+                          <td>13 Agustus 2022</td>
+                          <td>13 Agustus 2022</td>
+                          <td>
+                            <p>Suparno / 19731103 199803 1 012</p>
+                            <p>Yahya Fathoni Amri, S.Kom / -</p>
+                          </td>
+                          <td>Dinas Kominfo Kabupaten Karanganyar</td>
+                          <td>APBD TA 2022</td>
+                          <td>-</td>
+                          <td>
+                            <div class="btn-group" role="group">
+                              <button type="button" class="btn btn-md btn-primary">
+                                <i class="mdi mdi-printer"></i>
+                              </button>
+                              <button type="button" class="btn btn-md btn-warning">
+                                <i class="mdi mdi-tooltip-edit"></i>
+                              </button>
+                              <button type="button" class="btn btn-md btn-danger">
+                                <i class="mdi mdi-delete"></i>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
                         <tr>
                           <td>1</td>
                           <td>Plt. Kepala Dinas Komunikasi dan Informatika Kabupaten Karanganyar</td>
@@ -480,8 +607,8 @@
   </div>
   <!-- container-scroller -->
 
-  <!-- Modal SPPD -->
-  <div class="modal fade" id="modalsppd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <!-- Modal Tambah SPPD -->
+  <div class="modal fade" id="modaltambahsppd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl">
       <div class="modal-content">
         <div class="modal-header">
@@ -594,6 +721,147 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>
           <button type="submit" class="btn btn-primary">Tambah</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Edit SPPD -->
+  <div class="modal fade" id="modaleditsppd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Data SPPD</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form class="forms-sample">
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6 grid-margin">
+              <div class="form-group">
+                <div class="row">
+                  <label>Pejabat Pemberi Perintah</label>
+                </div>
+                <div class="row">
+                  <select class="selectpicker" multiple data-live-search="true" placeholder="Pilih Pejabat">
+                    <option value="AL">Alabama</option>
+                    <option value="WY">Wyoming</option>
+                    <option value="AM">America</option>
+                    <option value="CA">Canada</option>
+                    <option value="RU">Russia</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <label>Pegawai yang Diperintah</label>
+                </div>
+                <div class="row">
+                  <select class="selectpicker" multiple data-live-search="true" placeholder="Pilih Pegawai">
+                    <option value="AL">Alabama</option>
+                    <option value="WY">Wyoming</option>
+                    <option value="AM">America</option>
+                    <option value="CA">Canada</option>
+                    <option value="RU">Russia</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="golongan">Golongan Pegawai yang Diperintah</label>
+                <input type="text" class="form-control" id="golongan" placeholder="-" disabled>
+              </div>
+              <div class="form-group">
+                <label for="jabatan">Jabatan Pegawai yang Diperintah</label>
+                <input type="text" class="form-control" id="jabatan" placeholder="-" disabled>
+              </div>
+              <div class="form-group">
+                <label for="tingkat">Tingkat Pegawai yang Diperintah</label>
+                <input type="text" class="form-control" id="tingkat" placeholder="-" disabled>
+              </div>
+              <div class="form-group">
+                <label for="maksud">Maksud Perjalanan Dinas</label>
+                <input type="text" class="form-control" id="maksud" placeholder="Tulis Maksud Perjalanan Dinas">
+              </div>
+              <div class="form-group">
+                <label for="transportasi">Transportasi</label>
+                <input type="text" class="form-control" id="transportasi" placeholder="Tulis Transportasi yang Digunakan">
+              </div>
+              <div class="form-group">
+                <label for="berangkat">Tempat Berangkat</label>
+                <input type="text" class="form-control" id="berangkat" placeholder="Tulis Tempat Keberangkatan">
+              </div>
+            </div>
+            <div class="col-md-6 grid-margin">
+              <div class="form-group">
+                <label for="tujuan">Tempat Tujuan</label>
+                <input type="text" class="form-control" id="tujuan" placeholder="Tulis Tempat Tujuan">
+              </div>
+              <div class="form-group">
+                <label for="lama">Lama Perjalanan Dinas (hari)</label>
+                <input type="text" class="form-control" id="lama" placeholder="Tulis Lamanya Perjalanan Dinas">
+              </div>
+              <div class="form-group">
+                <label for="tglpergi">Tanggal Pergi</label>
+                <input type="date" class="form-control" id="tglpergi" placeholder="Pilih Tanggal Kepergian">
+              </div>
+              <div class="form-group">
+                <label for="tglkembali">Tanggal Kembali</label>
+                <input type="date" class="form-control" id="tglkembali" placeholder="Pilih Tanggal Kembali">
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <label>Pengikut</label>
+                </div>
+                <div class="row">
+                  <select class="selectpicker" multiple data-live-search="true" placeholder="Pilih Pegawai Pengikut">
+                    <option value="AL">Alabama</option>
+                    <option value="WY">Wyoming</option>
+                    <option value="AM">America</option>
+                    <option value="CA">Canada</option>
+                    <option value="RU">Russia</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="anggaran">Pembebanan Anggaran Instansi</label>
+                <input type="text" class="form-control" id="anggaran" placeholder="Tulis Pembebanan Anggaran">
+              </div>
+              <div class="form-group">
+                <label for="mataanggaran">Mata Anggaran</label>
+                <input type="text" class="form-control" id="mataanggaran" placeholder="Tulis Mata Anggaran">
+              </div>
+              <div class="form-group">
+                <label for="keterangan">Keterangan</label>
+                <input type="text" class="form-control" id="keterangan" placeholder="Tulis Keterangan">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>
+          <button type="submit" class="btn btn-primary">Simpan</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Hapus SPPD -->
+  <div class="modal fade" id="modalhapussppd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Hapus Data SPPD</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form class="forms-sample">
+        <div class="modal-body">
+          <p>Apakah anda yakin untuk menghapusnya?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>
+          <button type="submit" class="btn btn-danger">Hapus</button>
         </div>
         </form>
       </div>
