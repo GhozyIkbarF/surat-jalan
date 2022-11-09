@@ -102,35 +102,16 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="datasppd.php">
-              <i class="mdi mdi mdi-file-multiple menu-icon"></i>
-              <span class="menu-title">Data SPT</span>
-            </a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="datapegawai.php">
               <i class="mdi mdi-human-male-female menu-icon"></i>
               <span class="menu-title">Data Pegawai</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">
-              <i class="mdi mdi-cash-multiple menu-icon"></i>
-              <span class="menu-title">Data Biaya</span>
-            </a>
-          </li>
-          <li class="nav-item nav-category">Master Laporan</li>
-          <li class="nav-item">
-            <a class="nav-link" href="">
-              <i class="mdi mdi-paperclip menu-icon"></i>
-              <span class="menu-title">Data Laporan</span>
-            </a>
-          </li>
           <li class="nav-item nav-category">Master Setting</li>
           <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="datainstansi.php">
               <i class="mdi mdi-settings menu-icon"></i>
-              <span class="menu-title">Data Setting</span>
+              <span class="menu-title">Data Instansi</span>
             </a>
           </li>
         </ul>
@@ -147,7 +128,7 @@
                       <h4 class="card-title">Daftar Data Pegawai</h4>
                     </div>
                     <div>
-                      <button type="button" class="btn btn-success btn-md" data-bs-toggle="modal" data-bs-target="#modalpegawai">
+                      <button type="button" class="btn btn-success btn-md" data-bs-toggle="modal" data-bs-target="#modaltambahpegawai">
                         Tambah Data
                       </button>
                     </div>
@@ -178,10 +159,10 @@
                               <button type="button" class="btn btn-md btn-primary">
                                 <i class="mdi mdi-printer"></i>
                               </button>
-                              <button type="button" class="btn btn-md btn-warning">
+                              <button type="button" class="btn btn-md btn-warning" data-bs-toggle="modal" data-bs-target="#modaleditpegawai">
                                 <i class="mdi mdi-tooltip-edit"></i>
                               </button>
-                              <button type="button" class="btn btn-md btn-danger">
+                              <button type="button" class="btn btn-md btn-danger" data-bs-toggle="modal" data-bs-target="#modalhapuspegawai">
                                 <i class="mdi mdi-delete"></i>
                               </button>
                             </div>
@@ -253,8 +234,8 @@
   </div>
   <!-- container-scroller -->
 
-  <!-- Modal SPPD -->
-  <div class="modal fade" id="modalpegawai" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <!-- Modal Tambah Pegawai -->
+  <div class="modal fade" id="modaltambahpegawai" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
@@ -287,6 +268,67 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>
           <button type="submit" class="btn btn-primary">Tambah</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Edit Pegawai -->
+  <div class="modal fade" id="modaleditpegawai" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Data Pegawai</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form class="forms-sample">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="NIP">NIP</label>
+            <input type="text" class="form-control" id="nip" placeholder="Tulis NIP">
+          </div>
+          <div class="form-group">
+            <label for="Nama">Nama</label>
+            <input type="text" class="form-control" id="nama" placeholder="Tulis Nama">
+          </div>
+          <div class="form-group">
+            <label for="Jabatan">Jabatan</label>
+            <input type="text" class="form-control" id="jabatan" placeholder="Tulis jabatan">
+          </div>
+          <div class="form-group">
+            <label for="Pangkat">Pangkat</label>
+            <input type="text" class="form-control" id="pangkat" placeholder="Tulis Pangkat">
+          </div>
+          <div class="form-group">
+            <label for="Golongan">Golongan</label>
+            <input type="text" class="form-control" id="golongan" placeholder="Tulis Golongan">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>
+          <button type="submit" class="btn btn-primary">Simpan</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Hapus Pegawai -->
+  <div class="modal fade" id="modalhapuspegawai" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Hapus Data Pegawai</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form class="forms-sample">
+        <div class="modal-body">
+          <p>Apakah anda yakin untuk menghapusnya?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>
+          <button type="submit" class="btn btn-danger">Hapus</button>
         </div>
         </form>
       </div>
