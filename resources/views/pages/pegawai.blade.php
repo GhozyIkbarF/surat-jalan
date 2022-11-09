@@ -28,6 +28,22 @@
               <td>Aksi</td>
             </tr>
           </thead>
+          <tbody id="table-posts">
+            @foreach($pegawai as $p)
+            <tr id="index_{{ $p->id }}">
+              <td>{{ $loop->iteration }}</td>
+                <td>{{ $p->name }}</td>
+                <td>{{ $p->nip }}</td>
+                <td>{{ $p->jabatan }}</td>
+                <td>{{ $p->pangkat }}</td>
+                <td>{{ $p->golongan }}</td>
+                <td class="text-center">
+                    <a href="javascript:void(0)" id="btn-edit-pegawai" data-id="{{ $p->id }}" class="btn btn-primary btn-sm">EDIT</a>
+                    <a href="javascript:void(0)" id="btn-deletpegawai" data-id="{{ $p->id }}" class="btn btn-danger btn-sm">DELETE</a>
+                </td>
+            </tr>
+            @endforeach
+        </tbody>
         </table>
 <!-- Modal -->
 <div class="modal fade" id="ajaxModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
