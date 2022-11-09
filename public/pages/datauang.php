@@ -16,6 +16,8 @@
   <!-- endinject -->
   <!-- Plugin css for this page -->
   <link rel="stylesheet" href="../js/select.dataTables.min.css">
+  <!-- Multiple Select -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="../css/vertical-layout-light/style.css">
@@ -102,35 +104,16 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="datasppd.php">
-              <i class="mdi mdi mdi-file-multiple menu-icon"></i>
-              <span class="menu-title">Data SPT</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="datapegawai.php">
               <i class="mdi mdi-human-male-female menu-icon"></i>
               <span class="menu-title">Data Pegawai</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">
-              <i class="mdi mdi-cash-multiple menu-icon"></i>
-              <span class="menu-title">Data Biaya</span>
-            </a>
-          </li>
-          <li class="nav-item nav-category">Master Laporan</li>
-          <li class="nav-item">
-            <a class="nav-link" href="">
-              <i class="mdi mdi-paperclip menu-icon"></i>
-              <span class="menu-title">Data Laporan</span>
-            </a>
-          </li>
           <li class="nav-item nav-category">Master Setting</li>
           <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="datainstansi.php">
               <i class="mdi mdi-settings menu-icon"></i>
-              <span class="menu-title">Data Setting</span>
+              <span class="menu-title">Data Instansi</span>
             </a>
           </li>
         </ul>
@@ -147,11 +130,9 @@
                       <h4 class="card-title">Daftar Data Penerimaan Uang Perjalanan Dinas</h4>
                     </div>
                     <div>
-                      <a href="tambahdataspt.php">
-                        <button type="button" class="btn btn-success btn-md">
-                          Tambah Data
-                        </button>
-                      </a>
+                      <button type="button" class="btn btn-success btn-md" data-bs-toggle="modal" data-bs-target="#modaltambahuang">
+                        Tambah Data
+                      </button>
                     </div>
                   </div>
                   <div class="table-responsive mt-3">
@@ -159,61 +140,65 @@
                       <thead>
                         <tr>
                           <td>No</td>
-                          <td>Dasar Perintah</td>
-                          <td>Pegawai yang Diperintah</td>
-                          <td>Golongan</td>
-                          <td>NIP</td>
-                          <td>Jabatan</td>
-                          <td>Maksud Tugas</td>
-                          <td>Hari, Tanggal</td>
-                          <td>Waktu</td>
-                          <td>Tempat</td>
-                          <td>Tempat Ditetapkan</td>
-                          <td>Tanggal Ditetapkan</td>
-                          <td>Yang Menetapkan</td>
+                          <td>Kegiatan</td>
+                          <td>Lokasi</td>
+                          <td>Tanggal</td>
+                          <td>Kode Rekening</td>
+                          <td>Nama / NIP</td>
+                          <td>Jabatan / Pangkat / Gol. Eselon</td>
+                          <td>Uang Harian</td>
+                          <td>Uang Transport</td>
+                          <td>Biaya Transport</td>
+                          <td>Penerimaan</td>
                           <td>Aksi</td>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
                           <td>1</td>
-                          <td>Perintah Plt. Kepala Dinas Komunikasi dan Informatika Kabupaten Karanganyar</td>
-                          <td>
-                            <p>Hartono, S.Sos, M.M</p>
-                            <p>Suparno</p>
-                            <p>Yahya Fathoni Amri</p>
-                          </td>
-                          <td>
-                            <p>Pembina / IV a</p>
-                            <p>Pengatur Tingkat I / II d</p>
-                            <p>-</p>
-                          </td>
-                          <td>
-                            <p>19691015 199003 1 007</p>
-                            <p>19731103 199803 1 012</p>
-                            <p>-</p>
-                          </td>
-                          <td>
-                            <p>Kepala Bidang Tata Kelola Informatika</p>
-                            <p>Analis Sistem Informasi dan Diseminasi Hukum Pada Seksi Persandian dan Keamanan Jaringan</p>
-                            <p>Network Analyst</p>
-                          </td>
-                          <td>Sarasehan dan Renungan Ulang Janji Hari Pramuka ke-61 Tahun</td>
-                          <td>Sabtu, 13 Agustus 2022</td>
-                          <td>19.30 WIB s.d. selesai</td>
+                          <td>Sarasehan dan Renungan Ulang Janji Hari Pramuka ke-61 Tahun 2022</td>
                           <td>Pendopo Tri Manunggal, Malanggaten, Kebakkramat</td>
-                          <td>Karanganyar</td>
                           <td>13 Agustus 2022</td>
-                          <td>Drs. SUJARNO, M.Si.</td>
+                          <td>2.16.03.2.02.06.5.1.02.04.01.0003</td>
+                          <td>
+                            <p>Hartono, S.Sos., M.M / 19691015 199003 1 007</p>
+                            <p>Suparno / 19731103 199803 1 012</p>
+                            <p>Yahya Fathoni Amri, S.Kom</p>
+                          </td>
+                          <td>
+                            <p>Kepala Bidang Tata Kelola Informatika Dinas Kominfo Kab. Karanganyar / Pembina / IV a</p>
+                            <p>Analis Sistem Informasi dan Diseminasi Hukum Pada Seksi Persandian dan Keamanan Jaringan Dinas Kominfo Kab. Karanganyar / Pengatur Tingkat I / II d</p>
+                            <p>Network Analyst Dinas Kominfo Kab. Karanganyar / -</p>
+                          </td>
+                          <td>
+                            <p>-</p>
+                            <p>-</p>
+                            <p>-</p>
+                          </td>
+                          <td>
+                            <p>Rp80.000</p>
+                            <p>Ro60.000</p>
+                            <p>Rp50.000</p>
+                          </td>
+                          <td>
+                            <p>8 Lt x Rp12.500 = Rp100.000</p>
+                            <p>-</p>
+                            <p>-</p>
+                          </td>
+                          <td>
+                            <p>Rp180.000</p>
+                            <p>Rp60.000</p>
+                            <p>Rp50.000</p>
+                          </td>
                           <td>
                             <div class="btn-group" role="group">
                               <button type="button" class="btn btn-md btn-primary">
                                 <i class="mdi mdi-printer"></i>
                               </button>
-                              <button type="button" class="btn btn-md btn-warning">
+                              <button type="button" class="btn btn-md btn-warning" data-bs-toggle="modal" data-bs-target="#modaledituang">
                                 <i class="mdi mdi-tooltip-edit"></i>
                               </button>
-                              <button type="button" class="btn btn-md btn-danger">
+                              <button type="button" class="btn btn-md btn-danger" data-bs-toggle="modal" data-bs-target="#modalhapusuang">
                                 <i class="mdi mdi-delete"></i>
                               </button>
                             </div>
@@ -243,6 +228,331 @@
   </div>
   <!-- container-scroller -->
 
+  <!-- Modal Tambah Penerimaan Uang -->
+  <div class="modal fade" id="modaluang" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Tambah Data SPT</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form class="forms-sample">
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6 grid-margin">
+              <div class="form-group">
+                <label for="kegiatan">Kegiatan</label>
+                <input type="text" class="form-control" id="kegiatan" placeholder="Tulis Nama Kegiatan">
+              </div>
+              <div class="form-group">
+                <label for="lokasi">Lokasi</label>
+                <input type="text" class="form-control" id="Lokasi" placeholder="Tulis Lokasi">
+              </div>
+              <div class="form-group">
+                <label for="tgl">Tanggal Kegiatan</label>
+                <input type="date" class="form-control" id="tgl" placeholder="Pilih Tanggal Kegiatan">
+              </div>
+              <div class="form-group">
+                <label for="rekening">Kode Rekening</label>
+                <input type="text" class="form-control" id="rekening" placeholder="Tulis Kode Rekening">
+              </div>
+            </div>
+            <div class="col-md-6 grid-margin">
+              <div class="row">
+                <div class="col">
+                  <div class="form-group">
+                    <div class="row">
+                      <label>Nama Pegawai 1</label>
+                    </div>
+                    <div class="row">
+                      <select class="selectpicker" data-live-search="true" placeholder="Pilih Pegawai 1">
+                        <option value="AL">Alabama</option>
+                        <option value="WY">Wyoming</option>
+                        <option value="AM">America</option>
+                        <option value="CA">Canada</option>
+                        <option value="RU">Russia</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                    <div class="row">
+                      <label>Nama Pegawai 2</label>
+                    </div>
+                    <div class="row">
+                      <select class="selectpicker" data-live-search="true" placeholder="Pilih Pegawai 2">
+                        <option value="AL">Alabama</option>
+                        <option value="WY">Wyoming</option>
+                        <option value="AM">America</option>
+                        <option value="CA">Canada</option>
+                        <option value="RU">Russia</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                    <div class="row">
+                      <label>Nama Pegawai 3</label>
+                    </div>
+                    <div class="row">
+                      <select class="selectpicker" data-live-search="true" placeholder="Pilih Pegawai 3">
+                        <option value="AL">Alabama</option>
+                        <option value="WY">Wyoming</option>
+                        <option value="AM">America</option>
+                        <option value="CA">Canada</option>
+                        <option value="RU">Russia</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="form-group">
+                    <label for="Uang Harian 1">Uang Harian 1 (Rp)</label>
+                    <input type="text" class="form-control" id="uangharian1" placeholder="Harian Pegawai 1">
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                    <label for="Uang Harian 2">Uang Harian 2 (Rp)</label>
+                    <input type="text" class="form-control" id="uangharian2" placeholder="Harian Pegawai 2">
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                    <label for="Uang Harian 3">Uang Harian 3 (Rp)</label>
+                    <input type="text" class="form-control" id="uangharian3" placeholder="Harian Pegawai 3">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="form-group">
+                    <label for="Uang Transport 1">Uang Transport 1 (Rp)</label>
+                    <input type="text" class="form-control" id="uangTransport1" placeholder="Transport Pegawai 1">
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                    <label for="Uang Transport 2">Uang Transport 2 (Rp)</label>
+                    <input type="text" class="form-control" id="uangTransport2" placeholder="Transport Pegawai 2">
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                    <label for="Uang Transport 3">Uang Transport 3 (Rp)</label>
+                    <input type="text" class="form-control" id="uangTransport3" placeholder="Transport Pegawai 3">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="form-group">
+                    <label for="Biaya Transport 1">Biaya Transport 1 (Rp)</label>
+                    <input type="text" class="form-control" id="biayatransport1" placeholder="Biaya Transport Pegawai 1">
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                    <label for="Biaya Transport 2">Biaya Transport 2 (Rp)</label>
+                    <input type="text" class="form-control" id="biayatransport2" placeholder="Biaya Transport Pegawai 2">
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                    <label for="Biaya Transport 3">Biaya Transport 3 (Rp)</label>
+                    <input type="text" class="form-control" id="biayatransport3" placeholder="Biaya Transport Pegawai 3">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>
+          <button type="submit" class="btn btn-primary">Tambah</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Edit Penerimaan Uang -->
+  <div class="modal fade" id="modaledituang" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Data SPT</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form class="forms-sample">
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6 grid-margin">
+              <div class="form-group">
+                <label for="kegiatan">Kegiatan</label>
+                <input type="text" class="form-control" id="kegiatan" placeholder="Tulis Nama Kegiatan">
+              </div>
+              <div class="form-group">
+                <label for="lokasi">Lokasi</label>
+                <input type="text" class="form-control" id="Lokasi" placeholder="Tulis Lokasi">
+              </div>
+              <div class="form-group">
+                <label for="tgl">Tanggal Kegiatan</label>
+                <input type="date" class="form-control" id="tgl" placeholder="Pilih Tanggal Kegiatan">
+              </div>
+              <div class="form-group">
+                <label for="rekening">Kode Rekening</label>
+                <input type="text" class="form-control" id="rekening" placeholder="Tulis Kode Rekening">
+              </div>
+            </div>
+            <div class="col-md-6 grid-margin">
+              <div class="row">
+                <div class="col">
+                  <div class="form-group">
+                    <div class="row">
+                      <label>Nama Pegawai 1</label>
+                    </div>
+                    <div class="row">
+                      <select class="selectpicker" data-live-search="true" placeholder="Pilih Pegawai 1">
+                        <option value="AL">Alabama</option>
+                        <option value="WY">Wyoming</option>
+                        <option value="AM">America</option>
+                        <option value="CA">Canada</option>
+                        <option value="RU">Russia</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                    <div class="row">
+                      <label>Nama Pegawai 2</label>
+                    </div>
+                    <div class="row">
+                      <select class="selectpicker" data-live-search="true" placeholder="Pilih Pegawai 2">
+                        <option value="AL">Alabama</option>
+                        <option value="WY">Wyoming</option>
+                        <option value="AM">America</option>
+                        <option value="CA">Canada</option>
+                        <option value="RU">Russia</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                    <div class="row">
+                      <label>Nama Pegawai 3</label>
+                    </div>
+                    <div class="row">
+                      <select class="selectpicker" data-live-search="true" placeholder="Pilih Pegawai 3">
+                        <option value="AL">Alabama</option>
+                        <option value="WY">Wyoming</option>
+                        <option value="AM">America</option>
+                        <option value="CA">Canada</option>
+                        <option value="RU">Russia</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="form-group">
+                    <label for="Uang Harian 1">Uang Harian 1 (Rp)</label>
+                    <input type="text" class="form-control" id="uangharian1" placeholder="Harian Pegawai 1">
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                    <label for="Uang Harian 2">Uang Harian 2 (Rp)</label>
+                    <input type="text" class="form-control" id="uangharian2" placeholder="Harian Pegawai 2">
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                    <label for="Uang Harian 3">Uang Harian 3 (Rp)</label>
+                    <input type="text" class="form-control" id="uangharian3" placeholder="Harian Pegawai 3">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="form-group">
+                    <label for="Uang Transport 1">Uang Transport 1 (Rp)</label>
+                    <input type="text" class="form-control" id="uangTransport1" placeholder="Transport Pegawai 1">
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                    <label for="Uang Transport 2">Uang Transport 2 (Rp)</label>
+                    <input type="text" class="form-control" id="uangTransport2" placeholder="Transport Pegawai 2">
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                    <label for="Uang Transport 3">Uang Transport 3 (Rp)</label>
+                    <input type="text" class="form-control" id="uangTransport3" placeholder="Transport Pegawai 3">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="form-group">
+                    <label for="Biaya Transport 1">Biaya Transport 1 (Rp)</label>
+                    <input type="text" class="form-control" id="biayatransport1" placeholder="Biaya Transport Pegawai 1">
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                    <label for="Biaya Transport 2">Biaya Transport 2 (Rp)</label>
+                    <input type="text" class="form-control" id="biayatransport2" placeholder="Biaya Transport Pegawai 2">
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                    <label for="Biaya Transport 3">Biaya Transport 3 (Rp)</label>
+                    <input type="text" class="form-control" id="biayatransport3" placeholder="Biaya Transport Pegawai 3">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>
+          <button type="submit" class="btn btn-primary">Simpan</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Hapus Penerimaan Uang -->
+  <div class="modal fade" id="modalhapusuang" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Hapus Data SPT</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form class="forms-sample">
+        <div class="modal-body">
+          <p>Apakah anda yakin untuk menghapusnya?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>
+          <button type="submit" class="btn btn-danger">Hapus</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <!-- plugins:js -->
   <script src="../vendors/js/vendor.bundle.base.js"></script>
   <!-- endinject -->
@@ -263,6 +573,8 @@
   <script src="../js/jquery.cookie.js" type="text/javascript"></script>
   <script src="../js/dashboard.js"></script>
   <script src="../js/Chart.roundedBarCharts.js"></script>
+  <!-- Multiple Select -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/js/bootstrap-select.min.js"></script>
   <!-- datatables -->
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
   <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
