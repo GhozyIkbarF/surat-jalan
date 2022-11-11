@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Data Instansi</title>
+  <title>Dashboard</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="../vendors/feather/feather.css">
   <link rel="stylesheet" href="../vendors/mdi/css/materialdesignicons.min.css">
@@ -48,7 +48,7 @@
       <div class="navbar-menu-wrapper d-flex align-items-center">
         <ul class="navbar-nav">
           <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-            <h1 class="welcome-text text-black fw-bold">Data Instansi</h1>
+            <h1 class="welcome-text text-black fw-bold">Dashboard</h1>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
@@ -120,87 +120,89 @@
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
-          <div class="row">
-            <div class="col-sm-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <div class="d-sm-flex justify-content-between align-items-center">
-                    <div>
-                      <h4 class="card-title">Data Instansi</h4>
+          <div class="row flex-grow">
+            <div class="col-md-6 grid-margin stretch-card">
+              <div class="card bg-primary card-rounded">
+                <div class="card-body pb-3">
+                  <div class="row">
+                    <div class="col">
+                      <h4 class="card-title card-title-dash text-white mb-4">Data SPPD</h4>
+                      <p class="text-light mb-1">Jumlah Data SPPD</p>
+                      <h2 class="text-light">666</h2>
                     </div>
-                    <div>
-                      <button type="button" class="btn btn-success btn-md" data-bs-toggle="modal" data-bs-target="#modaledit">
-                        Edit Data
-                      </button>
+                    <div class="col align-self-center">
+                      <a href="datasppd.php">
+                        <button type="button" class="btn btn-outline-dark btn-icon-text">
+                          <i class="ti-file btn-icon-prepend"></i>
+                          Lihat
+                        </button>
+                      </a>
                     </div>
                   </div>
-                  <div class="mt-3">
-                  <form class="forms-sample">
-                    <div class="row">
-                      <div class="col">
-                        <div class="form-group">
-                          <label for="Nama">Nama Instansi</label>
-                          <input type="text" class="form-control" id="nama" placeholder="Dinas Komunikasi dan Informatika Kabupaten Karanganyar" disabled>
-                        </div>
-                      </div>
-                      <div class="col">
-                        <div class="form-group">
-                          <label for="Keterangan">Keterangan Instansi</label>
-                          <input type="text" class="form-control" id="keterangan" placeholder="" disabled>
-                        </div>
-                      </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 grid-margin stretch-card">
+              <div class="card bg-danger card-rounded">
+                <div class="card-body pb-3">
+                  <div class="row">
+                    <div class="col">
+                      <h4 class="card-title card-title-dash text-white mb-4">Data SPT</h4>
+                      <p class="text-light mb-1">Jumlah Data SPT</p>
+                      <h2 class="text-light">420</h2>
                     </div>
-                    <hr>
-                    <div class="row">
-                      <div class="col">
-                        <div class="form-group">
-                          <label for="Alamat">Alamat Instansi</label>
-                          <input type="text" class="form-control" id="alamat" placeholder="Jl. Lawu No. 385 B Karanganyar" disabled>
-                        </div>
-                        <div class="form-group">
-                          <label for="Lokasi">Kota/Kabupaten Instansi</label>
-                          <input type="text" class="form-control" id="lokasi" placeholder="Kabupaten Karanganyar" disabled>
-                        </div>
-                        <div class="form-group">
-                          <label for="Kode Pos">Kode Pos</label>
-                          <input type="text" class="form-control" id="kodepos" placeholder="57712" disabled>
-                        </div>
-                      </div>
-                      <div class="col">
-                        <div class="form-group">
-                          <label for="Faks">Faks Instansi</label>
-                          <input type="text" class="form-control" id="faks" placeholder="(0721) 495590" disabled>
-                        </div>
-                        <div class="form-group">
-                          <label for="Telepon">Telp Instansi</label>
-                          <input type="text" class="form-control" id="telepon" placeholder="(0271) 495039" disabled>
-                        </div>
-                      </div>
+                    <div class="col align-self-center">
+                      <a href="dataspt.php">
+                        <button type="button" class="btn btn-outline-dark btn-icon-text">
+                          <i class="ti-file btn-icon-prepend"></i>
+                          Lihat
+                        </button>
+                      </a>
                     </div>
-                    <hr>
-                    <div class="row">
-                      <div class="col">
-                        <div class="form-group">
-                          <label for="Pimpinan Tertinggi">Pimpinan Tertinggi Instansi</label>
-                          <input type="text" class="form-control" id="pimpinan" placeholder="Kepala Dinas" disabled>
-                        </div>
-                        <div class="form-group">
-                          <label for="Nama Pimpinan">Nama Pimpinan Tertinggi Instansi</label>
-                          <input type="text" class="form-control" id="namapimpinan" placeholder="Drs. Sujarno, M.Si." disabled>
-                        </div>
-                      </div>
-                      <div class="col">
-                        <div class="form-group">
-                          <label for="NIP Pimpinan">NIP Pimpinan Tertinggi Instansi</label>
-                          <input type="text" class="form-control" id="nippimpinan" placeholder="19630107 199003 1 004" disabled>
-                        </div>
-                        <div class="form-group">
-                          <label for="Jabatan Pimpinan">Jabatan Pimpinan Tertinggi Instansi</label>
-                          <input type="text" class="form-control" id="jabatanpimpinan" placeholder="Pembina Utama Muda" disabled>
-                        </div>
-                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row flex-grow">
+            <div class="col-md-6 grid-margin stretch-card">
+              <div class="card bg-success card-rounded">
+                <div class="card-body pb-3">
+                  <div class="row">
+                    <div class="col">
+                      <h4 class="card-title card-title-dash text-white mb-4">Data Penerimaan Uang</h4>
+                      <p class="text-light mb-1">Jumlah Data Penerimaan Uang</p>
+                      <h2 class="text-light">888</h2>
                     </div>
-                  </form>
+                    <div class="col align-self-center">
+                      <a href="datauang.php">
+                        <button type="button" class="btn btn-outline-dark btn-icon-text">
+                          <i class="ti-file btn-icon-prepend"></i>
+                          Lihat
+                        </button>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 grid-margin stretch-card">
+              <div class="card bg-warning card-rounded">
+                <div class="card-body pb-3">
+                  <div class="row">
+                    <div class="col">
+                      <h4 class="card-title card-title-dash text-dark mb-4">Data Pegawai</h4>
+                      <p class="status-summary-ight-white mb-1">Jumlah Data Pegawai</p>
+                      <h2 class="text-dark">555</h2>
+                    </div>
+                    <div class="col align-self-center">
+                      <a href="datapegawai.php">
+                        <button type="button" class="btn btn-outline-dark btn-icon-text">
+                          <i class="ti-file btn-icon-prepend"></i>
+                          Lihat
+                        </button>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
