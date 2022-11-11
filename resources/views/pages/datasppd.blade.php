@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('index')
 @section('title','Daftar Data SPPD')
 @section('sng','Data SPPD')
 @section('kpj','Surat Perintah Perjalanan Dinas')

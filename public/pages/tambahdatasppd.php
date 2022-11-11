@@ -346,14 +346,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
   <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
-<<<<<<< HEAD
-=======
   <script>
     $(document).ready( function () {
       $('#table_sppd').DataTable();
     } );
   </script>
->>>>>>> dcd5e9248fb21700d9d625f6b4fd03a10231fc36
   <!-- End custom js for this page-->
 </body>
 
