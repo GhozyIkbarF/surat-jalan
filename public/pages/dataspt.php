@@ -16,6 +16,8 @@
   <!-- endinject -->
   <!-- Plugin css for this page -->
   <link rel="stylesheet" href="../js/select.dataTables.min.css">
+  <!-- Multiple Select -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="../css/vertical-layout-light/style.css">
@@ -102,35 +104,16 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="datasppd.php">
-              <i class="mdi mdi mdi-file-multiple menu-icon"></i>
-              <span class="menu-title">Data SPT</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="datapegawai.php">
               <i class="mdi mdi-human-male-female menu-icon"></i>
               <span class="menu-title">Data Pegawai</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">
-              <i class="mdi mdi-cash-multiple menu-icon"></i>
-              <span class="menu-title">Data Biaya</span>
-            </a>
-          </li>
-          <li class="nav-item nav-category">Master Laporan</li>
-          <li class="nav-item">
-            <a class="nav-link" href="">
-              <i class="mdi mdi-paperclip menu-icon"></i>
-              <span class="menu-title">Data Laporan</span>
-            </a>
-          </li>
           <li class="nav-item nav-category">Master Setting</li>
           <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="datainstansi.php">
               <i class="mdi mdi-settings menu-icon"></i>
-              <span class="menu-title">Data Setting</span>
+              <span class="menu-title">Data Instansi</span>
             </a>
           </li>
         </ul>
@@ -147,15 +130,13 @@
                       <h4 class="card-title">Daftar Data SPT</h4>
                     </div>
                     <div>
-                      <a href="tambahdataspt.php">
-                        <button type="button" class="btn btn-success btn-md">
-                          Tambah Data
-                        </button>
-                      </a>
+                      <button type="button" class="btn btn-success btn-md" data-bs-toggle="modal" data-bs-target="#modaltambahspt">
+                        Tambah Data
+                      </button>
                     </div>
                   </div>
                   <div class="table-responsive mt-3">
-                    <table class="table table-striped table-bordered" id="table_sppd">
+                    <table class="table table-striped table-bordered" id="table_spt">
                       <thead>
                         <tr>
                           <td>No</td>
@@ -210,10 +191,10 @@
                               <button type="button" class="btn btn-md btn-primary">
                                 <i class="mdi mdi-printer"></i>
                               </button>
-                              <button type="button" class="btn btn-md btn-warning">
+                              <button type="button" class="btn btn-md btn-warning" data-bs-toggle="modal" data-bs-target="#modaleditspt">
                                 <i class="mdi mdi-tooltip-edit"></i>
                               </button>
-                              <button type="button" class="btn btn-md btn-danger">
+                              <button type="button" class="btn btn-md btn-danger" data-bs-toggle="modal" data-bs-target="#modalhapusspt">
                                 <i class="mdi mdi-delete"></i>
                               </button>
                             </div>
@@ -243,6 +224,191 @@
   </div>
   <!-- container-scroller -->
 
+  <!-- Modal Tambah SPT -->
+  <div class="modal fade" id="modaltambahspt" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Tambah Data SPT</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form class="forms-sample">
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6 grid-margin">
+              <div class="form-group">
+                <label for="dasarperintah">Dasar Perintah Tugas</label>
+                <input type="text" class="form-control" id="dasarperintah" placeholder="Tulis Dasar Perintah Tugas">
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <label>Pegawai yang Diperintah</label>
+                </div>
+                <div class="row">
+                  <select class="selectpicker" multiple data-live-search="true" placeholder="Pilih Pegawai">
+                    <option value="AL">Alabama</option>
+                    <option value="WY">Wyoming</option>
+                    <option value="AM">America</option>
+                    <option value="CA">Canada</option>
+                    <option value="RU">Russia</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="jabatan">Maksud Penugasan</label>
+                <input type="text" class="form-control" id="maksudtugas" placeholder="Tulis Maksud Penugasan">
+              </div>
+              <div class="form-group">
+                <label for="tgltugas">Hari, Tanggal Penugasan</label>
+                <input type="date" class="form-control" id="tgltugas" placeholder="Pilih Tanggal Penugasan">
+              </div>
+              <div class="form-group">
+                <label for="waktutugas">Waktu Penugasan (hari)</label>
+                <input type="text" class="form-control" id="waktutugas" placeholder="Tulis Waktu Penugasan">
+              </div>
+            </div>
+            <div class="col-md-6 grid-margin">
+              <div class="form-group">
+                <label for="tempatpenugasan">Tempat Penugasan</label>
+                <input type="text" class="form-control" id="tempatpenugasan" placeholder="Tulis Tempat Penugasan">
+              </div>
+              <div class="form-group">
+                <label for="tempatditetapkan">Tempat Ditetapkan</label>
+                <input type="text" class="form-control" id="tempatditetapkan" placeholder="Tulis Tempat Surat Ditetapkan">
+              </div>
+              <div class="form-group">
+                <label for="tglditetapkan">Hari, Tanggal Ditetapkan</label>
+                <input type="date" class="form-control" id="tglditetapkan" placeholder="Pilih Tanggal Surat Ditetapkan">
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <label>Yang Menetapkan</label>
+                </div>
+                <div class="row">
+                  <select class="selectpicker" multiple data-live-search="true" placeholder="Pilih Pegawai">
+                    <option value="AL">Alabama</option>
+                    <option value="WY">Wyoming</option>
+                    <option value="AM">America</option>
+                    <option value="CA">Canada</option>
+                    <option value="RU">Russia</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>
+          <button type="submit" class="btn btn-primary">Tambah</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Edit SPT -->
+  <div class="modal fade" id="modaleditspt" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Data SPT</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form class="forms-sample">
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6 grid-margin">
+              <div class="form-group">
+                <label for="dasarperintah">Dasar Perintah Tugas</label>
+                <input type="text" class="form-control" id="dasarperintah" placeholder="Tulis Dasar Perintah Tugas">
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <label>Pegawai yang Diperintah</label>
+                </div>
+                <div class="row">
+                  <select class="selectpicker" multiple data-live-search="true" placeholder="Pilih Pegawai">
+                    <option value="AL">Alabama</option>
+                    <option value="WY">Wyoming</option>
+                    <option value="AM">America</option>
+                    <option value="CA">Canada</option>
+                    <option value="RU">Russia</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="jabatan">Maksud Penugasan</label>
+                <input type="text" class="form-control" id="maksudtugas" placeholder="Tulis Maksud Penugasan">
+              </div>
+              <div class="form-group">
+                <label for="tgltugas">Hari, Tanggal Penugasan</label>
+                <input type="date" class="form-control" id="tgltugas" placeholder="Pilih Tanggal Penugasan">
+              </div>
+              <div class="form-group">
+                <label for="waktutugas">Waktu Penugasan (hari)</label>
+                <input type="text" class="form-control" id="waktutugas" placeholder="Tulis Waktu Penugasan">
+              </div>
+            </div>
+            <div class="col-md-6 grid-margin">
+              <div class="form-group">
+                <label for="tempatpenugasan">Tempat Penugasan</label>
+                <input type="text" class="form-control" id="tempatpenugasan" placeholder="Tulis Tempat Penugasan">
+              </div>
+              <div class="form-group">
+                <label for="tempatditetapkan">Tempat Ditetapkan</label>
+                <input type="text" class="form-control" id="tempatditetapkan" placeholder="Tulis Tempat Surat Ditetapkan">
+              </div>
+              <div class="form-group">
+                <label for="tglditetapkan">Hari, Tanggal Ditetapkan</label>
+                <input type="date" class="form-control" id="tglditetapkan" placeholder="Pilih Tanggal Surat Ditetapkan">
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <label>Yang Menetapkan</label>
+                </div>
+                <div class="row">
+                  <select class="selectpicker" multiple data-live-search="true" placeholder="Pilih Pegawai">
+                    <option value="AL">Alabama</option>
+                    <option value="WY">Wyoming</option>
+                    <option value="AM">America</option>
+                    <option value="CA">Canada</option>
+                    <option value="RU">Russia</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>
+          <button type="submit" class="btn btn-primary">Simpan</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Hapus SPT -->
+  <div class="modal fade" id="modalhapusspt" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Hapus Data SPT</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form class="forms-sample">
+        <div class="modal-body">
+          <p>Apakah anda yakin untuk menghapusnya?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>
+          <button type="submit" class="btn btn-danger">Hapus</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <!-- plugins:js -->
   <script src="../vendors/js/vendor.bundle.base.js"></script>
   <!-- endinject -->
@@ -263,13 +429,15 @@
   <script src="../js/jquery.cookie.js" type="text/javascript"></script>
   <script src="../js/dashboard.js"></script>
   <script src="../js/Chart.roundedBarCharts.js"></script>
+  <!-- Multiple Select -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/js/bootstrap-select.min.js"></script>
   <!-- datatables -->
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
   <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
   <script>
     $(document).ready( function () {
-      $('#table_sppd').DataTable();
+      $('#table_spt').DataTable();
     } );
   </script>
   <!-- End custom js for this page-->

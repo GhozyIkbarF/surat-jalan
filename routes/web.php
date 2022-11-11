@@ -18,14 +18,15 @@ Route::get('/', function () {
     return view('index');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/pdf1', [PdfController::class, 'index']);
 Route::get('/pdf2', [PdfController::class, 'pdf2']);
-Route::get('/datasppd', function () {
-    return view('pages.datasppd');
-});
-Route::resource('pegawai', PegawaiController::class);
 
+Route::get('/pdf3', [PdfController::class, 'pdf3']);
+
+
+Route::resource('pegawai', PegawaiController::class);
 require __DIR__ . '/auth.php';
