@@ -358,10 +358,10 @@ class PdfController extends Controller
         $this->pdf->Cell(295, 5, "Lokasi : Pendopo Tri Manunggal, Malanggaten, Kabkkramat, Tanggal 13 Agustus 2022", 0, 1, "C");
         $this->pdf->Ln(10);
         
-        $this->pdf->SetFont('Arial', '', 13);
-        $this->pdf->WriteHTML('<p align="center" >DAFTAR PENERIMAAN UANG PERJALANAN DINAS</p><br>');
-        $this->pdf->SetFont('Arial', '', 11);
-        $this->pdf->WriteHTML('<p align="center" >Sarasehan dan Renungan Ulang Janji Hari Pramuka ke-61 Tahun 2022</p><br><p align="center>Lokasi : Pendopo Tri Manunggal, Malanggaten, Kabkkramat, Tanggal 13 Agustus 2022</p>');
+        // $this->pdf->SetFont('Arial', '', 13);
+        // $this->pdf->WriteHTML('<p align="center" >DAFTAR PENERIMAAN UANG PERJALANAN DINAS</p><br>');
+        // $this->pdf->SetFont('Arial', '', 11);
+        // $this->pdf->WriteHTML('<p align="center" >Sarasehan dan Renungan Ulang Janji Hari Pramuka ke-61 Tahun 2022</p><br><p align="center>Lokasi : Pendopo Tri Manunggal, Malanggaten, Kabkkramat, Tanggal 13 Agustus 2022</p>');
 
         $this->pdf->SetFont('Arial', '', 11);
         $this->pdf->Cell(30, 5, "Kegiatan", 0, 0);
@@ -378,21 +378,24 @@ class PdfController extends Controller
         $this->pdf->MultiCell(200, 5, "aldgldjglsdjfglsjdflgjdlfjlsdfj", 0, 0);
         $this->pdf->Ln(5);
 
-        $this->pdf->SetWidths(Array(10,80,90,50,30,50,60,30));
         $this->pdf->SetFont('Arial', 'B', 12);
-        $this->pdf->Cell(10, 5, "NO", 0, 1, "C");
-        $this->pdf->Cell(70, 5, "Nama / NIP", 0, 1, "C");
-        $this->pdf->Cell(80, 5, "Jabatan / Pangkat / Gol. Eselon", 0, 1, "C");
-        $this->pdf->Cell(30, 5, "Uang Harian", 0, 1, "C");
-        $this->pdf->MultiCell(25, 5, "Uang Transport", 0, 1);
-        $this->pdf->Cell(30, 5, "Biaya Transport", 0, 1, "C");
-        $this->pdf->Cell(30, 5, "Penerimaan", 0, 1, "C");
-        $this->pdf->MultiCell(20, 5, "Tanda Tangan", 0, 1);
+        // $x = $this->pdf->GetX();
+        // $this->pdf->MultiCell(10, 5, "NO", 1, 0, "C");
+        // $this->pdf->SetX($x);
+        // $this->pdf->MultiCell(70, 5, "Nama / NIP", 1, 0, "C");
+        // $this->pdf->MultiCell(80, 5, "Jabatan / Pangkat / Gol. Eselon", 1, 0, "C");
+        // $this->pdf->MultiCell(35, 5, "Uang Harian", 1, 0, "C");
+        // $this->pdf->MultiCell(35, 5, "Uang Transport", 1, 0, "C");
+        // $this->pdf->MultiCell(30, 5, "Biaya Transport", 1, 0, "C");
+        // $this->pdf->MultiCell(30, 5, "Penerimaan", 1, 0, "C");
+        // $this->pdf->MultiCell(20, 5, "Tanda Tangan", 1, 0, "C");
 
+        $this->pdf->SetWidths(Array(10,70,80,40,30,40,40,30));
+        $this->pdf->SetAligns(Array("C","C","C","C","C","C","C","C"));
         $this->pdf->Row(Array('NO', 'Nama / NIP', 'Jabatan / Pangkat / Gol. Eselon', 'Uang Harian', 'Uang Transport',
         'Biaya Transport', 'Penerimaan', 'Tanda Tangan'));
         $this->pdf->SetFont('Arial', '', 12);
-        $this->pdf->WriteHTML('You can<br><p align="center" >center a line</p>and add a horizontal rule:<br><hr>');
+        // $this->pdf->WriteHTML('You can<br><p align="center" >center a line</p>and add a horizontal rule:<br><hr>');
        
 
         $this->pdf->Output();
