@@ -1,108 +1,96 @@
-@extends('layouts.main')
-@section('title','Daftar Data Pegawai')
-@section('sng','Data Pegawai')
-@section('kpj','Pegawai')
-@section('content')
-<div class="card">
-    <div class="card-body">
-      <div class="d-sm-flex justify-content-between align-items-center">
-        <div>
-          <h4 class="card-title">Daftar Data Pegawai</h4>
-        </div>
-        <div>
-          <a href="javascript:void(0)" class="btn btn-success btn-md tambah" id="createNewPegawai">
-            Tambah Data
-          </a>
-        </div>
-      </div>
-      <div class="table-responsive mt-3 w-full">
-        <table class="table table-striped table-bordered data-table"  style="width:100%;" >
-          <thead>
-            <tr>
-              <td>No</td>
-              <td>Nama</td>
-              <td>NIP</td>
-              <td>Jabatan</td>
-              <td>Pangkat</td>
-              <td>Golongan</td>
-              <td>Aksi</td>
-            </tr>
-          </thead>
-          <tbody id="table-posts">
-            @foreach($pegawai as $p)
-            <tr id="index_{{ $p->id }}">
-              <td>{{ $loop->iteration }}</td>
-                <td>{{ $p->name }}</td>
-                <td>{{ $p->nip }}</td>
-                <td>{{ $p->jabatan }}</td>
-                <td>{{ $p->pangkat }}</td>
-                <td>{{ $p->golongan }}</td>
-                <td class="text-center">
-                    <a href="javascript:void(0)" id="btn-edit-pegawai" data-id="{{ $p->id }}" class="btn btn-primary btn-sm">EDIT</a>
-                    <a href="javascript:void(0)" id="btn-deletpegawai" data-id="{{ $p->id }}" class="btn btn-danger btn-sm">DELETE</a>
-                </td>
-            </tr>
-            @endforeach
-        </tbody>
-        </table>
-<!-- Modal -->
-<div class="modal fade" id="ajaxModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="modelHeading">Tambah Pegawai</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form id="pegawaiForm" name="pegawaiForm" class="form-horizontal">
-          <input type="hidden" name="pegawai_id" id="pegawai_id">
-           <div class="form-group">
-               <label for="name" class="col-sm-2 control-label">Name</label>
-               <div class="col-sm-12">
-                   <input type="text" class="form-control" id="name" name="name" placeholder="Masukkan Nama" value="" maxlength="50" required="">
-               </div>
-           </div>
-           <div class="form-group">
-            <label for="nip" class="col-sm-2 control-label">NIP</label>
-            <div class="col-sm-12">
-                <input type="number" class="form-control" id="nip" name="nip" placeholder="Masukkan NIP" value="" maxlength="50" required="">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>Pegawai</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    @include('includes.style')
+</head>
+
+<body>
+    <div class="container-scroller">
+        <!-- partial:partials/_navbar.html -->
+        @include('includes.pegawai.navbar')
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper">
+            <!-- partial:partials/_sidebar.html -->
+            @include('includes.sidebar')
+            <!-- content -->
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <div class="row">
+                        <div class="col-sm-12 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-sm-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h4 class="card-title">Daftar Data Pegawai</h4>
+                                        </div>
+                                        <div>
+                                            <a href="javascript:void(0)" class="btn btn-success mb-2"
+                                                id="btn-create-pegawai">Tambah Pegawai</a>
+                                        </div>
+                                    </div>
+                                    <div class="table-responsive mt-3">
+                                        <table class="table table-striped table-bordered" style="text-align:center">
+                                            <thead>
+                                                <tr>
+                                                    {{-- <th>No</td> --}}
+                                                    <th>Nama</td>
+                                                    <th>NIP</td>
+                                                    <th>Jabatan</td>
+                                                    <th>Pangkat</td>
+                                                    <th>Golongan</td>
+                                                    <th>Aksi</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="table-pegawai">
+                                                @foreach ($Pegawai as $p)
+                                                    <tr>
+                                                        {{-- <td>{{ $loop->iteration }}</td> --}}
+                                                        <td>{{ $p->name }}</td>
+                                                        <td>{{ $p->nip }}</td>
+                                                        <td>{{ $p->jabatan }}</td>
+                                                        <td>{{ $p->pangkat }}</td>
+                                                        <td>{{ $p->golongan }}</td>
+                                                        <td class="text-center">
+                                                            <a href="javascript:void(0)" id="btn-edit-pegawai"
+                                                                data-id="{{ $p->id }}"
+                                                                class="btn btn-primary btn-sm"><i
+                                                                    class="mdi mdi-tooltip-edit"></i></a>
+                                                            <a href="javascript:void(0)" id="btn-delete-pegawai"
+                                                                data-id="{{ $p->id }}"
+                                                                class="btn btn-danger btn-sm"><i
+                                                                    class="mdi mdi-delete"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @include('components.pegawai.create-pegawai')
+                @include('components.pegawai.edit-pegawai')
+                @include('components.pegawai.delete-pegawai')
+                <!-- content-end -->
+                <!--partial:partials/footer -->
+                @include('includes.footer')
             </div>
-          </div>
-          <div class="form-group">
-            <label for="jabatan" class="col-sm-2 control-label">Jabatan</label>
-            <div class="col-sm-12">
-                <input type="text" class="form-control" id="jabatan" name="jabatan" placeholder="Masukkan Jabatan" value="" maxlength="50" required="">
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="pangkat" class="col-sm-2 control-label">Pangkat</label>
-            <div class="col-sm-12">
-                <input type="text" class="form-control" id="pangkat" name="pangkat" placeholder="Masukkan Pangkat" value="" maxlength="50" required="">
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="golongan" class="col-sm-2 control-label">Golongan</label>
-            <div class="col-sm-12">
-                <input type="text" class="form-control" id="golongan" name="golongan" placeholder="n golongan" value="" maxlength="50" required="">
-            </div>
-          </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-warning text-white" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-success"  id="saveBtn" value="create">Simpan</button>
-        </div>
-      </form>
     </div>
-  </div>
-</div>
-      </div>
-    </div>
-  </div>
-@endsection
+    <!-- container-scroller -->
 
+</body>
 
-
-
-
-
-
+</html>
