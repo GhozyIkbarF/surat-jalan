@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Biaya;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class BiayaController extends Controller
 {
@@ -14,7 +15,9 @@ class BiayaController extends Controller
      */
     public function index()
     {
-        return view('pages.datauang');
+        $Biaya = Biaya::latest()->get();
+
+        return view('pages.biaya', compact('Biaya'));
     }
 
     /**
@@ -24,7 +27,35 @@ class BiayaController extends Controller
      */
     public function create()
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'kegiatan'     => 'required',
+            'lokasi'   => 'required|unique:pegawais',
+            'tanggal'     => 'required',
+            'kode_rek'     => 'required',
+            ''     => 'required',
+        ]);
+
+        //check if validation fails
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 422);
+        }
+
+        //create pegawai
+        $pegawai = Pegawai::create([
+            'name'     => $request->name,
+            'nip'   => $request->nip,
+            'jabatan'   => $request->jabatan,
+            'pangkat'   => $request->pangkat,
+            'golongan'   => $request->golongan
+        ]);
+
+        //return response
+        return response()->json([
+            'success' => true,
+            'message' => 'Data Berhasil Disimpan!',
+            'data'    => $pegawai
+        ]);
+
     }
 
     /**
