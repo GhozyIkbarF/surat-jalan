@@ -341,7 +341,7 @@ class PdfController extends Controller
         $this->fpdf->AddPage('P', array(210, 330));
 
         // Kop Surat
-        // $this->fpdf->Image('karanganyarlogo.png', 10, 10, 20, 25);
+        // $this->fpdf->Image('logo.png', 10, 10, 189);
         $this->fpdf->SetFont('Arial', 'B', 14);
         $this->fpdf->Cell(0, 7, "PEMERINTAH KABUPATEN KARANGANYAR", 0, 1, "C");
         $this->fpdf->SetFont('Arial', 'B', 18);
