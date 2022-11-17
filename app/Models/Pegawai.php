@@ -12,4 +12,8 @@ class Pegawai extends Model
     protected $fillable = [
         'name', 'nip', 'jabatan', 'pangkat', 'golongan'
     ];
+    public function Biayas()
+    {
+        return $this->hasMany(Biaya::class);
+    }
 }
