@@ -30,5 +30,6 @@ Route::get('/pdf3', [PdfController::class, 'pdf3']);
 
 Route::resource('pegawai', PegawaiController::class)->middleware(['auth', 'verified']);
 Route::resource('biaya', BiayaController::class)->middleware(['auth', 'verified']);
-
+//log-viewers
+Route::get('log-viewers', [\Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'index']);
 require __DIR__ . '/auth.php';
