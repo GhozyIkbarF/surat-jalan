@@ -10,34 +10,34 @@
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="name" class="control-label">Name</label>
-                    <input type="text" class="form-control" id="name">
+                    <label for="name" class="control-label">Nama</label>
+                    <input type="text" class="form-control" id="name" placeholder="Tulis Nama">
                     <div class="alert alert-danger mt-2 d-none" role="alert" id="alert-name"></div>
                 </div>
                 <div class="form-group">
                     <label for="name" class="control-label">NIP</label>
-                    <input type="text" class="form-control" id="nip">
+                    <input type="text" class="form-control" id="nip" placeholder="Tulis NIP">
                     <div class="alert alert-danger mt-2 d-none" role="alert" id="alert-nip"></div>
                 </div>
                 <div class="form-group">
                     <label for="name" class="control-label">Jabatan</label>
-                    <input type="text" class="form-control" id="jabatan">
+                    <input type="text" class="form-control" id="jabatan" placeholder="Tulis Jabatan">
                     <div class="alert alert-danger mt-2 d-none" role="alert" id="alert-jabatan"></div>
                 </div>
                 <div class="form-group">
                     <label for="name" class="control-label">Pangkat</label>
-                    <input type="text" class="form-control" id="pangkat">
+                    <input type="text" class="form-control" id="pangkat" placeholder="Tulis Pangkat">
                     <div class="alert alert-danger mt-2 d-none" role="alert" id="alert-pangkat"></div>
                 </div>
                 <div class="form-group">
                     <label for="name" class="control-label">Golongan</label>
-                    <input type="text" class="form-control" id="golongan">
+                    <input type="text" class="form-control" id="golongan" placeholder="Tulis Golongan">
                     <div class="alert alert-danger mt-2 d-none" role="alert" id="alert-golongan"></div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">TUTUP</button>
-                <button type="button" class="btn btn-primary" id="store">SIMPAN</button>
+                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">BATAL</button>
+                <button type="button" class="btn btn-primary" id="store">TAMBAH</button>
             </div>
         </div>
     </div>
