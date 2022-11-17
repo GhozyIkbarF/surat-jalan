@@ -8,19 +8,37 @@
     </li>
     <li class="nav-item nav-category">Master Data</li>
     <li class="nav-item">
-      <a class="nav-link" href="{{ url('/sppd') }}">
+      <a class="nav-link" href="datasppd.php">
         <i class="mdi mdi mdi-file-multiple menu-icon"></i>
         <span class="menu-title">Data SPPD</span>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="{{ url('/spt') }}">
+      <a class="nav-link" href="dataspt.php">
+        <i class="mdi mdi mdi-file-multiple menu-icon"></i>
+        <span class="menu-title">Data SPT</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="datauang.php">
+        <i class="mdi mdi mdi-file-multiple menu-icon"></i>
+        <span class="menu-title">Data Penerimaan Uang</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="datasppd.php">
+        <i class="mdi mdi mdi-file-multiple menu-icon"></i>
+        <span class="menu-title">Data SPT</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="">
         <i class="mdi mdi-human-male-female menu-icon"></i>
         <span class="menu-title">Data Pegawai</span>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="{{ url('/biaya') }}">
+      <a class="nav-link" href="">
         <i class="mdi mdi-cash-multiple menu-icon"></i>
         <span class="menu-title">Data Biaya</span>
       </a>
