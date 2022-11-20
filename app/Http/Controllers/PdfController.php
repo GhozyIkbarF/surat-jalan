@@ -10,114 +10,114 @@ use Illuminate\Support\Arr;
 
 class PDF_MC_Table extends FPDF
 {
-var $widths;
-var $aligns;
+    var $widths;
+    var $aligns;
 
-var $B=0;
-var $I=0;
-var $U=0;
-var $HREF='';
-var $ALIGN='';
+    var $B=0;
+    var $I=0;
+    var $U=0;
+    var $HREF='';
+    var $ALIGN='';
 
-function SetWidths($w)
-{
-    //Set the array of column widths
-    $this->widths=$w;
-}
-
-function SetAligns($a)
-{
-    //Set the array of column alignments
-    $this->aligns=$a;
-}
-
-function Row($data)
-{
-    //Calculate the height of the row
-    $nb=0;
-    for($i=0;$i<count($data);$i++)
-        $nb=max($nb,$this->NbLines($this->widths[$i],$data[$i]));
-    $h=5*$nb;
-    //Issue a page break first if needed
-    $this->CheckPageBreak($h);
-    //Draw the cells of the row
-    for($i=0;$i<count($data);$i++)
+    function SetWidths($w)
     {
-        $w=$this->widths[$i];
-        $a=isset($this->aligns[$i]) ? $this->aligns[$i] : 'L';
-        //Save the current position
-        $x=$this->GetX();
-        $y=$this->GetY();
-        //Draw the border
-        $this->Rect($x,$y,$w,$h);
-        //Print the text
-        $this->MultiCell($w,5,$data[$i],0,$a);
-        //Put the position to the right of the cell
-        $this->SetXY($x+$w,$y);
+        //Set the array of column widths
+        $this->widths=$w;
     }
-    //Go to the next line
-    $this->Ln($h);
-}
 
-function CheckPageBreak($h)
-{
-    //If the height h would cause an overflow, add a new page immediately
-    if($this->GetY()+$h>$this->PageBreakTrigger)
-        $this->AddPage($this->CurOrientation);
-}
-
-function NbLines($w,$txt)
-{
-    //Computes the number of lines a MultiCell of width w will take
-    $cw=&$this->CurrentFont['cw'];
-    if($w==0)
-        $w=$this->w-$this->rMargin-$this->x;
-    $wmax=($w-2*$this->cMargin)*1000/$this->FontSize;
-    $s=str_replace("\r",'',$txt);
-    $nb=strlen($s);
-    if($nb>0 and $s[$nb-1]=="\n")
-        $nb--;
-    $sep=-1;
-    $i=0;
-    $j=0;
-    $l=0;
-    $nl=1;
-    while($i<$nb)
+    function SetAligns($a)
     {
-        $c=$s[$i];
-        if($c=="\n")
+        //Set the array of column alignments
+        $this->aligns=$a;
+    }
+
+    function Row($data)
+    {
+        //Calculate the height of the row
+        $nb=0;
+        for($i=0;$i<count($data);$i++)
+            $nb=max($nb,$this->NbLines($this->widths[$i],$data[$i]));
+        $h=5*$nb;
+        //Issue a page break first if needed
+        $this->CheckPageBreak($h);
+        //Draw the cells of the row
+        for($i=0;$i<count($data);$i++)
         {
-            $i++;
-            $sep=-1;
-            $j=$i;
-            $l=0;
-            $nl++;
-            continue;
+            $w=$this->widths[$i];
+            $a=isset($this->aligns[$i]) ? $this->aligns[$i] : 'L';
+            //Save the current position
+            $x=$this->GetX();
+            $y=$this->GetY();
+            //Draw the border
+            $this->Rect($x,$y,$w,$h);
+            //Print the text
+            $this->MultiCell($w,5,$data[$i],0,$a);
+            //Put the position to the right of the cell
+            $this->SetXY($x+$w,$y);
         }
-        if($c==' ')
-            $sep=$i;
-        $l+=$cw[$c];
-        if($l>$wmax)
+        //Go to the next line
+        $this->Ln($h);
+    }
+
+    function CheckPageBreak($h)
+    {
+        //If the height h would cause an overflow, add a new page immediately
+        if($this->GetY()+$h>$this->PageBreakTrigger)
+            $this->AddPage($this->CurOrientation);
+    }
+
+    function NbLines($w,$txt)
+    {
+        //Computes the number of lines a MultiCell of width w will take
+        $cw=&$this->CurrentFont['cw'];
+        if($w==0)
+            $w=$this->w-$this->rMargin-$this->x;
+        $wmax=($w-2*$this->cMargin)*1000/$this->FontSize;
+        $s=str_replace("\r",'',$txt);
+        $nb=strlen($s);
+        if($nb>0 and $s[$nb-1]=="\n")
+            $nb--;
+        $sep=-1;
+        $i=0;
+        $j=0;
+        $l=0;
+        $nl=1;
+        while($i<$nb)
         {
-            if($sep==-1)
+            $c=$s[$i];
+            if($c=="\n")
             {
-                if($i==$j)
-                    $i++;
+                $i++;
+                $sep=-1;
+                $j=$i;
+                $l=0;
+                $nl++;
+                continue;
+            }
+            if($c==' ')
+                $sep=$i;
+            $l+=$cw[$c];
+            if($l>$wmax)
+            {
+                if($sep==-1)
+                {
+                    if($i==$j)
+                        $i++;
+                }
+                else
+                    $i=$sep+1;
+                $sep=-1;
+                $j=$i;
+                $l=0;
+                $nl++;
             }
             else
-                $i=$sep+1;
-            $sep=-1;
-            $j=$i;
-            $l=0;
-            $nl++;
+                $i++;
         }
-        else
-            $i++;
+        return $nl;
     }
-    return $nl;
-}
 
-function WriteHTML($html)
+    function WriteHTML($html)
     {
         //HTML parser
         $html=str_replace("\n",' ',$html);
@@ -214,8 +214,355 @@ function WriteHTML($html)
         $this->SetStyle('U',false);
         $this->SetTextColor(0);
     }
-}
 
+    function Kop($h1, $h2, $h3, $h4)
+    {
+        // Kop
+        $this->SetFont('Arial', 'B', 14);
+        $this->Cell(0, 7, $h1, 0, 1, "C");
+        $this->SetFont('Arial', 'B', 18);
+        $this->Cell(0, 7, $h2, 0, 1, "C");
+        $this->SetFont('Arial', '', 10);
+        $this->Cell(0, 5, $h3, 0, 1, "C");
+        $this->Cell(0, 5, $h4, 0, 1, "C");
+
+        // Garis
+        $this->SetLineWidth(1);
+        $this->Line(10, 35, 200, 35);
+        $this->SetLineWidth(0);
+        $this->Line(10, 36, 200, 36);
+        $this->Ln(7);
+    }
+
+    function Dasar($dasar)
+    {
+        $this->Cell(30, 5, 'Dasar', 0, 0);
+        $this->Cell(5, 5, ':', 0, 0);
+        $this->MultiCell(0, 5, $dasar, 0);
+        $this->Ln(10);
+    }
+
+    function Pegawai($nama1, $pangkat1, $nip1, $jabatan1, $nama2, $pangkat2, $nip2, $jabatan2, $nama3, $pangkat3, $nip3, $jabatan3)
+    {
+        $this->Cell(5, 5, '1.', 0, 0);
+        $this->Cell(45, 5, 'Nama', 0, 0);
+        $this->Cell(5, 5, ':', 0, 0);
+        $this->Cell(0, 5, $nama1, 0, 1);
+
+        $this->Cell(40, 5, "", 0, 0);
+        $this->Cell(45, 5, 'Pangkat / Gol Ruang', 0, 0);
+        $this->Cell(5, 5, ':', 0, 0);
+        $this->Cell(0, 5, $pangkat1, 0, 1);
+
+        $this->Cell(40, 5, "", 0, 0);
+        $this->Cell(45, 5, 'NIP', 0, 0);
+        $this->Cell(5, 5, ':', 0, 0);
+        $this->Cell(0, 5, $nip1, 0, 1);
+
+        $this->Cell(40, 5, "", 0, 0);
+        $this->Cell(45, 5, 'Jabatan', 0, 0);
+        $this->Cell(5, 5, ':', 0, 0);
+        $this->Cell(0, 5, $jabatan1, 0, 1);
+        $this->Ln(5);
+
+        $this->Cell(35, 5, "", 0, 0);
+        $this->Cell(5, 5, '2.', 0, 0);
+        $this->Cell(45, 5, 'Nama', 0, 0);
+        $this->Cell(5, 5, ':', 0, 0);
+        $this->Cell(0, 5, $nama2, 0, 1);
+
+        $this->Cell(40, 5, "", 0, 0);
+        $this->Cell(45, 5, 'Pangkat / Gol Ruang', 0, 0);
+        $this->Cell(5, 5, ':', 0, 0);
+        $this->Cell(0, 5, $pangkat2, 0, 1);
+
+        $this->Cell(40, 5, "", 0, 0);
+        $this->Cell(45, 5, 'NIP', 0, 0);
+        $this->Cell(5, 5, ':', 0, 0);
+        $this->Cell(0, 5, $nip2, 0, 1);
+
+        $this->Cell(40, 5, "", 0, 0);
+        $this->Cell(45, 5, 'Jabatan', 0, 0);
+        $this->Cell(5, 5, ':', 0, 0);
+        $this->Cell(0, 5, $jabatan2, 0, 1);
+        $this->Ln(5);
+
+        $this->Cell(35, 5, "", 0, 0);
+        $this->Cell(5, 5, '3.', 0, 0);
+        $this->Cell(45, 5, 'Nama', 0, 0);
+        $this->Cell(5, 5, ':', 0, 0);
+        $this->Cell(0, 5, $nama3, 0, 1);
+
+        $this->Cell(40, 5, "", 0, 0);
+        $this->Cell(45, 5, 'Pangkat / Gol Ruang', 0, 0);
+        $this->Cell(5, 5, ':', 0, 0);
+        $this->Cell(0, 5, $pangkat3, 0, 1);
+
+        $this->Cell(40, 5, "", 0, 0);
+        $this->Cell(45, 5, 'NIP', 0, 0);
+        $this->Cell(5, 5, ':', 0, 0);
+        $this->Cell(0, 5, $nip3, 0, 1);
+
+        $this->Cell(40, 5, "", 0, 0);
+        $this->Cell(45, 5, 'Jabatan', 0, 0);
+        $this->Cell(5, 5, ':', 0, 0);
+        $this->Cell(0, 5, $jabatan3, 0, 1);
+        $this->Ln(5);
+    }
+
+    function Untuk($untuk, $tanggal, $waktu, $tempat)
+    {
+        $this->Cell(30, 5, 'Untuk', 0, 0);
+        $this->Cell(5, 5, ':', 0, 0);
+        $this->MultiCell(0, 5, $untuk, 0);
+        $this->Cell(35, 5, '', 0, 0);
+
+        $this->Cell(50, 5, 'Hari / Tanggal', 0, 0);
+        $this->Cell(5, 5, ':', 0, 0);
+        $this->Cell(0, 5, $tanggal, 0, 1);
+        $this->Cell(35, 5, '', 0, 0);
+
+        $this->Cell(50, 5, 'Waktu', 0, 0);
+        $this->Cell(5, 5, ':', 0, 0);
+        $this->Cell(0, 5, $waktu, 0, 1);
+        $this->Cell(35, 5, '', 0, 0);
+
+        $this->Cell(50, 5, 'Tempat', 0, 0);
+        $this->Cell(5, 5, ':', 0, 0);
+        $this->MultiCell(0, 5, $tempat, 0);
+        $this->Ln(5);
+    }
+
+    function TTD($tempat, $tanggal, $bu)
+    {
+        $this->Cell(69, 5, "", 0, 0);
+        $this->Cell(30, 5, "Ditetapkan di", 0, 0);
+        $this->Cell(5, 5, ":", 0, 0);
+        $this->Cell(0, 5, $tempat, 0, 1);
+        
+        $this->Cell(69, 5, "", 0, 0);
+        $this->Cell(30, 5, "Pada tanggal", 0, 0);
+        $this->Cell(5, 5, ":", 0, 0);
+        $this->Cell(0, 5, $tanggal, 0, 1);
+        $this->Ln(5);
+
+        $this->Cell(62, 5, "", 0, 0);
+        $this->Cell(7, 5, "Plt.", 0, 0);
+        $this->MultiCell(0, 5, "KEPALA DINAS KOMUNIKASI DAN INFORMATIKA ASISTEN ADMINISTRASI UMUM SEKRETARIS DAERAH", 0, 1);
+        $this->Ln(20);
+
+        $this->SetFont('Arial', $bu, 12);
+        $this->Cell(69, 5, "", 0, 0);
+        $this->Cell(0, 5, "Drs. SUJARNO, M.Si.", 0, 1);
+
+        $this->Cell(69, 5, "", 0, 0);
+        $this->SetFont('Arial', '', 12);
+        $this->Cell(0, 5, "Pembina Utama Muda", 0, 1);
+        
+        $this->Cell(69, 5, "", 0, 0);
+        $this->Cell(0, 5, "NIP. 19630107 199003 1 004", 0, 1);
+    }
+
+    function Lembar($lembar, $kode, $nomor)
+    {
+        $this->SetFont('Arial', '', 12);
+        $this->Cell(100, 5, "", 0, 0);
+        $this->Cell(25, 5, "Lembar ke", 0, 0);
+        $this->Cell(5, 5, ":", 0, 0);
+        $this->Cell(0, 5, "$lembar", 0, 1);
+        
+        $this->Cell(100, 5, "", 0, 0);
+        $this->Cell(25, 5, "Kode No", 0, 0);
+        $this->Cell(5, 5, ":", 0, 0);
+        $this->Cell(0, 5, "$kode", 0, 1);
+        
+        $this->Cell(100, 5, "", 0, 0);
+        $this->Cell(25, 5, "Nomor", 0, 0);
+        $this->Cell(5, 5, ":", 0, 0);
+        $this->Cell(0, 5, "$nomor", 0, 1);
+        $this->Ln(10);
+    }
+
+    function Tabel($pejabat, $pegawai, $pangkat, $jabatan, $tingkat, $maksud, $kendaraan, $berangkat, $tujuan, $lama, $tglberangkat, $tglkembali, $instansi, $anggaran, $keterangan)
+    {
+        $this->SetWidths(Array(10, 65, 95)); // Total width 175
+        $this->Row(Array('1.', 'Pejabat yang memberi perintah', $pejabat));
+        $this->Row(Array('2.', 'Nama / NIP Pegawai yang diperintah', $pegawai));
+        $this->Row(Array('3.', 'a. Pangkat dan Golongan menurut PP Np. 6 Tahun 1997', $pangkat));
+        $this->Row(Array('', 'b. Jabatan', $jabatan));
+        $this->Row(Array('', 'c. Tingkat menurut peraturan perjalanan', $tingkat));
+        $this->Row(Array('4.', 'Maksud Perjalanan', $maksud));
+        $this->Row(Array('5.', 'Alat angkut yang dipergunakan', $kendaraan));
+        $this->Row(Array('6.', 'a. Tempat berangkat', $berangkat));
+        $this->Row(Array('', 'b. Tempat tujuan', $tujuan));
+        $this->Row(Array('7.', 'a. Lamanya Perjalanan Dinas', $lama));
+        $this->Row(Array('', 'b. Tanggal berangkat', $tglberangkat));
+        $this->Row(Array('', 'c. Tanggal harus kembali', $tglkembali));
+        $this->Row(Array('8.', 'Pengikut / NIP', '1. Suparno / 19731103 199803 1 012 2. Yahya Fathoni Amri, S.Kom. / -'));
+        $this->Row(Array('9.', 'Pembebanan Anggaran', ''));
+        $this->Row(Array('', 'a. Instansi', $instansi));
+        $this->Row(Array('', 'b. Mata Anggaran', $anggaran));
+        $this->Row(Array('10.', 'Keterangan lain-lain', $keterangan));
+        $this->Ln(10);
+    }
+
+    function RomawiI($no, $dari, $tgl, $ke)
+    {
+        $this->Cell(75, 5, "", 0, 0);
+        $this->Cell(7, 5, "I.", 0, 0);
+        $this->Cell(43, 5, "SPPD No", 0, 0);
+        $this->Cell(7, 5, ":", 0, 0);
+        $this->Cell(0, 5, $no, 0, 1);
+
+        $this->Cell(82, 5, "", 0, 0);
+        $this->Cell(0, 5, "Berangkat dari", 0, 1);
+
+        $this->Cell(82, 5, "", 0, 0);
+        $this->Cell(43, 5, "(tempat kedudukan)", 0, 0);
+        $this->Cell(7, 5, ":", 0, 0);
+        $this->Cell(0, 5, $dari, 0, 1);
+
+        $this->Cell(82, 5, "", 0, 0);
+        $this->Cell(43, 5, "Pada Tanggal", 0, 0);
+        $this->Cell(7, 5, ":", 0, 0);
+        $this->Cell(0, 5, $tgl, 0, 1);
+
+        $this->Cell(82, 5, "", 0, 0);
+        $this->Cell(43, 5, "Ke", 0, 0);
+        $this->Cell(7, 5, ":", 0, 0);
+        $this->Cell(0, 5, $ke, 0, 1);
+        $this->Ln(5);
+    }
+
+    function RomawiII($tiba, $tgltiba, $dari, $ke, $tgldari)
+    {
+        $this->Cell(7, 5, "II.", 0, 0);
+        $this->Cell(30, 5, "Tiba di", 0, 0);
+        $this->Cell(7, 5, ":", 0, 0);
+        $this->Cell(51, 5, $tiba, 0, 0);
+        $this->Cell(30, 5, "Berangkat dari", 0, 0);
+        $this->Cell(7, 5, ":", 0, 0);
+        $this->Cell(0, 5, $dari, 0, 1);
+
+        $this->Cell(7, 5, "", 0, 0);
+        $this->Cell(30, 5, "Pada Tanggal", 0, 0);
+        $this->Cell(7, 5, ":", 0, 0);
+        $this->Cell(51, 5, $tgltiba, 0, 0);
+        $this->Cell(30, 5, "Ke", 0, 0);
+        $this->Cell(7, 5, ":", 0, 0);
+        $this->Cell(0, 5, $ke, 0, 1);
+
+        $this->Cell(95, 5, "", 0, 0);
+        $this->Cell(30, 5, "Pada Tanggal", 0, 0);
+        $this->Cell(7, 5, ":", 0, 0);
+        $this->Cell(0, 5, $tgldari, 0, 1);
+        $this->Ln(15);
+
+        $this->Cell(7, 5, "", 0, 0);
+        $this->Cell(88, 5, "(............................................................)", 0, 0);
+        $this->Cell(0, 5, "(............................................................)", 0, 1);
+
+        $this->Cell(7, 5, "", 0, 0);
+        $this->Cell(88, 5, "NIP.", 0, 0);
+        $this->Cell(0, 5, "NIP.", 0, 1);
+        $this->Ln(5);
+    }
+
+    function RomawiIII($tiba, $tgltiba, $dari, $ke, $tgldari)
+    {
+        $this->Cell(7, 5, "III.", 0, 0);
+        $this->Cell(30, 5, "Tiba di", 0, 0);
+        $this->Cell(7, 5, ":", 0, 0);
+        $this->Cell(51, 5, $tiba, 0, 0);
+        $this->Cell(30, 5, "Berangkat dari", 0, 0);
+        $this->Cell(7, 5, ":", 0, 0);
+        $this->Cell(0, 5, $dari, 0, 1);
+
+        $this->Cell(7, 5, "", 0, 0);
+        $this->Cell(30, 5, "Pada Tanggal", 0, 0);
+        $this->Cell(7, 5, ":", 0, 0);
+        $this->Cell(51, 5, $tgltiba, 0, 0);
+        $this->Cell(30, 5, "Ke", 0, 0);
+        $this->Cell(7, 5, ":", 0, 0);
+        $this->Cell(0, 5, $ke, 0, 1);
+
+        $this->Cell(95, 5, "", 0, 0);
+        $this->Cell(30, 5, "Pada Tanggal", 0, 0);
+        $this->Cell(7, 5, ":", 0, 0);
+        $this->Cell(0, 5, $tgldari, 0, 1);
+        $this->Ln(15);
+
+        $this->Cell(7, 5, "", 0, 0);
+        $this->Cell(88, 5, "(............................................................)", 0, 0);
+        $this->Cell(0, 5, "(............................................................)", 0, 1);
+
+        $this->Cell(7, 5, "", 0, 0);
+        $this->Cell(88, 5, "NIP.", 0, 0);
+        $this->Cell(0, 5, "NIP.", 0, 1);
+        $this->Ln(5);
+    }
+
+    function RomawiIV($tiba, $tgltiba, $dari, $ke, $tgldari)
+    {
+        $this->Cell(7, 5, "IV.", 0, 0);
+        $this->Cell(30, 5, "Tiba di", 0, 0);
+        $this->Cell(7, 5, ":", 0, 0);
+        $this->Cell(51, 5, $tiba, 0, 0);
+        $this->Cell(30, 5, "Berangkat dari", 0, 0);
+        $this->Cell(7, 5, ":", 0, 0);
+        $this->Cell(0, 5, $dari, 0, 1);
+
+        $this->Cell(7, 5, "", 0, 0);
+        $this->Cell(30, 5, "Pada Tanggal", 0, 0);
+        $this->Cell(7, 5, ":", 0, 0);
+        $this->Cell(51, 5, $tgltiba, 0, 0);
+        $this->Cell(30, 5, "Ke", 0, 0);
+        $this->Cell(7, 5, ":", 0, 0);
+        $this->Cell(0, 5, $ke, 0, 1);
+
+        $this->Cell(95, 5, "", 0, 0);
+        $this->Cell(30, 5, "Pada Tanggal", 0, 0);
+        $this->Cell(7, 5, ":", 0, 0);
+        $this->Cell(0, 5, $tgldari, 0, 1);
+        $this->Ln(15);
+
+        $this->Cell(7, 5, "", 0, 0);
+        $this->Cell(88, 5, "(............................................................)", 0, 0);
+        $this->Cell(0, 5, "(............................................................)", 0, 1);
+
+        $this->Cell(7, 5, "", 0, 0);
+        $this->Cell(88, 5, "NIP.", 0, 0);
+        $this->Cell(0, 5, "NIP.", 0, 1);
+    }
+
+    function RomawiV($tiba, $tgl)
+    {
+        $this->Cell(70, 5, "", 0, 0);
+        $this->Cell(7, 5, "V.", 0, 0);
+        $this->Cell(43, 5, "Tiba kembali di", 0, 0);
+        $this->Cell(7, 5, ":", 0, 0);
+        $this->Cell(0, 5, $tiba, 0, 1);
+
+        $this->Cell(77, 5, "", 0, 0);
+        $this->Cell(43, 5, "Pada tanggal", 0, 0);
+        $this->Cell(7, 5, ":", 0, 0);
+        $this->Cell(0, 5, $tgl, 0, 1);
+
+        $this->Cell(77, 5, "", 0, 0);
+        $this->MultiCell(0, 5, "Telah diperiksa, dengan keterangan bahwa perjalanan tersebut diatas benar dilakukan atas perintahnya dan semata-mata untuk kepentingan jabatan dalam waktu yang sesingkat-singkatnya.", 0, 1);
+        $this->Ln(5);
+    }
+
+    function Judul($kegiatan, $lokasi)
+    {
+        $this->SetFont('Arial', '', 14);
+        $this->Cell(0, 7, "PEMERINTAH KABUPATEN KARANGANYAR", 0, 1, "C");
+        $this->SetFont('Arial', '', 12);
+        $this->Cell(0, 5, $kegiatan, 0, 1, "C");
+        $this->Cell(0, 5, "Lokasi: ". $lokasi, 0, 1, "C");
+        $this->Ln(5);
+    }
+}
 
 class PdfController extends Controller
 {
@@ -232,102 +579,45 @@ class PdfController extends Controller
         $this->fpdf->SetMargins(20, 7.5, 20);
         $this->fpdf->AddPage('P', array(210, 330));
 
-        // Kop Surat
+        // Kop Surat dan Garis Dua
         // $this->fpdf->Image('karanganyarlogo.png', 10, 10, 20, 25);
-        $this->fpdf->SetFont('Arial', 'B', 14);
-        $this->fpdf->Cell(0, 7, "PEMERINTAH KABUPATEN KARANGANYAR", 0, 1, "C");
-        $this->fpdf->SetFont('Arial', 'B', 18);
-        $this->fpdf->Cell(0, 7, "DINAS KOMUNIKASI DAN INFORMATIKA", 0, 1, "C");
-        $this->fpdf->SetFont('Arial', '', 10);
-        $this->fpdf->Cell(0, 5, "Alamat : Jl. Lawu No. 385 B Karanganyar  Telepon (0271) 495039 ext. 228   Faks. (0271) 495590", 0, 1, "C");
-        $this->fpdf->Cell(0, 5, "Website : www.karanganyarkab.go.id    E-mail : diskominfo@karanganyarkab.go.id   Kode Pos 57712", 0, 1, "C");
+        $this->fpdf->Kop("PEMERINTAH KABUPATEN KARANGANYAR", "DINAS KOMUNIKASI DAN INFORMATIKA", "Alamat : Jl. Lawu No. 385 B Karanganyar  Telepon (0271) 495039 ext. 228   Faks. (0271) 495590", "Website : www.karanganyarkab.go.id    E-mail : diskominfo@karanganyarkab.go.id   Kode Pos 57712");
 
-        // Garis Dua
-        $this->fpdf->SetLineWidth(1);
-        $this->fpdf->Line(10, 35, 205, 35);
-        $this->fpdf->SetLineWidth(0);
-        $this->fpdf->Line(10, 36, 205, 36);
-        $this->fpdf->Ln(7);
-
-        // Surat Perintah Tugas
+        // Judul Surat Perintah Tugas
         $this->fpdf->SetFont('Arial', 'BU', 12);
         $this->fpdf->Cell(0, 7, "SURAT PERINTAH TUGAS", 0, 1, "C");
         $this->fpdf->SetFont('Arial', '', 12);
-        $this->fpdf->Cell(60, 7, "", 0, 0);
+        $this->fpdf->Cell(57, 7, "", 0, 0);
         $this->fpdf->Cell(0, 7, "Nomor :", 0, 0);
         $this->fpdf->Ln(15);
 
         // Dasar
-        $this->fpdf->Cell(30, 5, 'Dasar', 0, 0);
-        $this->fpdf->Cell(5, 5, ':', 0, 0);
-        $this->fpdf->MultiCell(0, 5, 'Dokumen Pelaksanaan Anggaran (DPA) Dinas Komunikasi dan Informatika Kabupaten Karanganyar TA. 2022, Sub Kegiatan Pengembangan dan Pengelolaan Ekosistem Kabupaten/Kota Cerdas, dan Kota Cerdas No. Rekening : 2.16.03.2.02.09.5.1.02.04.01.0001', 0);
-        $this->fpdf->Ln(10);
+        $this->fpdf->Dasar('Perintah Plt. Kepala Dinas Komunikasi dan Informatika Kabupaten Karanganyar tanggal 13 Agustus 2022');
 
         // Memerintahkan
         $this->fpdf->SetFont('Arial', 'B', 12);
         $this->fpdf->Cell(0, 5, "MEMERINTAHKAN :", 0, 1, "C");
         $this->fpdf->Ln(10);
 
+        // Kepada
         $this->fpdf->SetFont('Arial', '', 12);
         $this->fpdf->Cell(30, 5, 'Kepada', 0, 0);
-        $this->fpdf->Cell(5, 5, ':', 0, 0, "C");
-        $this->fpdf->MultiCell(0, 5, 'Terlampir', 0, 0);
-        $this->fpdf->Ln(10);
-
-        $this->fpdf->Cell(30, 5, 'Untuk', 0, 0);
         $this->fpdf->Cell(5, 5, ':', 0, 0);
-        $this->fpdf->MultiCell(0, 5, 'Mengikuti kunjungan kerja dalam rangka Sharing Knowledge Dan Evaluasi Pelaksanaan Indeks SPBE tahun 2022 di Dinas Komunikasi dan Informatika (Diskominfo) Kabupaten Bantul, serta Persiapan Pelaksanaan Penilaian Program Smartcity di Dinas Komunikasi, dan Informatika (Diskominfo) Kabupaten Gunung Kidul pada :', 0);
-        $this->fpdf->Cell(35, 5, '', 0, 0);
 
-        $this->fpdf->Cell(57, 5, 'Hari / Tanggal', 0, 0);
-        $this->fpdf->Cell(5, 5, ':', 0, 0);
-        $this->fpdf->Cell(0, 5, 'Senin - Selasa / 13 -14 Juni 2022', 0, 1);
-        $this->fpdf->Cell(35, 5, '', 0, 0);
+        $this->fpdf->Pegawai('Hartono, S.Sos., M.M.', 'Pembina / IV a', '19691015', 'Kepala Bidang Tata Kelola Informatika', 'Hartono, S.Sos., M.M.', 'Pembina / IV a', '19691015', 'Kepala Bidang Tata Kelola Informatika', 'Hartono, S.Sos., M.M.', 'Pembina / IV a', '19691015', 'Kepala Bidang Tata Kelola Informatika', );
 
-        $this->fpdf->Cell(57, 5, 'Waktu', 0, 0);
-        $this->fpdf->Cell(5, 5, ':', 0, 0);
-        $this->fpdf->Cell(0, 5, '07.30 WIB s/d selesai', 0, 1);
-        $this->fpdf->Cell(35, 5, '', 0, 0);
-
-        $this->fpdf->Cell(57, 5, 'Tempat', 0, 0);
-        $this->fpdf->Cell(5, 5, ':', 0, 0);
-        $this->fpdf->MultiCell(0, 5, 'Diskominfo Kabupaten Bantul dan Diskominfo Kabupaten Gunung Kidul', 0);
-        $this->fpdf->Ln(5);
+        // Untuk
+        $this->fpdf->Untuk('Sarasehan dan Renungan Ulang Janji Hari Pramuka ke-61 Tahun 2022 yang dilaksanakan pada', 'Senin - Selasa / 13 -14 Juni 2022', '07.30 WIB s/d selesai', 'Diskominfo Kabupaten Bantul dan Diskominfo Kabupaten Gunung Kidul');
 
         // Dengan Ketentuan
         $this->fpdf->Cell(0, 5, 'Dengan ketentuan : ', 0, 1);
         $this->fpdf->MultiCell(0, 5, 'Setelah selesai melaksanakan tugas segera melaporkan hasil pelaksanaan tugas kepada atasan.', 0);
-        $this->fpdf->Ln(5);
 
         $this->fpdf->Cell(0, 5, "Demikian untuk dilaksanakan sebagaimana mestinya.", 0, 1, "C");
-        $this->fpdf->Ln(20);
+        $this->fpdf->Ln(15);
 
         // Tanda Tangan
-        $this->fpdf->Cell(75, 5, '', 0, 0);
-        $this->fpdf->Cell(27, 5, 'Ditetapkan di', 0, 0);
-        $this->fpdf->Cell(5, 5, ':', 0, 0);
-        $this->fpdf->Cell(0, 5, 'Karanganyar', 0, 1);
-
-        $this->fpdf->Cell(75, 5, '', 0, 0);
-        $this->fpdf->Cell(27, 5, 'Pada tanggal', 0, 0);
-        $this->fpdf->Cell(5, 5, ':', 0, 0);
-        $this->fpdf->Cell(0, 5, '10 Juni 2022', 0, 1);
-        $this->fpdf->Ln(5);
-
-        $this->fpdf->Cell(75, 5, '', 0, 0);
-        $this->fpdf->MultiCell(0, 5, 'KEPALA DINAS KOMUNIKASI DAN INFORMATIKA KABUPATEN KARANGANYAR', 0, 0);
-        $this->fpdf->Ln(25);
-
-        $this->fpdf->Cell(75, 5, '', 0, 0);
-        $this->fpdf->SetFont('Arial', 'BU', 12);
-        $this->fpdf->Cell(0, 5, 'Drs. SUJARNO, M.Si.', 0, 1);
-
-        $this->fpdf->Cell(75, 5, '', 0, 0);
-        $this->fpdf->SetFont('Arial', '', 12);
-        $this->fpdf->Cell(0, 5, 'Pembina Utama Muda', 0, 1);
-
-        $this->fpdf->Cell(75, 5, '', 0, 0);
-        $this->fpdf->Cell(0, 5, 'NIP. 19630107 199003 1 004', 0, 0);
+        $this->fpdf->TTD("Karanganyar", "13 Agustus 2022", "BU");
 
         $this->fpdf->Output('I', 'SPT.pdf');
 
@@ -340,40 +630,12 @@ class PdfController extends Controller
         $this->fpdf->SetMargins(20, 7.5, 20);
         $this->fpdf->AddPage('P', array(210, 330));
 
-        // Kop Surat
-        // $this->fpdf->Image('logo.png', 10, 10, 189);
-        $this->fpdf->SetFont('Arial', 'B', 14);
-        $this->fpdf->Cell(0, 7, "PEMERINTAH KABUPATEN KARANGANYAR", 0, 1, "C");
-        $this->fpdf->SetFont('Arial', 'B', 18);
-        $this->fpdf->Cell(0, 7, "DINAS KOMUNIKASI DAN INFORMATIKA", 0, 1, "C");
-        $this->fpdf->SetFont('Arial', '', 10);
-        $this->fpdf->Cell(0, 5, "Alamat : Jl. Lawu No. 385 B Karanganyar  Telepon (0271) 495039 ext. 228   Faks. (0271) 495590", 0, 1, "C");
-        $this->fpdf->Cell(0, 5, "Website : www.karanganyarkab.go.id    E-mail : diskominfo@karanganyarkab.go.id   Kode Pos 57712", 0, 1, "C");
-
-        // Garis Dua
-        $this->fpdf->SetLineWidth(1);
-        $this->fpdf->Line(10, 35, 200, 35);
-        $this->fpdf->SetLineWidth(0);
-        $this->fpdf->Line(10, 36, 200, 36);
-        $this->fpdf->Ln(7);
+        // Kop Surat dan Garis Dua
+        // $this->fpdf->Image('karanganyarlogo.png', 10, 10, 20, 25);
+        $this->fpdf->Kop("PEMERINTAH KABUPATEN KARANGANYAR", "DINAS KOMUNIKASI DAN INFORMATIKA", "Alamat : Jl. Lawu No. 385 B Karanganyar  Telepon (0271) 495039 ext. 228   Faks. (0271) 495590", "Website : www.karanganyarkab.go.id    E-mail : diskominfo@karanganyarkab.go.id   Kode Pos 57712");
 
         // Lembar ke
-        $this->fpdf->SetFont('Arial', '', 12);
-        $this->fpdf->Cell(100, 5, "", 0, 0);
-        $this->fpdf->Cell(25, 5, "Lembar ke", 0, 0);
-        $this->fpdf->Cell(5, 5, ":", 0, 0);
-        $this->fpdf->Cell(0, 5, "......................", 0, 1);
-        
-        $this->fpdf->Cell(100, 5, "", 0, 0);
-        $this->fpdf->Cell(25, 5, "Kode No", 0, 0);
-        $this->fpdf->Cell(5, 5, ":", 0, 0);
-        $this->fpdf->Cell(0, 5, "......................", 0, 1);
-        
-        $this->fpdf->Cell(100, 5, "", 0, 0);
-        $this->fpdf->Cell(25, 5, "Nomor", 0, 0);
-        $this->fpdf->Cell(5, 5, ":", 0, 0);
-        $this->fpdf->Cell(0, 5, "......................", 0, 1);
-        $this->fpdf->Ln(10);
+        $this->fpdf->Lembar('......................', '......................', '......................');
 
         // Surat Perintah Perjalanan Dinas
         $this->fpdf->SetFont('Arial', 'U', 12);
@@ -390,179 +652,25 @@ class PdfController extends Controller
         $this->fpdf->Ln(7);
 
         // Tabel
-        $this->fpdf->SetWidths(Array(10, 65, 95)); // Total width 175
-        $this->fpdf->Row(Array('1.', 'Pejabat yang memberi perintah', 'Plt. Kepala Dinas Komunikasi dan Informatika Kabupaten Karanganyar'));
-        $this->fpdf->Row(Array('2.', 'Nama / NIP Pegawai yang diperintah', 'Hartono, S.Sos., M.M. / 19691015 199003 1 007'));
-        $this->fpdf->Row(Array('3.', 'a. Pangkat dan Golongan menurut PP Np. 6 Tahun 1997', 'Pembina / IV a'));
-        $this->fpdf->Row(Array('', 'b. Jabatan', 'Kepala Bidang Tata Kelola Informatika'));
-        $this->fpdf->Row(Array('', 'c. Tingkat menurut peraturan perjalanan', '-'));
-        $this->fpdf->Row(Array('4.', 'Maksud Perjalanan', 'sarasehan dan Renungan Ulang Janji Hari Pramuka ke-61 Tahun 2022'));
-        $this->fpdf->Row(Array('5.', 'Alat angkut yang dipergunakan', 'Kendaraan Dinas'));
-        $this->fpdf->Row(Array('6.', 'a. Tempat berangkat', 'Karanganyar'));
-        $this->fpdf->Row(Array('', 'b. Tempat tujuan', 'Pendopo Tri Manunggal, Malanggaten, Kebakkramat'));
-        $this->fpdf->Row(Array('7.', 'a. Lamanya Perjalanan Dinas', ''));
-        $this->fpdf->Row(Array('', 'b. Tanggal berangkat', '13 Agustus 2022'));
-        $this->fpdf->Row(Array('', 'c. Tanggal harus kembali', '13 Agustus 2022'));
-        $this->fpdf->Row(Array('8.', 'Pengikut / NIP', '1. Suparno / 19731103 199803 1 012 2. Yahya Fathoni Amri, S.Kom. / -'));
-        $this->fpdf->Row(Array('9.', 'Pembebanan Anggaran', ''));
-        $this->fpdf->Row(Array('', 'a. Instansi', 'Dinas Kominfo Kabupaten Karanganyar'));
-        $this->fpdf->Row(Array('', 'b. Mata Anggaran', 'APBD TA 2022'));
-        $this->fpdf->Row(Array('10.', 'Keterangan lain-lain', ''));
-        $this->fpdf->Ln(10);
+        $this->fpdf->Tabel('Plt. Kepala Dinas Komunikasi dan Informatika Kabupaten Karanganyar', 'Hartono, S.Sos., M.M. / 19691015 199003 1 007', 'Pembina / IV a', 'Kepala Bidang Tata Kelola Informatika', '-', 'Sarasehan dan Renungan Ulang Janji Hari Pramuka ke-61 Tahun 2022', 'Kendaraan Dinas', 'Karanganyar', 'Pendopo Tri Manunggal, Malanggaten, Kebakkramat', '', '13 Agustus 2022', '13 Agustus 2022', '', 'Dinas Kominfo Kabupaten Karanganyar', 'APBD TA 2022', '');
 
         // Tanda Tangan
-        $this->fpdf->Cell(69, 5, "", 0, 0);
-        $this->fpdf->Cell(30, 5, "Ditetapkan di", 0, 0);
-        $this->fpdf->Cell(5, 5, ":", 0, 0);
-        $this->fpdf->Cell(0, 5, "Karanganyar", 0, 1);
-        
-        $this->fpdf->Cell(69, 5, "", 0, 0);
-        $this->fpdf->Cell(30, 5, "Pada tanggal", 0, 0);
-        $this->fpdf->Cell(5, 5, ":", 0, 0);
-        $this->fpdf->Cell(0, 5, "13 Agustus 2022", 0, 1);
-        $this->fpdf->Ln(5);
-
-        $this->fpdf->Cell(62, 5, "", 0, 0);
-        $this->fpdf->Cell(7, 5, "Plt.", 0, 0);
-        $this->fpdf->MultiCell(0, 5, "KEPALA DINAS KOMUNIKASI DAN INFORMATIKA ASISTEN ADMINISTRASI UMUM SEKRETARIS DAERAH", 0, 1);
-        $this->fpdf->Ln(20);
-
-        $this->fpdf->SetFont('Arial', 'U', 12);
-        $this->fpdf->Cell(69, 5, "", 0, 0);
-        $this->fpdf->Cell(0, 5, "Drs. SUJARNO, M.Si.", 0, 1);
-
-        $this->fpdf->Cell(69, 5, "", 0, 0);
-        $this->fpdf->SetFont('Arial', '', 12);
-        $this->fpdf->Cell(0, 5, "Pembina Utama Muda", 0, 1);
-        
-        $this->fpdf->Cell(69, 5, "", 0, 0);
-        $this->fpdf->Cell(0, 5, "NIP. 19630107 199003 1 004", 0, 1);
-
-
+        $this->fpdf->TTD("Karanganyar", "13 Agustus 2022", "U");
 
         // Halaman Tanda Tangan
         $this->fpdf->AddPage('P', array(210, 330));
 
         // Romawi I
-        $this->fpdf->Cell(75, 5, "", 0, 0);
-        $this->fpdf->Cell(7, 5, "I.", 0, 0);
-        $this->fpdf->Cell(43, 5, "SPPD No", 0, 0);
-        $this->fpdf->Cell(7, 5, ":", 0, 0);
-        $this->fpdf->Cell(0, 5, "...............................", 0, 1);
-
-        $this->fpdf->Cell(82, 5, "", 0, 0);
-        $this->fpdf->Cell(0, 5, "Berangkat dari", 0, 1);
-
-        $this->fpdf->Cell(82, 5, "", 0, 0);
-        $this->fpdf->Cell(43, 5, "(tempat kedudukan)", 0, 0);
-        $this->fpdf->Cell(7, 5, ":", 0, 0);
-        $this->fpdf->Cell(0, 5, "Kab. Karanganyar", 0, 1);
-
-        $this->fpdf->Cell(82, 5, "", 0, 0);
-        $this->fpdf->Cell(43, 5, "Pada Tanggal", 0, 0);
-        $this->fpdf->Cell(7, 5, ":", 0, 0);
-        $this->fpdf->Cell(0, 5, "13 Juni 2022", 0, 1);
-
-        $this->fpdf->Cell(82, 5, "", 0, 0);
-        $this->fpdf->Cell(43, 5, "Ke", 0, 0);
-        $this->fpdf->Cell(7, 5, ":", 0, 0);
-        $this->fpdf->Cell(0, 5, "Kab. Bantul", 0, 1);
-        $this->fpdf->Ln(5);
+        $this->fpdf->RomawiI("...............................", "Kab. Karanganyar", "13 Juni 2022", "Kab. Bantul");
 
         // Romawi II
-        $this->fpdf->Cell(7, 5, "II.", 0, 0);
-        $this->fpdf->Cell(30, 5, "Tiba di", 0, 0);
-        $this->fpdf->Cell(7, 5, ":", 0, 0);
-        $this->fpdf->Cell(51, 5, "Kab. Bantul", 0, 0);
-        $this->fpdf->Cell(30, 5, "Berangkat dari", 0, 0);
-        $this->fpdf->Cell(7, 5, ":", 0, 0);
-        $this->fpdf->Cell(0, 5, "Kab. Bantul", 0, 1);
-
-        $this->fpdf->Cell(7, 5, "", 0, 0);
-        $this->fpdf->Cell(30, 5, "Pada Tanggal", 0, 0);
-        $this->fpdf->Cell(7, 5, ":", 0, 0);
-        $this->fpdf->Cell(51, 5, "13 Juni 2022", 0, 0);
-        $this->fpdf->Cell(30, 5, "Ke", 0, 0);
-        $this->fpdf->Cell(7, 5, ":", 0, 0);
-        $this->fpdf->Cell(0, 5, "Kab. Gunung Kidul", 0, 1);
-
-        $this->fpdf->Cell(95, 5, "", 0, 0);
-        $this->fpdf->Cell(30, 5, "Pada Tanggal", 0, 0);
-        $this->fpdf->Cell(7, 5, ":", 0, 0);
-        $this->fpdf->Cell(0, 5, "13 Juni 2022", 0, 1);
-        $this->fpdf->Ln(15);
-
-        $this->fpdf->Cell(7, 5, "", 0, 0);
-        $this->fpdf->Cell(88, 5, "(............................................................)", 0, 0);
-        $this->fpdf->Cell(0, 5, "(............................................................)", 0, 1);
-
-        $this->fpdf->Cell(7, 5, "", 0, 0);
-        $this->fpdf->Cell(88, 5, "NIP.", 0, 0);
-        $this->fpdf->Cell(0, 5, "NIP.", 0, 1);
-        $this->fpdf->Ln(5);
+        $this->fpdf->RomawiII("Kab. Bantul", "13 Juni 2022", "Kab. Bantul", "Kab. Gunung Kidul", "13 Juni 2022");
 
         // Romawi III
-        $this->fpdf->Cell(7, 5, "III.", 0, 0);
-        $this->fpdf->Cell(30, 5, "Tiba di", 0, 0);
-        $this->fpdf->Cell(7, 5, ":", 0, 0);
-        $this->fpdf->Cell(51, 5, "Kab. Gunung Kidul", 0, 0);
-        $this->fpdf->Cell(30, 5, "Berangkat dari", 0, 0);
-        $this->fpdf->Cell(7, 5, ":", 0, 0);
-        $this->fpdf->Cell(0, 5, "Kab. Gunung Kidul", 0, 1);
-
-        $this->fpdf->Cell(7, 5, "", 0, 0);
-        $this->fpdf->Cell(30, 5, "Pada Tanggal", 0, 0);
-        $this->fpdf->Cell(7, 5, ":", 0, 0);
-        $this->fpdf->Cell(51, 5, "14 Juni 2022", 0, 0);
-        $this->fpdf->Cell(30, 5, "Ke", 0, 0);
-        $this->fpdf->Cell(7, 5, ":", 0, 0);
-        $this->fpdf->Cell(0, 5, "Kab. Karanganyar", 0, 1);
-
-        $this->fpdf->Cell(95, 5, "", 0, 0);
-        $this->fpdf->Cell(30, 5, "Pada Tanggal", 0, 0);
-        $this->fpdf->Cell(7, 5, ":", 0, 0);
-        $this->fpdf->Cell(0, 5, "14 Juni 2022", 0, 1);
-        $this->fpdf->Ln(15);
-
-        $this->fpdf->Cell(7, 5, "", 0, 0);
-        $this->fpdf->Cell(88, 5, "(............................................................)", 0, 0);
-        $this->fpdf->Cell(0, 5, "(............................................................)", 0, 1);
-
-        $this->fpdf->Cell(7, 5, "", 0, 0);
-        $this->fpdf->Cell(88, 5, "NIP.", 0, 0);
-        $this->fpdf->Cell(0, 5, "NIP.", 0, 1);
-        $this->fpdf->Ln(5);
+        $this->fpdf->RomawiIII("Kab. Gunung Kidul", "14 Juni 2022", "Kab. Gunung Kidul", "Kab. Karanganyar", "14 Juni 2022");
 
         // Romawi IV
-        $this->fpdf->Cell(7, 5, "IV.", 0, 0);
-        $this->fpdf->Cell(30, 5, "Tiba di", 0, 0);
-        $this->fpdf->Cell(7, 5, ":", 0, 0);
-        $this->fpdf->Cell(51, 5, "", 0, 0);
-        $this->fpdf->Cell(30, 5, "Berangkat dari", 0, 0);
-        $this->fpdf->Cell(7, 5, ":", 0, 0);
-        $this->fpdf->Cell(0, 5, "", 0, 1);
-
-        $this->fpdf->Cell(7, 5, "", 0, 0);
-        $this->fpdf->Cell(30, 5, "Pada Tanggal", 0, 0);
-        $this->fpdf->Cell(7, 5, ":", 0, 0);
-        $this->fpdf->Cell(51, 5, "", 0, 0);
-        $this->fpdf->Cell(30, 5, "Ke", 0, 0);
-        $this->fpdf->Cell(7, 5, ":", 0, 0);
-        $this->fpdf->Cell(0, 5, "", 0, 1);
-
-        $this->fpdf->Cell(95, 5, "", 0, 0);
-        $this->fpdf->Cell(30, 5, "Pada Tanggal", 0, 0);
-        $this->fpdf->Cell(7, 5, ":", 0, 0);
-        $this->fpdf->Cell(0, 5, "", 0, 1);
-        $this->fpdf->Ln(15);
-
-        $this->fpdf->Cell(7, 5, "", 0, 0);
-        $this->fpdf->Cell(88, 5, "(............................................................)", 0, 0);
-        $this->fpdf->Cell(0, 5, "(............................................................)", 0, 1);
-
-        $this->fpdf->Cell(7, 5, "", 0, 0);
-        $this->fpdf->Cell(88, 5, "NIP.", 0, 0);
-        $this->fpdf->Cell(0, 5, "NIP.", 0, 1);
+        $this->fpdf->RomawiIV("", "", "", "", "");
 
         // Garis
         $this->fpdf->SetLineWidth(0);
@@ -570,20 +678,7 @@ class PdfController extends Controller
         $this->fpdf->Ln(10);
 
         // Romawi V
-        $this->fpdf->Cell(70, 5, "", 0, 0);
-        $this->fpdf->Cell(7, 5, "V.", 0, 0);
-        $this->fpdf->Cell(43, 5, "Tiba kembali di", 0, 0);
-        $this->fpdf->Cell(7, 5, ":", 0, 0);
-        $this->fpdf->Cell(0, 5, "", 0, 1);
-
-        $this->fpdf->Cell(77, 5, "", 0, 0);
-        $this->fpdf->Cell(43, 5, "Pada tanggal", 0, 0);
-        $this->fpdf->Cell(7, 5, ":", 0, 0);
-        $this->fpdf->Cell(0, 5, "", 0, 1);
-
-        $this->fpdf->Cell(77, 5, "", 0, 0);
-        $this->fpdf->MultiCell(0, 5, "Telah diperiksa, dengan keterangan bahwa perjalanan tersebut diatas benar dilakukan atas perintahnya dan semata-mata untuk kepentingan jabatan dalam waktu yang sesingkat-singkatnya.", 0, 1);
-        $this->fpdf->Ln(5);
+        $this->fpdf->RomawiV("", "");
 
         // Tanda Tangan
         $this->fpdf->Cell(77, 5, "", 0, 0);
@@ -609,7 +704,7 @@ class PdfController extends Controller
 
         // Garis
         $this->fpdf->SetLineWidth(0);
-        $this->fpdf->Line(20, 277, 190, 277);
+        $this->fpdf->Line(20, 282, 190, 282);
 
         // Romawi VII
         $this->fpdf->Cell(7, 5, "VII.", 0, 0);
@@ -625,16 +720,12 @@ class PdfController extends Controller
     // Daftar Penerimaan Uang Perjalanan Dinas
     public function pdf3()
     {
+        $this->fpdf = new PDF_MC_Table();
         $this->fpdf->SetMargins(10, 7.5, 10);
         $this->fpdf->AddPage("L", array(330, 210));
 
         // Judul, Kegiatan, Lokasi
-        $this->fpdf->SetFont('Arial', '', 14);
-        $this->fpdf->Cell(0, 7, "PEMERINTAH KABUPATEN KARANGANYAR", 0, 1, "C");
-        $this->fpdf->SetFont('Arial', '', 12);
-        $this->fpdf->Cell(0, 5, "Sarasehan dan Renungan Ulang Janji Hari Pramuka ke-61 Tahun 2022", 0, 1, "C");
-        $this->fpdf->Cell(0, 5, "Lokasi: Pendopo Tri Manunggal, Malanggaten, Kebakkramat, Tanggal 13 Agustus 2022", 0, 1, "C");
-        $this->fpdf->Ln(5);
+        $this->fpdf->Judul("Sarasehan dan Renungan Ulang Janji Hari Pramuka ke-61 Tahun 2022", "Pendopo Tri Manunggal, Malanggaten, Kebakkramat, Tanggal 13 Agustus 2022");
 
         // Kegiatan, Kode Rekening, Unit Kerja
         $this->fpdf->Cell(10, 5, "", 0, 0);
