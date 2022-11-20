@@ -22,6 +22,7 @@ class PegawaiController extends Controller
         return view('pages.pegawai', compact('Pegawai'));
     }
 
+
     /**
      * store
      *
@@ -33,10 +34,8 @@ class PegawaiController extends Controller
         //define validation rules
         $validator = Validator::make($request->all(), [
             'name'     => 'required',
-            'nip'   => 'required|unique:pegawais',
+            'nip'   => 'unique:pegawais',
             'jabatan'     => 'required',
-            'pangkat'     => 'required',
-            'golongan'     => 'required',
         ]);
 
         //check if validation fails

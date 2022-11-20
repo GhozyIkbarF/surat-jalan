@@ -12,4 +12,12 @@ class Pegawai extends Model
     protected $fillable = [
         'name', 'nip', 'jabatan', 'pangkat', 'golongan'
     ];
+    public function Biayas()
+    {
+        return $this->belongsTo(Biaya::class);
+    }
+    public function Spts()
+    {
+        return $this->belongsTo(Biaya::class);
+    }
 }
