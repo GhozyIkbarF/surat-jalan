@@ -21,7 +21,7 @@
                                 <table class="table table-striped table-bordered" style="text-align:center;">
                                     <thead>
                                         <tr>
-                                            {{-- <th>No</td> --}}
+                                            <th>No</td>
                                             <th>Nama</td>
                                             <th>NIP</td>
                                             <th>Jabatan</td>
@@ -33,7 +33,7 @@
                                     <tbody id="table-pegawai">
                                         @foreach ($Pegawai as $p)
                                             <tr>
-                                                {{-- <td>{{ $loop->iteration }}</td> --}}
+                                                <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $p->name }}</td>
                                                 <td>{{ $p->nip }}</td>
                                                 <td>{{ $p->jabatan }}</td>
@@ -61,7 +61,5 @@
         @include('components.pegawai.edit-pegawai')
         @include('components.pegawai.delete-pegawai')
         <!-- content-end -->
-        <!--partial:partials/footer -->
-        @include('includes.footer')
     </div>
 @endsection

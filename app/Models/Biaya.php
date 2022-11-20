@@ -13,6 +13,6 @@ class Biaya extends Model
     ];
     public function Pegawais()
     {
-        return $this->belongsTo(Pegawai::class)->withDefault();
+        return $this->hasMany(Pegawai::class);
     }
 }

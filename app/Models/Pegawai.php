@@ -14,6 +14,10 @@ class Pegawai extends Model
     ];
     public function Biayas()
     {
-        return $this->hasMany(Biaya::class);
+        return $this->belongsTo(Biaya::class);
+    }
+    public function Spts()
+    {
+        return $this->belongsTo(Biaya::class);
     }
 }
