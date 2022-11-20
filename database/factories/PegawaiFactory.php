@@ -21,9 +21,9 @@ class PegawaiFactory extends Factory
         return [
             'name' => $faker->name(),
             'nip' => mt_rand(0000001, 9999999),
-            'jabatan' => $faker->name(),
-            'pangkat' => $faker->name(),
-            'golongan' => $faker->name(),
+            'jabatan' => $faker->randomElement(['Guru', 'Dokter', 'Peneliti', 'Terknisi Komputer', 'Dosen']),
+            'pangkat' => $faker->randomElement(['Bripda', 'Bharada', 'Bharatu', 'Bharaka']),
+            'golongan' => $faker->randomElement(['1A', '1B', '2A', '2B']),
         ];
     }
 }
