@@ -2,9 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PdfController;
-use App\Http\Controllers\SptController;
-use App\Http\Controllers\SppdController;
 use App\Http\Controllers\BiayaController;
+use App\Http\Controllers\PegawaiController;
+use Rap2hpoutre\LaravelLogViewer\LogViewerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,24 +18,22 @@ use App\Http\Controllers\BiayaController;
 */
 
 Route::get('/', function () {
-    return view('layouts.main');
+    return view('index');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::controller(SppdController::class)->group(function () {
-    Route::get('/sppd', 'index')->name('datasppd');
-    Route::get('/create-sppd', 'create')->middleware(['auth', 'verified'])->name('tambahsppd');
-});
 
-Route::get('/spt', [SptController::class, 'index']);
-Route::get('/biaya', [BiayaController::class, 'index']);
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
-
 Route::get('/pdf1', [PdfController::class, 'index']);
 Route::get('/pdf2', [PdfController::class, 'pdf2']);
+
 Route::get('/pdf3', [PdfController::class, 'pdf3']);
 
 
-Route::resource('pegawai-ajax-crud', PegawaiAjaxController::class);
+Route::resource('pegawai', PegawaiController::class)->middleware(['auth', 'verified']);
+Route::resource('biaya', BiayaController::class)->middleware(['auth', 'verified']);
+
+//log-viewers
+Route::get('log-viewers', [LogViewerController::class, 'index']);
 require __DIR__ . '/auth.php';
