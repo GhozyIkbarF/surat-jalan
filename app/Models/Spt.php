@@ -14,9 +14,4 @@ class Spt extends Model
     {
         return $this->hasMany(Pegawai::class);
     }
-
-    public function getCreatedAtAttribute()
-    {
-        return Carbon::parse($this->attributes['hari_tanggal']);
-    }
 }
