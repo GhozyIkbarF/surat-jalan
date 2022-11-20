@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('biayas', function (Blueprint $table) {
-            $table->unsignedBigInteger('pegawai_id')->after('id')->required();
-            $table->foreign('pegawai_id')->references('id')->on('pegawais')->onDelete('restrict');
+        Schema::table('pegawais', function (Blueprint $table) {
+            $table->unsignedBigInteger('biaya_id')->after('id')->nullable();
+            $table->foreign('biaya_id')->references('id')->on('biayas')->onDelete('restrict');
         });
     }
 
@@ -26,9 +26,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('biayas', function (Blueprint $table) {
-            $table->dropForeign(['pegawai_id']);
-            $table->dropColumn('pegawai_id');
+        Schema::table('pegawais', function (Blueprint $table) {
+            $table->dropForeign(['biaya_id']);
+            $table->dropColumn('biaya_id');
         });
     }
 };

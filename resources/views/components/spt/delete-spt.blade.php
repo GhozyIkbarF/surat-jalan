@@ -1,8 +1,8 @@
 <script>
-    //button create biaya event
-    $('body').on('click', '#btn-delete-biaya', function() {
+    //button create pegawai event
+    $('body').on('click', '#btn-delete-pegawai', function() {
 
-        let biaya_id = $(this).data('id');
+        let pegawai_id = $(this).data('id');
         let token = $("meta[name='csrf-token']").attr("content");
 
         Swal.fire({
@@ -20,7 +20,7 @@
                 //fetch to delete data
                 $.ajax({
 
-                    url: `/biaya/${biaya_id}`,
+                    url: `/pegawai/${pegawai_id}`,
                     type: "DELETE",
                     cache: false,
                     data: {
@@ -37,8 +37,8 @@
                             timer: 3000
                         });
 
-                        //remove biaya on table
-                        $(`#index_${biaya_id}`).remove();
+                        //remove pegawai on table
+                        $(`#index_${pegawai_id}`).remove();
                     }
                 });
 

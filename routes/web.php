@@ -2,7 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PdfController;
+use App\Http\Controllers\BiayaController;
 use App\Http\Controllers\PegawaiController;
+use Rap2hpoutre\LaravelLogViewer\LogViewerController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,6 +33,7 @@ Route::get('/pdf3', [PdfController::class, 'pdf3']);
 
 Route::resource('pegawai', PegawaiController::class)->middleware(['auth', 'verified']);
 Route::resource('biaya', BiayaController::class)->middleware(['auth', 'verified']);
+
 //log-viewers
-Route::get('log-viewers', [\Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'index']);
+Route::get('log-viewers', [LogViewerController::class, 'index']);
 require __DIR__ . '/auth.php';
