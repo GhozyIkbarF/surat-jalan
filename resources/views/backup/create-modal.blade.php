@@ -15,14 +15,11 @@
                     <input type="text" class="form-control" id="title">
                     <div class="alert alert-danger mt-2 d-none" role="alert" id="alert-title"></div>
                 </div>
-
-
                 <div class="form-group">
                     <label class="control-label">Content</label>
                     <textarea class="form-control" id="content" rows="4"></textarea>
                     <div class="alert alert-danger mt-2 d-none" role="alert" id="alert-content"></div>
                 </div>
-
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">TUTUP</button>
