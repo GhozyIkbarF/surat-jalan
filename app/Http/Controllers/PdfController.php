@@ -562,6 +562,26 @@ class PDF_MC_Table extends FPDF
         $this->Cell(0, 5, "Lokasi: ". $lokasi, 0, 1, "C");
         $this->Ln(5);
     }
+
+    function Kegiatan($kegiatan, $rekening, $unitkerja)
+    {
+        $this->Cell(10, 5, "", 0, 0);
+        $this->Cell(35, 5, "Kegiatan", 0, 0);
+        $this->Cell(5, 5, ":", 0, 0);
+        $this->Cell(0, 5, $kegiatan, 0, 1);
+
+        $this->Cell(10, 5, "", 0, 0);
+        $this->Cell(35, 5, "Kode Rekening", 0, 0);
+        $this->Cell(5, 5, ":", 0, 0);
+        $this->Cell(0, 5, $rekening, 0, 1);
+        $this->Ln(5);
+
+        $this->Cell(10, 5, "", 0, 0);
+        $this->Cell(35, 5, "Unit Kerja", 0, 0);
+        $this->Cell(5, 5, ":", 0, 0);
+        $this->Cell(0, 5, $unitkerja, 0, 1);
+        $this->Ln(3);
+    }
 }
 
 class PdfController extends Controller
@@ -728,22 +748,7 @@ class PdfController extends Controller
         $this->fpdf->Judul("Sarasehan dan Renungan Ulang Janji Hari Pramuka ke-61 Tahun 2022", "Pendopo Tri Manunggal, Malanggaten, Kebakkramat, Tanggal 13 Agustus 2022");
 
         // Kegiatan, Kode Rekening, Unit Kerja
-        $this->fpdf->Cell(10, 5, "", 0, 0);
-        $this->fpdf->Cell(35, 5, "Kegiatan", 0, 0);
-        $this->fpdf->Cell(5, 5, ":", 0, 0);
-        $this->fpdf->Cell(0, 5, "Sarasehan dan Renungan Ulang Janji Hari Pramuka ke-61 Tahun 2022", 0, 1);
-
-        $this->fpdf->Cell(10, 5, "", 0, 0);
-        $this->fpdf->Cell(35, 5, "Kode Rekening", 0, 0);
-        $this->fpdf->Cell(5, 5, ":", 0, 0);
-        $this->fpdf->Cell(0, 5, "2.16.03.2.02.06.5.1.02.04.01.003", 0, 1);
-        $this->fpdf->Ln(5);
-
-        $this->fpdf->Cell(10, 5, "", 0, 0);
-        $this->fpdf->Cell(35, 5, "Unit Kerja", 0, 0);
-        $this->fpdf->Cell(5, 5, ":", 0, 0);
-        $this->fpdf->Cell(0, 5, "Dinas Komunikasi dan Informatika Kabupaten Karanganyar", 0, 1);
-        $this->fpdf->Ln(3);
+        $this->fpdf->Kegiatan("Sarasehan dan Renungan Ulang Janji Hari Pramuka ke-61 Tahun 2022", "2.16.03.2.02.06.5.1.02.04.01.003", "Dinas Komunikasi dan Informatika Kabupaten Karanganyar");
 
         // Tabel Header
         $this->fpdf->SetWidths(Array(10, 62, 90, 30, 25, 37, 30, 26)); // Total width 310
