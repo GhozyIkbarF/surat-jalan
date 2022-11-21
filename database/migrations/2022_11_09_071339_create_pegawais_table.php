@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('pegawais', function (Blueprint $table) {
             $table->id();
-            $table->string('nama', 100)->required();
-            $table->integer('nip', 100, false, false)->unique()->required();
+            $table->string('name', 100)->required();
+            // $table->integer('nip', 100, false, false)->unique()->required();
+            $table->integer('nip')->length(100)->required();
             $table->string('jabatan', 100)->required();
             $table->string('pangkat', 100)->required();
             $table->string('golongan', 10)->required();

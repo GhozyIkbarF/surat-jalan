@@ -13,7 +13,7 @@
                 <input type="hidden" id="pegawai_id">
 
                 <div class="form-group">
-                    <label for="name" class="control-label">Name</label>
+                    <label for="name" class="control-label">Nama</label>
                     <input type="text" class="form-control" id="name-edit">
                     <div class="alert alert-danger mt-2 d-none" role="alert" id="alert-name-edit"></div>
                 </div>
@@ -40,7 +40,7 @@
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">TUTUP</button>
+                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">BATAL</button>
                 <button type="button" class="btn btn-primary" id="update">UPDATE</button>
             </div>
         </div>
