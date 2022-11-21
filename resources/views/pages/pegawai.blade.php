@@ -34,7 +34,7 @@
                                         @foreach ($Pegawai as $p)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $p->name }}</td>
+                                                <td>{{ $p->nama }}</td>
                                                 <td>{{ $p->nip }}</td>
                                                 <td>{{ $p->jabatan }}</td>
                                                 <td>{{ $p->pangkat }}</td>

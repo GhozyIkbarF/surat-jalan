@@ -44,6 +44,7 @@
 </div>
 
 <script>
+    
     //button create post event
     $('body').on('click', '#btn-create-pegawai', function() {
 
