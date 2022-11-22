@@ -42,7 +42,7 @@
                     <label for="name" class="control-label">Nama Pertama</label>
                     <select name="nama1" id="nama1" class="form-control">
                         <option value="">Select One</option>
-                        @foreach ($pegawai as $item)
+                        @foreach ($biaya as $item)
                             <option value="{{ $item->id }}">{{ $item->name }}</option>
                         @endforeach
                     </select>
@@ -52,7 +52,7 @@
                     <label for="name" class="control-label">Nama Kedua</label>
                     <select name="nama2" id="nama2" class="form-control">
                         <option value="">Select One</option>
-                        @foreach ($pegawai as $item)
+                        @foreach ($biaya as $item)
                             <option value="{{ $item->id }}">{{ $item->name }}</option>
                         @endforeach
                     </select>
@@ -62,7 +62,7 @@
                     <label for="name" class="control-label">Nama Ketiga</label>
                     <select name="nama3" id="nama3" class="form-control">
                         <option value="">Select One</option>
-                        @foreach ($pegawai as $item)
+                        @foreach ($biaya as $item)
                             <option value="{{ $item->id }}">{{ $item->name }}</option>
                         @endforeach
                     </select>
@@ -75,7 +75,7 @@
                     <label for="name" class="control-label">NIP Pertama</label>
                     <select name="nip1" id="nip1" class="form-control">
                         <option value="">Select One</option>
-                        @foreach ($pegawai as $item)
+                        @foreach ($biaya as $item)
                             <option value="{{ $item->id }}">{{ $item->nip }}</option>
                         @endforeach
                     </select>
@@ -85,7 +85,7 @@
                     <label for="name" class="control-label">NIP Kedua</label>
                     <select name="nip2" id="nip2" class="form-control">
                         <option value="">Select One</option>
-                        @foreach ($pegawai as $item)
+                        @foreach ($biaya as $item)
                             <option value="{{ $item->id }}">{{ $item->nip }}</option>
                         @endforeach
                     </select>
@@ -95,7 +95,7 @@
                     <label for="name" class="control-label">NIP Ketiga</label>
                     <select name="nip3" id="nip3" class="form-control">
                         <option value="">Select One</option>
-                        @foreach ($pegawai as $item)
+                        @foreach ($biaya as $item)
                             <option value="{{ $item->id }}">{{ $item->nip }}</option>
                         @endforeach
                     </select>
@@ -108,7 +108,7 @@
                     <label for="name" class="control-label">Jabatan Pertama</label>
                     <select name="jabatan1" id="jabatan1" class="form-control">
                         <option value="">Select One</option>
-                        @foreach ($pegawai as $item)
+                        @foreach ($biaya as $item)
                             <option value="{{ $item->id }}">{{ $item->jabatan }}</option>
                         @endforeach
                     </select>
@@ -118,7 +118,7 @@
                     <label for="name" class="control-label">Jabatan Kedua</label>
                     <select name="jabatan2" id="jabatan2" class="form-control">
                         <option value="">Select One</option>
-                        @foreach ($pegawai as $item)
+                        @foreach ($biaya as $item)
                             <option value="{{ $item->id }}">{{ $item->jabatan }}</option>
                         @endforeach
                     </select>
@@ -128,7 +128,7 @@
                     <label for="name" class="control-label">Jabatan Ketiga</label>
                     <select name="jabatan3" id="jabatan3" class="form-control">
                         <option value="">Select One</option>
-                        @foreach ($pegawai as $item)
+                        @foreach ($biaya as $item)
                             <option value="{{ $item->id }}">{{ $item->jabatan }}</option>
                         @endforeach
                     </select>
@@ -141,7 +141,7 @@
                     <label for="name" class="control-label">Pangkat Pertama</label>
                     <select name="pangkat1" id="pangkat1" class="form-control">
                         <option value="">Select One</option>
-                        @foreach ($pegawai as $item)
+                        @foreach ($biaya as $item)
                             <option value="{{ $item->id }}">{{ $item->pangkat }}</option>
                         @endforeach
                     </select>
@@ -151,7 +151,7 @@
                     <label for="name" class="control-label">Pangkat Kedua</label>
                     <select name="pangkat2" id="pangkat2" class="form-control">
                         <option value="">Select One</option>
-                        @foreach ($pegawai as $item)
+                        @foreach ($biaya as $item)
                             <option value="{{ $item->id }}">{{ $item->pangkat }}</option>
                         @endforeach
                     </select>
@@ -161,7 +161,7 @@
                     <label for="name" class="control-label">Pangkat Ketiga</label>
                     <select name="pangkat3" id="pangkat3" class="form-control">
                         <option value="">Select One</option>
-                        @foreach ($pegawai as $item)
+                        @foreach ($biaya as $item)
                             <option value="{{ $item->id }}">{{ $item->pangkat }}</option>
                         @endforeach
                     </select>
@@ -174,7 +174,7 @@
                     <label for="name" class="control-label">Golongan Pertama</label>
                     <select name="golongan1" id="golongan1" class="form-control">
                         <option value="">Select One</option>
-                        @foreach ($pegawai as $item)
+                        @foreach ($biaya as $item)
                             <option value="{{ $item->id }}">{{ $item->golongan }}</option>
                         @endforeach
                     </select>
@@ -184,7 +184,7 @@
                     <label for="name" class="control-label">Golongan Kedua</label>
                     <select name="golongan2" id="golongan2" class="form-control">
                         <option value="">Select One</option>
-                        @foreach ($pegawai as $item)
+                        @foreach ($biaya as $item)
                             <option value="{{ $item->id }}">{{ $item->golongan }}</option>
                         @endforeach
                     </select>
@@ -194,7 +194,7 @@
                     <label for="name" class="control-label">Golongan Ketiga</label>
                     <select name="golongan3" id="golongan3" class="form-control">
                         <option value="">Select One</option>
-                        @foreach ($pegawai as $item)
+                        @foreach ($biaya as $item)
                             <option value="{{ $item->id }}">{{ $item->golongan }}</option>
                         @endforeach
                     </select>

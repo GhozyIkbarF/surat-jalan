@@ -17,10 +17,10 @@ class BiayaController extends Controller
      */
     public function index()
     {
-        $biaya = Biaya::latest()->get();
-        $pegawai = Pegawai::all();
+        $biaya = Biaya::with('pegawais')->get();
+        // $pegawai = Pegawai::all();
         return view('pages.biaya', [
-            'pegawai' => $pegawai,
+            // 'pegawai' => $pegawai,
             'biaya' => $biaya,
         ]);
     }
