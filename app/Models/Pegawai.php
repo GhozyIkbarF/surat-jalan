@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use App\Models\Biaya;
 
 class Pegawai extends Model
 {
@@ -12,11 +12,11 @@ class Pegawai extends Model
     protected $fillable = [
         'name', 'nip', 'jabatan', 'pangkat', 'golongan'
     ];
-    public function Biayas()
+    public function biaya()
     {
         return $this->belongsTo(Biaya::class);
     }
-    public function Spts()
+    public function spts()
     {
         return $this->belongsTo(Biaya::class);
     }

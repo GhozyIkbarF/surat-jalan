@@ -39,8 +39,8 @@
                     <label for="name" class="control-label">Nama Pertama</label>
                     <select name="nama1" id="nama1" class="form-control">
                         <option value="">Select One</option>
-                        @foreach ($pegawai as $item)
-                            <option value="{{ $item->id }}">{{ $item->name }}</option>
+                        @foreach ($biaya as $item)
+                            <option value="{{ $item->name }}">{{ $item->name }}</option>
                         @endforeach
                     </select>
                     <div class="alert alert-danger mt-2 d-none" role="alert" id="alert-name"></div>
@@ -49,8 +49,8 @@
                     <label for="name" class="control-label">Nama Kedua</label>
                     <select name="nama2" id="nama2" class="form-control">
                         <option value="">Select One</option>
-                        @foreach ($pegawai as $item)
-                            <option value="{{ $item->id }}">{{ $item->name }}</option>
+                        @foreach ($biaya as $item)
+                            <option value="{{ $item->name }}">{{ $item->name }}</option>
                         @endforeach
                     </select>
                     <div class="alert alert-danger mt-2 d-none" role="alert" id="alert-name"></div>
@@ -59,21 +59,20 @@
                     <label for="name" class="control-label">Nama Ketiga</label>
                     <select name="nama3" id="nama3" class="form-control">
                         <option value="">Select One</option>
-                        @foreach ($pegawai as $item)
-                            <option value="{{ $item->id }}">{{ $item->name }}</option>
+                        @foreach ($biaya as $item)
+                            <option value="{{ $item->name }}">{{ $item->name }}</option>
                         @endforeach
                     </select>
                     <div class="alert alert-danger mt-2 d-none" role="alert" id="alert-name"></div>
                 </div>
                 {{-- akhir nama --}}
-
                 {{-- nip --}}
                 <div class="form-group">
                     <label for="name" class="control-label">NIP Pertama</label>
                     <select name="nip1" id="nip1" class="form-control">
                         <option value="">Select One</option>
-                        @foreach ($pegawai as $item)
-                            <option value="{{ $item->id }}">{{ $item->nip }}</option>
+                        @foreach ($biaya as $item)
+                            <option value="{{ $item->nip }}">{{ $item->nip }} - {{ $item->name }}</option>
                         @endforeach
                     </select>
                     <div class="alert alert-danger mt-2 d-none" role="alert" id="alert-nip"></div>
@@ -82,8 +81,8 @@
                     <label for="name" class="control-label">NIP Kedua</label>
                     <select name="nip2" id="nip2" class="form-control">
                         <option value="">Select One</option>
-                        @foreach ($pegawai as $item)
-                            <option value="{{ $item->id }}">{{ $item->nip }}</option>
+                        @foreach ($biaya as $item)
+                            <option value="{{ $item->nip }}">{{ $item->nip }} - {{ $item->name }}</option>
                         @endforeach
                     </select>
                     <div class="alert alert-danger mt-2 d-none" role="alert" id="alert-nip"></div>
@@ -92,21 +91,19 @@
                     <label for="name" class="control-label">NIP Ketiga</label>
                     <select name="nip3" id="nip3" class="form-control">
                         <option value="">Select One</option>
-                        @foreach ($pegawai as $item)
-                            <option value="{{ $item->id }}">{{ $item->nip }}</option>
+                        @foreach ($biaya as $item)
+                            <option value="{{ $item->nip }}">{{ $item->nip }} - {{ $item->name }}</option>
                         @endforeach
                     </select>
                     <div class="alert alert-danger mt-2 d-none" role="alert" id="alert-nip"></div>
                 </div>
-                {{-- akhir nip --}}
-
                 {{-- jabatan --}}
                 <div class="form-group">
                     <label for="name" class="control-label">Jabatan Pertama</label>
                     <select name="jabatan1" id="jabatan1" class="form-control">
                         <option value="">Select One</option>
-                        @foreach ($pegawai as $item)
-                            <option value="{{ $item->id }}">{{ $item->jabatan }}</option>
+                        @foreach ($biaya as $item)
+                            <option value="{{ $item->jabatan }}">{{ $item->jabatan }} - {{ $item->name }}</option>
                         @endforeach
                     </select>
                     <div class="alert alert-danger mt-2 d-none" role="alert" id="alert-jabatan"></div>
@@ -115,8 +112,8 @@
                     <label for="name" class="control-label">Jabatan Kedua</label>
                     <select name="jabatan2" id="jabatan2" class="form-control">
                         <option value="">Select One</option>
-                        @foreach ($pegawai as $item)
-                            <option value="{{ $item->id }}">{{ $item->jabatan }}</option>
+                        @foreach ($biaya as $item)
+                            <option value="{{ $item->jabatan }}">{{ $item->jabatan }} - {{ $item->name }}</option>
                         @endforeach
                     </select>
                     <div class="alert alert-danger mt-2 d-none" role="alert" id="alert-jabatan"></div>
@@ -125,21 +122,19 @@
                     <label for="name" class="control-label">Jabatan Ketiga</label>
                     <select name="jabatan3" id="jabatan3" class="form-control">
                         <option value="">Select One</option>
-                        @foreach ($pegawai as $item)
-                            <option value="{{ $item->id }}">{{ $item->jabatan }}</option>
+                        @foreach ($biaya as $item)
+                            <option value="{{ $item->jabatan }}">{{ $item->jabatan }} - {{ $item->name }}</option>
                         @endforeach
                     </select>
                     <div class="alert alert-danger mt-2 d-none" role="alert" id="alert-jabatan"></div>
                 </div>
-                {{-- akhir jabatan --}}
-
                 {{-- pangkat --}}
                 <div class="form-group">
                     <label for="name" class="control-label">Pangkat Pertama</label>
                     <select name="pangkat1" id="pangkat1" class="form-control">
                         <option value="">Select One</option>
-                        @foreach ($pegawai as $item)
-                            <option value="{{ $item->id }}">{{ $item->pangkat }}</option>
+                        @foreach ($biaya as $item)
+                            <option value="{{ $item->pangkat }}">{{ $item->pangkat }} - {{ $item->name }}</option>
                         @endforeach
                     </select>
                     <div class="alert alert-danger mt-2 d-none" role="alert" id="alert-pangkat"></div>
@@ -148,8 +143,8 @@
                     <label for="name" class="control-label">Pangkat Kedua</label>
                     <select name="pangkat2" id="pangkat2" class="form-control">
                         <option value="">Select One</option>
-                        @foreach ($pegawai as $item)
-                            <option value="{{ $item->id }}">{{ $item->pangkat }}</option>
+                        @foreach ($biaya as $item)
+                            <option value="{{ $item->pangkat }}">{{ $item->pangkat }} - {{ $item->name }}</option>
                         @endforeach
                     </select>
                     <div class="alert alert-danger mt-2 d-none" role="alert" id="alert-pangkat"></div>
@@ -158,21 +153,20 @@
                     <label for="name" class="control-label">Pangkat Ketiga</label>
                     <select name="pangkat3" id="pangkat3" class="form-control">
                         <option value="">Select One</option>
-                        @foreach ($pegawai as $item)
-                            <option value="{{ $item->id }}">{{ $item->pangkat }}</option>
+                        @foreach ($biaya as $item)
+                            <option value="{{ $item->pangkat }}">{{ $item->pangkat }} - {{ $item->name }}</option>
                         @endforeach
                     </select>
                     <div class="alert alert-danger mt-2 d-none" role="alert" id="alert-pangkat"></div>
                 </div>
-                {{-- akhir pangkat --}}
-
                 {{-- golongan --}}
                 <div class="form-group">
                     <label for="name" class="control-label">Golongan Pertama</label>
                     <select name="golongan1" id="golongan1" class="form-control">
                         <option value="">Select One</option>
-                        @foreach ($pegawai as $item)
-                            <option value="{{ $item->id }}">{{ $item->golongan }}</option>
+                        @foreach ($biaya as $item)
+                            <option value="{{ $item->golongan }}">{{ $item->golongan }} - {{ $item->name }}
+                            </option>
                         @endforeach
                     </select>
                     <div class="alert alert-danger mt-2 d-none" role="alert" id="alert-golongan"></div>
@@ -181,8 +175,9 @@
                     <label for="name" class="control-label">Golongan Kedua</label>
                     <select name="golongan2" id="golongan2" class="form-control">
                         <option value="">Select One</option>
-                        @foreach ($pegawai as $item)
-                            <option value="{{ $item->id }}">{{ $item->golongan }}</option>
+                        @foreach ($biaya as $item)
+                            <option value="{{ $item->golongan }}">{{ $item->golongan }} - {{ $item->name }}
+                            </option>
                         @endforeach
                     </select>
                     <div class="alert alert-danger mt-2 d-none" role="alert" id="alert-golongan"></div>
@@ -191,14 +186,13 @@
                     <label for="name" class="control-label">Golongan Ketiga</label>
                     <select name="golongan3" id="golongan3" class="form-control">
                         <option value="">Select One</option>
-                        @foreach ($pegawai as $item)
-                            <option value="{{ $item->id }}">{{ $item->golongan }}</option>
+                        @foreach ($biaya as $item)
+                            <option value="{{ $item->golongan }}">{{ $item->golongan }} - {{ $item->name }}
+                            </option>
                         @endforeach
                     </select>
                     <div class="alert alert-danger mt-2 d-none" role="alert" id="alert-golongan"></div>
                 </div>
-                {{-- akhir golongan --}}
-
                 {{-- uang harian --}}
                 <div class="form-group">
                     <label for="name" class="control-label">Uang Harian Pertama</label>
@@ -325,6 +319,7 @@
         let penerimaan1 = $('#penerimaan1').val();
         let penerimaan2 = $('#penerimaan2').val();
         let penerimaan3 = $('#penerimaan3').val();
+
         let token = $("meta[name='csrf-token']").attr("content");
 
         //ajax
@@ -472,137 +467,146 @@
 
 
             },
-            error: function(error) {
+            // error: function(error) {
 
-                if (error.responseJSON.kegiatan[0]) {
+            //     if (error.responseJSON.kegiatan[0]) {
 
-                    //show alert
-                    $('#alert-kegiatan').removeClass('d-none');
-                    $('#alert-kegiatan').addClass('d-block');
+            //         //show alert
+            //         $('#alert-kegiatan').removeClass('d-none');
+            //         $('#alert-kegiatan').addClass('d-block');
 
-                    //add message to alert
-                    $('#alert-kegiatan').html(error.responseJSON.kegiatan[0]);
-                }
+            //         //add message to alert
+            //         $('#alert-kegiatan').html(error.responseJSON.kegiatan[0]);
+            //     }
 
-                if (error.responseJSON.lokasi[0]) {
+            //     if (error.responseJSON.lokasi[0]) {
 
-                    //show alert
-                    $('#alert-lokasi').removeClass('d-none');
-                    $('#alert-lokasi').addClass('d-block');
+            //         //show alert
+            //         $('#alert-lokasi').removeClass('d-none');
+            //         $('#alert-lokasi').addClass('d-block');
 
-                    //add message to alert
-                    $('#alert-lokasi').html(error.responseJSON.lokasi[0]);
-                }
-                if (error.responseJSON.tanggal[0]) {
+            //         //add message to alert
+            //         $('#alert-lokasi').html(error.responseJSON.lokasi[0]);
+            //     }
+            //     if (error.responseJSON.tanggal[0]) {
 
-                    //show alert
-                    $('#alert-tanggal').removeClass('d-none');
-                    $('#alert-tanggal').addClass('d-block');
+            //         //show alert
+            //         $('#alert-tanggal').removeClass('d-none');
+            //         $('#alert-tanggal').addClass('d-block');
 
-                    //add message to alert
-                    $('#alert-tanggal').html(error.responseJSON.tanggal[0]);
-                }
-                if (error.responseJSON.kode_rek[0]) {
+            //         //add message to alert
+            //         $('#alert-tanggal').html(error.responseJSON.tanggal[0]);
+            //     }
+            //     if (error.responseJSON.kode_rek[0]) {
 
-                    //show alert
-                    $('#alert-kode_rek').removeClass('d-none');
-                    $('#alert-kode_rek').addClass('d-block');
+            //         //show alert
+            //         $('#alert-kode_rek').removeClass('d-none');
+            //         $('#alert-kode_rek').addClass('d-block');
 
-                    //add message to alert
-                    $('#alert-kode_rek').html(error.responseJSON.kode_rek[0]);
-                }
+            //         //add message to alert
+            //         $('#alert-kode_rek').html(error.responseJSON.kode_rek[0]);
+            //     }
+            //     // alert name
+            //     if (error.responseJSON.name[0]) {
 
-                if (error.responseJSON.name[0]) {
+            //         //show alert
+            //         $('#alert-name').removeClass('d-none');
+            //         $('#alert-name').addClass('d-block');
 
-                    //show alert
-                    $('#alert-name').removeClass('d-none');
-                    $('#alert-name').addClass('d-block');
+            //         //add message to alert
+            //         $('#alert-name').html(error.responseJSON.name[0]);
+            //     }
+            //     if (error.responseJSON.name[0]) {
 
-                    //add message to alert
-                    $('#alert-name').html(error.responseJSON.name[0]);
-                }
+            //         //show alert
+            //         $('#alert-name').removeClass('d-none');
+            //         $('#alert-name').addClass('d-block');
 
-                if (error.responseJSON.nip[0]) {
+            //         //add message to alert
+            //         $('#alert-name').html(error.responseJSON.name[0]);
+            //     }
 
-                    //show alert
-                    $('#alert-nip').removeClass('d-none');
-                    $('#alert-nip').addClass('d-block');
+            //     if (error.responseJSON.nip[0]) {
 
-                    //add message to alert
-                    $('#alert-nip').html(error.responseJSON.nip[0]);
-                }
+            //         //show alert
+            //         $('#alert-nip').removeClass('d-none');
+            //         $('#alert-nip').addClass('d-block');
 
-                if (error.responseJSON.jabatan[0]) {
+            //         //add message to alert
+            //         $('#alert-nip').html(error.responseJSON.nip[0]);
+            //     }
 
-                    //show alert
-                    $('#alert-jabatan').removeClass('d-none');
-                    $('#alert-jabatan').addClass('d-block');
+            //     if (error.responseJSON.jabatan[0]) {
 
-                    //add message to alert
-                    $('#alert-jabatan').html(error.responseJSON.jabatan[0]);
-                }
+            //         //show alert
+            //         $('#alert-jabatan').removeClass('d-none');
+            //         $('#alert-jabatan').addClass('d-block');
 
-                if (error.responseJSON.pangkat[0]) {
+            //         //add message to alert
+            //         $('#alert-jabatan').html(error.responseJSON.jabatan[0]);
+            //     }
 
-                    //show alert
-                    $('#alert-pangkat').removeClass('d-none');
-                    $('#alert-pangkat').addClass('d-block');
+            //     if (error.responseJSON.pangkat[0]) {
 
-                    //add message to alert
-                    $('#alert-pangkat').html(error.responseJSON.pangkat[0]);
-                }
+            //         //show alert
+            //         $('#alert-pangkat').removeClass('d-none');
+            //         $('#alert-pangkat').addClass('d-block');
 
-                if (error.responseJSON.golongan[0]) {
+            //         //add message to alert
+            //         $('#alert-pangkat').html(error.responseJSON.pangkat[0]);
+            //     }
 
-                    //show alert
-                    $('#alert-golongan').removeClass('d-none');
-                    $('#alert-golongan').addClass('d-block');
+            //     if (error.responseJSON.golongan[0]) {
 
-                    //add message to alert
-                    $('#alert-golongan').html(error.responseJSON.golongan[0]);
-                }
+            //         //show alert
+            //         $('#alert-golongan').removeClass('d-none');
+            //         $('#alert-golongan').addClass('d-block');
 
-                if (error.responseJSON.harian[0]) {
+            //         //add message to alert
+            //         $('#alert-golongan').html(error.responseJSON.golongan[0]);
+            //     }
 
-                    //show alert
-                    $('#alert-harian').removeClass('d-none');
-                    $('#alert-harian').addClass('d-block');
+            //     if (error.responseJSON.harian[0]) {
 
-                    //add message to alert
-                    $('#alert-harian').html(error.responseJSON.harian[0]);
-                }
+            //         //show alert
+            //         $('#alert-harian').removeClass('d-none');
+            //         $('#alert-harian').addClass('d-block');
 
-                if (error.responseJSON.transport[0]) {
+            //         //add message to alert
+            //         $('#alert-harian').html(error.responseJSON.harian[0]);
+            //     }
 
-                    //show alert
-                    $('#alert-transport').removeClass('d-none');
-                    $('#alert-transport').addClass('d-block');
+            //     if (error.responseJSON.transport[0]) {
 
-                    //add message to alert
-                    $('#alert-transport').html(error.responseJSON.transport[0]);
-                }
+            //         //show alert
+            //         $('#alert-transport').removeClass('d-none');
+            //         $('#alert-transport').addClass('d-block');
 
-                if (error.responseJSON.biaya[0]) {
+            //         //add message to alert
+            //         $('#alert-transport').html(error.responseJSON.transport[0]);
+            //     }
 
-                    //show alert
-                    $('#alert-biaya').removeClass('d-none');
-                    $('#alert-biaya').addClass('d-block');
+            //     if (error.responseJSON.biaya[0]) {
 
-                    //add message to alert
-                    $('#alert-biaya').html(error.responseJSON.biaya[0]);
-                }
+            //         //show alert
+            //         $('#alert-biaya').removeClass('d-none');
+            //         $('#alert-biaya').addClass('d-block');
 
-                if (error.responseJSON.penerimaan[0]) {
+            //         //add message to alert
+            //         $('#alert-biaya').html(error.responseJSON.biaya[0]);
+            //     }
 
-                    //show alert
-                    $('#alert-penerimaan').removeClass('d-none');
-                    $('#alert-penerimaan').addClass('d-block');
+            //     if (error.responseJSON.penerimaan[0]) {
 
-                    //add message to alert
-                    $('#alert-penerimaan').html(error.responseJSON.penerimaan[0]);
-                }
+            //         //show alert
+            //         $('#alert-penerimaan').removeClass('d-none');
+            //         $('#alert-penerimaan').addClass('d-block');
 
-            }
+            //         //add message to alert
+            //         $('#alert-penerimaan').html(error.responseJSON.penerimaan[0]);
+            //     }
+
+            // }
 
         });
 
